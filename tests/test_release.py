@@ -68,6 +68,8 @@ class ReleaseTests(unittest.TestCase):
                   "review_kind": "all_static_segments", "reviewed_entire_video": False,
                   "reviewed_all_static_segments": True, "frame_mapping_verified": True,
                   "segments": [], "review_evidence": []}
+        if selection["kind"] == "observations":
+            review.update(observation_source_mapping_verified=True, static_holds_only=True)
         for index, event in enumerate(selection["events"]):
             frame = event["start_frame"]
             path = self.root / f"decoded-{index}.png"
@@ -96,8 +98,68 @@ class ReleaseTests(unittest.TestCase):
         with self.assertRaisesRegex(release.ReleaseError, "every selection event"):
             release.validate_review_coverage(review, selection, "a" * 64)
         selection["kind"] = "observations"
-        with self.assertRaisesRegex(release.ReleaseError, "restricted to terminal_log"):
+        with self.assertRaisesRegex(release.ReleaseError, "explicit source-mapping"):
             release.validate_review_coverage(review, selection, "a" * 64)
+
+    def observation_fixture(self, duration=0.3):
+        from PIL import Image
+        Image.new("RGB", (80, 40), "#123456").save(self.root / "fixture.png")
+        (self.root / "population.csv").write_text("attempt_id,outcome\ntest-1,fixture_only\n")
+        self.spec["video"] = {"kind": "observations", "selection_rule": "Only synthetic unit-test image",
+                              "population_ref": "population.csv", "fps": 10,
+                              "events": [{"id": "image-fixture", "source": "fixture.png", "display_seconds": duration,
+                                          "run_id": "test", "attempt_id": "test-1", "observation_id": "test-obs-1",
+                                          "camera": "synthetic-fixture", "caption": "Synthetic test image; not simulator footage."}]}
+
+    @unittest.skipUnless(importlib.util.find_spec("PIL") and shutil.which("ffmpeg") and shutil.which("ffprobe"), "Pillow/FFmpeg optional integration prerequisites")
+    def test_static_observations_require_origin_mapping_and_seal_without_playback(self):
+        self.observation_fixture()
+        self.build(render=True)
+        selection = release.read_json(self.out / "video/selection.json")
+        review = self.static_fixture_review()
+        review["observation_source_mapping_verified"] = False
+        with self.assertRaisesRegex(release.ReleaseError, "explicit source-mapping"):
+            release.validate_static_video(self.out, review, self.root)
+        review["observation_source_mapping_verified"] = True
+        selection["disclosure"] = "Unrecorded continuous flight"
+        with self.assertRaisesRegex(release.ReleaseError, "editorial-hold disclosure"):
+            release.validate_review_coverage(review, selection, review["video_sha256"])
+        release.write_json(self.root / "review.json", review)
+        self.assertEqual(release.finalize_release(self.out, self.root / "review.json")["artifact_status"], "verified")
+        proof = release.read_json(self.out / "video/static-content-validation.json")
+        self.assertEqual(proof["frames_compared"], 3)
+        self.assertEqual(proof["observation_static_origin"]["method"], "exact_reencode_of_builder_static_slides_v1")
+        self.assertFalse(release.read_json(self.out / "video/visual-review.json")["reviewed_entire_video"])
+        proof["observation_static_origin"]["events"][0]["source_sha256"] = "0" * 64
+        release.write_json(self.out / "video/static-content-validation.json", proof)
+        saved = release.read_json(self.out / "evidence/release-spec.json")
+        release.write_manifest_and_hashes(self.out, saved, "verified")
+        with self.assertRaisesRegex(release.ReleaseError, "bound to every original source"):
+            release.verify_release(self.out)
+
+    @unittest.skipUnless(importlib.util.find_spec("PIL") and shutil.which("ffmpeg") and shutil.which("ffprobe"), "Pillow/FFmpeg optional integration prerequisites")
+    def test_static_observations_reject_dynamic_frame_even_with_an_additional_reference(self):
+        from PIL import Image
+        self.observation_fixture()
+        self.build(render=True)
+        selection = release.read_json(self.out / "video/selection.json")
+        with Image.open(self.out / selection["events"][0]["slide"]) as image:
+            original = image.convert("RGB").tobytes()
+        pixels = original + Image.new("RGB", (1280, 720), "#dd00dd").tobytes() + original
+        command = release.static_encoding_command(shutil.which("ffmpeg"), 10)
+        result = subprocess.run(command, cwd=self.out, input=pixels, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        review = self.static_fixture_review()
+        additional = self.root / "dynamic-reference.png"
+        result = subprocess.run([shutil.which("ffmpeg"), "-v", "error", "-y", "-i", str(self.out / "video/demo.mp4"),
+                                 "-vf", "select=eq(n\\,1)", "-frames:v", "1", str(additional)], capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        digest = release.sha256(additional)
+        review["review_evidence"].append({"id": "dynamic", "path": str(additional), "sha256": digest})
+        review["segments"][0]["additional_frames"] = [{"output_frame": 1, "decoded_frame": str(additional),
+                                                       "decoded_frame_sha256": digest, "review_evidence_ids": ["dynamic"]}]
+        with self.assertRaisesRegex(release.ReleaseError, "arbitrary dynamic footage"):
+            release.validate_static_video(self.out, review, self.root)
 
     def test_portable_bundle_retains_unknowns_and_truthful_status(self):
         result = self.build()

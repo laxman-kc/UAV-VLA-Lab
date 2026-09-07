@@ -96,7 +96,10 @@ def main() -> None:
         return
     hooks = Path(__file__).with_name("_aerovla_runtime_hooks.py").read_bytes()
     ast.parse(hooks)
+    reset_helper = Path(__file__).with_name("reset_protocol.py").read_bytes()
+    ast.parse(reset_helper)
     destination = checkout / "_vla_lab_runtime.py"
+    reset_destination = checkout / "_vla_lab_reset.py"
     if not backup.exists():
         backup.write_text(original)
     target.write_text(patched)
@@ -105,15 +108,24 @@ def main() -> None:
             saved.write_text(data)
         path.write_text(revised)
     destination.write_bytes(hooks)
+    reset_destination.write_bytes(reset_helper)
     manifest = {
         "schema_version": 1,
         "upstream_revision": PINNED_REVISION,
         "protocol": "aerovla-e37685a-observed-v1",
-        "behavior": "Existing parser, commands, stopping, cameras and clock settings retained; cancellation propagates through broad upstream exception handlers",
-        "timing_note": "Synchronous event/image recording adds measurable overhead to an unpaused simulator",
+        "behavior": "Default upstream reset, parser, commands, stopping, cameras and clock settings retained; cancellation propagates through broad upstream exception handlers. Optional timed reset is activated only by explicit environment selection and a distinct runtime ID.",
+        "timing_note": "Synchronous event/image recording adds measurable overhead; observation events retain a separate image write/hash interval",
+        "default_reset_protocol": "upstream",
+        "optional_reset_protocols": {
+            "paused-final-pose-time-v1": {"helper": reset_destination.name, "sha256": digest(reset_helper),
+                                        "selection_env": "VLA_LAB_RESET_PROTOCOL",
+                                        "runtime_id_requires_protocol_name": True,
+                                        "acceptance_before_model_preparation": True}
+        },
         "files": {
             str(RELATIVE_EVALUATOR): {"original_sha256": EVALUATOR_SHA256, "patched_sha256": digest(patched.encode())},
             destination.name: {"sha256": digest(hooks)},
+            reset_destination.name: {"sha256": digest(reset_helper)},
         },
         "upstream_protocol_source_sha256": PROTECTED_SOURCE_HASHES,
     }

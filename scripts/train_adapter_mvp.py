@@ -187,6 +187,32 @@ def validate_dataset(data_json, dataset_root, manifest_path):
             "limitation": "Hashes and declarations are checked; this program does not establish that expert labels are correct."}
 
 
+def load_reference_contract():
+    source = Path(__file__).with_name("prepare_published_reference.py")
+    spec = importlib.util.spec_from_file_location("pinned_published_reference_contract", source)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def validate_supervision(options):
+    mode = getattr(options, "supervision_mode", "reviewed-expert")
+    if mode == "reviewed-expert":
+        result = validate_dataset(options.data_json, options.dataset_root, options.dataset_manifest)
+        result["supervision_mode"] = mode
+        return result
+    if mode != "published-reference-mechanics" or options.phase != "P10" or options.steps != 1:
+        raise ContractError("Published-reference mechanics is an explicit P10-only one-update mode")
+    source = Path(__file__).with_name("prepare_published_reference.py")
+    module = load_reference_contract()
+    try:
+        result = module.validate_for_mechanics(options.data_json, options.dataset_root, options.dataset_manifest)
+    except ValueError as exc:
+        raise ContractError(str(exc)) from exc
+    result["reference_contract_code"] = file_record(source)
+    return result
+
+
 def validate_parent(base_root, adapter_root, manifest_path):
     manifest = read_json(manifest_path)
     if manifest.get("schema_version") != "vla.adapter-parent.v1" or manifest.get("preserve_projector") is not True:
@@ -552,6 +578,8 @@ def run_training(options, report):
     report["completed_at_utc"] = now()
     report["checkpoint_files"] = [file_record(path) for path in sorted(checkpoint.iterdir()) if path.is_file()]
     report["research_claim"] = "No claim that learning or navigation improved. This candidate requires separate development evaluation."
+    if getattr(options, "supervision_mode", "reviewed-expert") == "published-reference-mechanics":
+        report["research_claim"] = "P10 training mechanics on unchanged published reference targets only. Physical label horizon remains unknown; no P09 expert-correction completion, P12 adaptation, recovery or learning-improvement claim."
     write_json(options.output / "report.json", report)
     write_json(options.output / "checkpoint-manifest.json", {"schema_version": "vla.training-checkpoint.v1",
         "status": "mechanics_verified", "phase": options.phase, "parent": report["parent"], "dataset": report["dataset"],
@@ -567,6 +595,11 @@ def validate_options(options):
             raise ContractError(f"{field} must be positive")
     if options.phase == "P10" and options.steps != 1:
         raise ContractError("P10 requires exactly one optimizer step")
+    mode = getattr(options, "supervision_mode", "reviewed-expert")
+    if mode not in ("reviewed-expert", "published-reference-mechanics"):
+        raise ContractError("Unknown supervision mode")
+    if mode == "published-reference-mechanics" and options.phase != "P10":
+        raise ContractError("Published-reference mechanics cannot be used for P12 adaptation")
     if not 0 <= options.seed <= 2 ** 32 - 1:
         raise ContractError("seed must be an unsigned 32-bit integer")
     for field in ("learning_rate", "max_grad_norm", "min_free_gib"):
@@ -584,6 +617,8 @@ def parser():
     for flag in ("base-model", "adapter", "parent-manifest", "data-json", "dataset-root", "dataset-manifest", "upstream", "output"):
         result.add_argument("--" + flag, type=Path, required=True)
     result.add_argument("--phase", choices=("P10", "P12"), required=True)
+    result.add_argument("--supervision-mode", choices=("reviewed-expert", "published-reference-mechanics"), default="reviewed-expert",
+                        help="Default requires reviewed expert data; opt-in published reference targets are P10 mechanics only")
     result.add_argument("--steps", type=int, default=1)
     result.add_argument("--learning-rate", type=float, required=True)
     result.add_argument("--batch-size", type=int, default=1)
@@ -621,7 +656,9 @@ def main(argv=None):
         "sampling": "Seeded shuffle of all training row indices, repeat at epoch boundary; no dropping or automatic labels",
         "checkpoint_cadence": "Only final configured optimizer step; intermediate steps remain in the log",
         "effective_batch_examples": options.batch_size * options.gradient_accumulation}
-    report["dataset"] = validate_dataset(options.data_json, options.dataset_root, options.dataset_manifest)
+    report["dataset"] = validate_supervision(options)
+    if options.supervision_mode == "published-reference-mechanics":
+        report["limitations"].append("P10 reuses five unchanged publisher examples for training mechanics; physical action horizon remains unknown and P09 expert correction is incomplete.")
     report["parent"] = validate_parent(options.base_model, options.adapter, options.parent_manifest)
     report["code"] = {"runner": file_record(__file__), "upstream": validate_upstream(options.upstream)}
     report["config_sha256"] = canonical_hash(report["config"])

@@ -205,6 +205,10 @@ class TrainingContractTests(unittest.TestCase):
             training.validate_options(options)
         options.phase = "P12"
         training.validate_options(options)
+        options.supervision_mode = "published-reference-mechanics"
+        with self.assertRaisesRegex(training.ContractError, "cannot be used for P12"):
+            training.validate_options(options)
+        options.supervision_mode = "reviewed-expert"
         options.learning_rate = float("nan")
         with self.assertRaisesRegex(training.ContractError, "finite and positive"):
             training.validate_options(options)

@@ -1,0 +1,750 @@
+{
+  "schema_version": "vla.publication-candidate.v1",
+  "created_at_utc": "2026-09-07T04:33:19.109017+00:00",
+  "status": "prepared_for_review_not_published",
+  "comparison_base_commit": "fcd29707cfc4ec55daf50c93d03d3819d462c52a",
+  "source_snapshot_commit": "850383c723e4c8c7c98477848d67426606b9c96f",
+  "execution_provenance": "Content-only allowlist. Source hashes identify copied bytes; this preparation does not assert that every copied change was executed or tested.",
+  "changed_source_scope": {
+    "considered": 37,
+    "included": 36,
+    "excluded": [
+      {
+        "path": "scripts/analyze_baseline.py",
+        "source_sha256": "da2797ae7429e9ef486453d48bee45846fd4b5f35b5bc489fa25b936106abf08",
+        "reason": "Untracked new source excluded from this conservative phase snapshot; no execution or test claim assessed."
+      }
+    ],
+    "roots": [
+      "scripts",
+      "tests",
+      "docs/runbooks"
+    ]
+  },
+  "allowlist": [
+    {
+      "path": "PUBLIC_STATUS.md",
+      "sha256": "fbbd85603ea3bd2c64844eb03cfd765e058ef49642f72c58f233957a36e31085",
+      "bytes": 4758,
+      "content_relationship": "new reduced publication document",
+      "redaction_findings": [],
+      "private_literal_scan": "passed"
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "85db23ca9bd49213dad2746f62f43a86ad8948d43e3025acd1e081b70cfab2c0",
+      "source_basis": "README.md at comparison_base_commit",
+      "sha256": "f8368df822fbfeae41fd1ee9e3337feae8f769a22bb332c25a64ea2051856c1c",
+      "bytes": 1526,
+      "content_relationship": "public documentation derivative",
+      "redaction_findings": [
+        {
+          "kind": "public_navigation_and_scope_rewrite",
+          "reason": "Replace dated execution-status and host-specific README prose with a current public capability link and explicit scope limits. Already-public base history is not rewritten."
+        }
+      ],
+      "private_literal_scan": "passed"
+    },
+    {
+      "path": "REVIEW.md",
+      "sha256": "b60af478986020350a2cc11998c4d404f4058f671645d80f83d12b5130df11be",
+      "bytes": 4451,
+      "content_relationship": "new reduced publication document",
+      "redaction_findings": [],
+      "private_literal_scan": "passed"
+    },
+    {
+      "path": "VIDEO_AUDIT.md",
+      "sha256": "c201a5a83f23b6234324fb765a3c13bc55977a9551536e0a2413fcc72cc490a5",
+      "bytes": 2770,
+      "content_relationship": "new reduced publication document",
+      "redaction_findings": [],
+      "private_literal_scan": "passed"
+    },
+    {
+      "path": "docs/runbooks/evaluation.md",
+      "source_sha256": "37a5e8fb67fd08886ef6c4fa499800a9c156eea447a3c00b1ce39fcbeffbc0bf",
+      "sha256": "37a5e8fb67fd08886ef6c4fa499800a9c156eea447a3c00b1ce39fcbeffbc0bf",
+      "bytes": 18438,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "docs/runbooks/interruption.md",
+      "source_sha256": "8226cbaeee3fcf95f9b18a9ff1f02519177bff67eb0a0ecca791434ae9ea4cf9",
+      "sha256": "8226cbaeee3fcf95f9b18a9ff1f02519177bff67eb0a0ecca791434ae9ea4cf9",
+      "bytes": 9178,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "docs/runbooks/published_reference.md",
+      "source_sha256": "5f9947e852c510ccd9d4c42893c38f1ec65cdc738c0955801128c036949fbbb9",
+      "sha256": "5f9947e852c510ccd9d4c42893c38f1ec65cdc738c0955801128c036949fbbb9",
+      "bytes": 10933,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "docs/runbooks/reset_diagnostic.md",
+      "source_sha256": "c07528ecc7d1b412813aa58af127700ef1e383a279f7f5c876bcfe59b474c2d6",
+      "sha256": "c07528ecc7d1b412813aa58af127700ef1e383a279f7f5c876bcfe59b474c2d6",
+      "bytes": 6079,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "docs/runbooks/reset_protocol.md",
+      "source_sha256": "060b57b2684b77d7dc53e08937778a46b84964c5f03bda22a06a686e042b9a4e",
+      "sha256": "060b57b2684b77d7dc53e08937778a46b84964c5f03bda22a06a686e042b9a4e",
+      "bytes": 11029,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "docs/runbooks/restart_validation.md",
+      "source_sha256": "a16c82fb74561d5420f08a26758361c15688817747b2ec822430fbac7caf1472",
+      "sha256": "a16c82fb74561d5420f08a26758361c15688817747b2ec822430fbac7caf1472",
+      "bytes": 4664,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "docs/runbooks/simulation_session.md",
+      "source_sha256": "c55890ea0a27c2f9b07c7022ea6da63971ca422710843aeb1988987b5b2c0fdd",
+      "sha256": "c55890ea0a27c2f9b07c7022ea6da63971ca422710843aeb1988987b5b2c0fdd",
+      "bytes": 8869,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "docs/runbooks/training.md",
+      "source_sha256": "975f55530f715fda2e0d743b9da98551e39308332e2a5f0542bb8e3a46118333",
+      "sha256": "0a2014fb22cf94b2f825d0549cefdbb795f52f7784ce0c95135a6debab514cc9",
+      "bytes": 14676,
+      "content_relationship": "public documentation derivative",
+      "redaction_findings": [
+        {
+          "kind": "documentation_status_rewrite",
+          "reason": "Replace obsolete environment-specific execution statement with verified P10 scope; no source code or execution records changed."
+        }
+      ],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/_aerovla_runtime_hooks.py",
+      "source_sha256": "e5a171f120398d17979adca5a9043322f6f767a2ead6381fb146876b36212eef",
+      "sha256": "e5a171f120398d17979adca5a9043322f6f767a2ead6381fb146876b36212eef",
+      "bytes": 29087,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/audit_published_training.py",
+      "source_sha256": "a6e4f0a7824e4cb91265091a843be51c3b6a7c76b9b8b05141018b29f23fd6fe",
+      "sha256": "a6e4f0a7824e4cb91265091a843be51c3b6a7c76b9b8b05141018b29f23fd6fe",
+      "bytes": 4673,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/build_release.py",
+      "source_sha256": "3af28d2e958c3c21dc04e25e27df1f664e5ddf7aa31f67decb1c986d004115dd",
+      "sha256": "3af28d2e958c3c21dc04e25e27df1f664e5ddf7aa31f67decb1c986d004115dd",
+      "bytes": 70613,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/fix_airsim_rpc.py",
+      "source_sha256": "ad61372be258368c39be87e27c6f132a317ec0c2ad58f6d99e5dac0a6a25e71c",
+      "sha256": "ad61372be258368c39be87e27c6f132a317ec0c2ad58f6d99e5dac0a6a25e71c",
+      "bytes": 5391,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/interrupt_after_event.py",
+      "source_sha256": "a5e316fed2e21cfcab75179e974c06a725f9dcb3113744eca2a5ebfd5aa19e5c",
+      "sha256": "a5e316fed2e21cfcab75179e974c06a725f9dcb3113744eca2a5ebfd5aa19e5c",
+      "bytes": 20684,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/patch_aerovla_runtime.py",
+      "source_sha256": "33d46ca1e621a35afcf4d50c91d05006fd1136ec326243313b44f39104dc7910",
+      "sha256": "33d46ca1e621a35afcf4d50c91d05006fd1136ec326243313b44f39104dc7910",
+      "bytes": 7365,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/prepare_evaluation_batch.py",
+      "source_sha256": "87a6dccad2c1f0cbddbf407ad09f84cb302b0383b5ff7557e9dc8cf9003609ef",
+      "sha256": "87a6dccad2c1f0cbddbf407ad09f84cb302b0383b5ff7557e9dc8cf9003609ef",
+      "bytes": 15672,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/prepare_published_reference.py",
+      "source_sha256": "3019ff8eede0503a482dae7aace60687becc3dfc83f21566fa926c44b23c1add",
+      "sha256": "3019ff8eede0503a482dae7aace60687becc3dfc83f21566fa926c44b23c1add",
+      "bytes": 23168,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/reset_diagnostic.py",
+      "source_sha256": "3e41d7cd1cd227c72a77386b89e3dc5fcc512f1d5ea710ede95fc780b1f9b0ed",
+      "sha256": "3e41d7cd1cd227c72a77386b89e3dc5fcc512f1d5ea710ede95fc780b1f9b0ed",
+      "bytes": 17234,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/reset_protocol.py",
+      "source_sha256": "68fc45788dbab4da31b65f1ca1fb5b243aa4bef163fd8ac909e89a634e528401",
+      "sha256": "68fc45788dbab4da31b65f1ca1fb5b243aa4bef163fd8ac909e89a634e528401",
+      "bytes": 15068,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/run_simulation_session.py",
+      "source_sha256": "4ee4ca1caac33e89420802620ad072ad34ee62908ba5adf415a6951f530f6b84",
+      "sha256": "4ee4ca1caac33e89420802620ad072ad34ee62908ba5adf415a6951f530f6b84",
+      "bytes": 25038,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/simulator_probe.py",
+      "source_sha256": "817c5d55b1b0824dca79a09999667f0d95208120f37aec4255542d1d6397fa27",
+      "sha256": "817c5d55b1b0824dca79a09999667f0d95208120f37aec4255542d1d6397fa27",
+      "bytes": 22939,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/summarize_navigation.py",
+      "source_sha256": "73e597138e4c442ed8cc93a90730f9a3b16c577c30602a1547665e9a697d1c21",
+      "sha256": "73e597138e4c442ed8cc93a90730f9a3b16c577c30602a1547665e9a697d1c21",
+      "bytes": 48051,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/supervise_run.py",
+      "source_sha256": "7d1542fa8e7dd6f8ec77c8b8bff14fd7e9572c227056ecae22f60c2837ea0ac2",
+      "sha256": "7d1542fa8e7dd6f8ec77c8b8bff14fd7e9572c227056ecae22f60c2837ea0ac2",
+      "bytes": 16645,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/train_adapter_mvp.py",
+      "source_sha256": "24c0ebf8b89f287e14f58f1a4ed43b6e2a22f474dc40cd9b8c7cd907dae9392a",
+      "sha256": "24c0ebf8b89f287e14f58f1a4ed43b6e2a22f474dc40cd9b8c7cd907dae9392a",
+      "bytes": 40228,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "scripts/validate_restart.py",
+      "source_sha256": "d0fb51f184b2bbe388162d737d44f477ff51fb6d8020de1de38e57cb9c67c251",
+      "sha256": "d0fb51f184b2bbe388162d737d44f477ff51fb6d8020de1de38e57cb9c67c251",
+      "bytes": 26033,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_evaluation_batch.py",
+      "source_sha256": "7f9225170572873b3968f4a9e99e9787b33e07a1a00e5457143f48141accf347",
+      "sha256": "7f9225170572873b3968f4a9e99e9787b33e07a1a00e5457143f48141accf347",
+      "bytes": 11931,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_interrupt_after_event.py",
+      "source_sha256": "19011696344b8564a762b645825b8f9d3bf43696a72e291c6e41c5554868d36b",
+      "sha256": "19011696344b8564a762b645825b8f9d3bf43696a72e291c6e41c5554868d36b",
+      "bytes": 14668,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_navigation_summary.py",
+      "source_sha256": "d7c437042ca924fe7f3c2cfdd661867eed10882e02b85b006c483a3f996e1f81",
+      "sha256": "d7c437042ca924fe7f3c2cfdd661867eed10882e02b85b006c483a3f996e1f81",
+      "bytes": 17646,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_optional_reset_integration.py",
+      "source_sha256": "477ecf7a2faadbd88a7068d27bfc23347fd9058b690611637672653a032a9559",
+      "sha256": "477ecf7a2faadbd88a7068d27bfc23347fd9058b690611637672653a032a9559",
+      "bytes": 16959,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_published_reference.py",
+      "source_sha256": "256247a07dc9fc2e01389643239677b8d100ea64dc7b2121c0f662aed0a0d6b1",
+      "sha256": "256247a07dc9fc2e01389643239677b8d100ea64dc7b2121c0f662aed0a0d6b1",
+      "bytes": 14698,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_release.py",
+      "source_sha256": "c1509c9d9638ac28bc0b63356a9b277275aec764094539ccf6c0a8ae9c874d28",
+      "sha256": "c1509c9d9638ac28bc0b63356a9b277275aec764094539ccf6c0a8ae9c874d28",
+      "bytes": 22160,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_reset_diagnostic.py",
+      "source_sha256": "f2958e2bd9f5ded2334bd68adbc9e08268475cce0da1fc4e38eb5865c746347b",
+      "sha256": "f2958e2bd9f5ded2334bd68adbc9e08268475cce0da1fc4e38eb5865c746347b",
+      "bytes": 6102,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_reset_protocol.py",
+      "source_sha256": "a503b05758dac3668ee9c32885b96fe8c579abd314320dbae9e6fa43161b7cf8",
+      "sha256": "a503b05758dac3668ee9c32885b96fe8c579abd314320dbae9e6fa43161b7cf8",
+      "bytes": 8659,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_restart_validation.py",
+      "source_sha256": "6bbef6c6d7e053b0d46db6159e1950412a40fde861055fd96ef5bdf86bead4fd",
+      "sha256": "6bbef6c6d7e053b0d46db6159e1950412a40fde861055fd96ef5bdf86bead4fd",
+      "bytes": 12431,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_simulation_session.py",
+      "source_sha256": "b48a1c06b9d4193ee74bf5f99f632c165b72fb70d2f52bbd0bdf33968ee214fa",
+      "sha256": "b48a1c06b9d4193ee74bf5f99f632c165b72fb70d2f52bbd0bdf33968ee214fa",
+      "bytes": 10285,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_supervise_run.py",
+      "source_sha256": "5cdfdd6e7ed0cdcc35006bafa4a4fa094450bef2b7388072f99f4cfd6a82252d",
+      "sha256": "5cdfdd6e7ed0cdcc35006bafa4a4fa094450bef2b7388072f99f4cfd6a82252d",
+      "bytes": 7081,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    },
+    {
+      "path": "tests/test_training_contract.py",
+      "source_sha256": "8ffb20fa3451f44eb197c20a9dec7b3319042d353c1ea36a8a7e163ddd53f50b",
+      "sha256": "8ffb20fa3451f44eb197c20a9dec7b3319042d353c1ea36a8a7e163ddd53f50b",
+      "bytes": 15099,
+      "content_relationship": "verbatim source copy",
+      "redaction_findings": [],
+      "private_literal_scan": "passed",
+      "generic_literals_note": "Loopback addresses, system paths and placeholder examples in code/documentation are generic protocol/test values, not identifiers collected from a user host."
+    }
+  ],
+  "excluded_payload_classes": [
+    "All raw logs and event streams",
+    "All runtime/host inventories and diagnostic reports",
+    "All experiment configuration and runtime receipt files",
+    "All full release bundles",
+    "All model and dataset assets",
+    "Existing local commit history",
+    "Videos: identified separately for review only; no MP4 is copied into this candidate"
+  ],
+  "scan_scope": {
+    "all_candidate_text_bytes": true,
+    "patterns": [
+      "personal_home_path",
+      "private_gpu_uuid",
+      "account_name",
+      "non_loopback_ipv4",
+      "hardware_mac_address",
+      "private_key",
+      "literal_access_credential"
+    ],
+    "generic_loopback_is_not_private_host_address": true,
+    "personal_paths_removed_or_excluded": true,
+    "known_limit": "Pattern review is not proof against arbitrary hidden secrets; no user-host metadata files are included."
+  },
+  "video_audit": {
+    "status": "completed_metadata_content_screen",
+    "records": [
+      {
+        "phase": "P03",
+        "release_id": "20260907-timedpose-v1",
+        "video_sha256": "0132cf9aa8b648744bac1c2cba55d817bafe3c1e56434c36cd8745be142822e3",
+        "video_bytes": 764839,
+        "duration_seconds": 60.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 10,
+          "rendered_text_fields_and_excerpts_checked": 10,
+          "source_slide_hashes_checked": 10,
+          "source_image_or_log_hashes_checked": 10,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "a826b34509f56cdf8b6a3a942466385e972cb9e6a4f67fb654f6b5eb8b971bed",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 600,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P04",
+        "release_id": "20260907-controller-rpcfix-v1",
+        "video_sha256": "f520db1ca24dc96dde2abeaedc68e82166907d31ce0d9bad9db67159ec838a2c",
+        "video_bytes": 778302,
+        "duration_seconds": 60.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 12,
+          "rendered_text_fields_and_excerpts_checked": 12,
+          "source_slide_hashes_checked": 12,
+          "source_image_or_log_hashes_checked": 12,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "12a063bf4c05b29bbb3259374d5f81e3a3a631c01ac0d9cb1f233284316a9901",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 600,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P04",
+        "release_id": "20260907-timedpose-v1",
+        "video_sha256": "3bab88b5a89b486d3822616efb443a3fccb42431e277b02297f0a351d9e25d1c",
+        "video_bytes": 766968,
+        "duration_seconds": 60.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 12,
+          "rendered_text_fields_and_excerpts_checked": 12,
+          "source_slide_hashes_checked": 12,
+          "source_image_or_log_hashes_checked": 12,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "986570b0484f916155362c030c947bd623768fb4e1eb0c251c3f361f9e124693",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 600,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P06",
+        "release_id": "20260907-observed-v1",
+        "video_sha256": "39e6a8993971d6dd6839bcd6ae2277d67e2e41703e90e679bc75283d1f357907",
+        "video_bytes": 761038,
+        "duration_seconds": 60.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 12,
+          "rendered_text_fields_and_excerpts_checked": 12,
+          "source_slide_hashes_checked": 12,
+          "source_image_or_log_hashes_checked": 12,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "c9f2833868d61d978b0512bdd637781fb4b2f59123c42fea81ed82ad03f22818",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 600,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P06-reference",
+        "release_id": "20260907-reference-v1",
+        "video_sha256": "daa10868403ad8132ca6869bf72c4e4148a9e2e88a8a45afde81d345c7bb8f68",
+        "video_bytes": 1061870,
+        "duration_seconds": 90.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 18,
+          "rendered_text_fields_and_excerpts_checked": 18,
+          "source_slide_hashes_checked": 18,
+          "source_image_or_log_hashes_checked": 18,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "a50088facfff6b263e746fa62e239e3168581a7b0ccad1c7964874528159be1b",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 900,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P07",
+        "release_id": "20260907-interruption-recording-v2",
+        "video_sha256": "2b536f54bf33f3573ceb26c144d3d933258ffaf2cc20c1d8e39a215b8cfcc84f",
+        "video_bytes": 1517412,
+        "duration_seconds": 110.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 19,
+          "rendered_text_fields_and_excerpts_checked": 19,
+          "source_slide_hashes_checked": 19,
+          "source_image_or_log_hashes_checked": 19,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "3b035d8ae9ecc35c0c7d02b996414a0631e02c3fed3d7bf386887f19c59f3550",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 1100,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P07",
+        "release_id": "20260907-interruption-restart-v1",
+        "video_sha256": "b924d96f4a77f417a6a257380af6010dca638bc682582a84ac355f1969bdc5d8",
+        "video_bytes": 1212506,
+        "duration_seconds": 86.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 16,
+          "rendered_text_fields_and_excerpts_checked": 16,
+          "source_slide_hashes_checked": 16,
+          "source_image_or_log_hashes_checked": 16,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "e95a6e94b0e8763988fb2ec83103a228628b1554a3700b210d1aaa281a073406",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 860,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P10",
+        "release_id": "20260907-reference-mechanics-logs-v1",
+        "video_sha256": "d78c2bda4c008d4818ce21187baa501d10a0df22b77ee23bd0ccc6850f2a25af",
+        "video_bytes": 393732,
+        "duration_seconds": 60.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "excluded_visible_private_or_diagnostic_content",
+        "included_in_candidate_payload": false,
+        "visible_findings": [
+          {
+            "event_id": "scope",
+            "category": "visible_private_host_path_or_identifier"
+          },
+          {
+            "event_id": "optimizer",
+            "category": "visible_runtime_memory_diagnostics"
+          }
+        ],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 8,
+          "rendered_text_fields_and_excerpts_checked": 8,
+          "source_slide_hashes_checked": 8,
+          "source_image_or_log_hashes_checked": 8,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "db7803e813da5bb3426276a4fd3d8b08d916f0bb78ca0ee0f156200225923ef5",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 600,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      },
+      {
+        "phase": "P10",
+        "release_id": "20260907-reference-mechanics-v1",
+        "video_sha256": "5768943cacad5c0249ccc9c1d048cfee97596cd9e1f7b57d80d6ae59d2bf029e",
+        "video_bytes": 649824,
+        "duration_seconds": 50.0,
+        "codec": "h264",
+        "stream_types": [
+          "video"
+        ],
+        "status": "candidate_mp4_only",
+        "included_in_candidate_payload": false,
+        "visible_findings": [],
+        "container_private_metadata_findings": false,
+        "review_coverage": {
+          "static_segments": 10,
+          "rendered_text_fields_and_excerpts_checked": 10,
+          "source_slide_hashes_checked": 10,
+          "source_image_or_log_hashes_checked": 10,
+          "actual_visual_method": "Every rendered static slide inspected in contact sheets; P10 slides additionally inspected at full size during the immediately preceding release review.",
+          "prior_all_frame_static_proof_hash": "53bf6eda1ba47989e533e26ee56d0af22a7f6182fc57aa4741969d2112ba063f",
+          "prior_all_frame_proof_revalidated": true,
+          "prior_static_proof_output_frames": 500,
+          "container_and_stream_tags_checked": true,
+          "audio_or_data_streams": false
+        },
+        "publication_note": "MP4 alone only. Source mappings, review files, reports and full release bundle are not approved for export by this content screen. Generic report.html footer does not include the report."
+      }
+    ],
+    "scope": "Visible MP4 content and container/stream metadata for the named hashes only. No video copied or published; no publication authorization inferred.",
+    "known_limit": "Visual inspection and metadata/hash checks are not a steganographic or legal-rights audit. Existing static proofs bind the named slides to all encoded frames where available."
+  },
+  "publication_authorization": "Not asserted; no publication or Git operation was performed.",
+  "completed_at_utc": "2026-09-07T04:54:20.728749+00:00",
+  "candidate_payload": {
+    "files_excluding_manifest_and_checksum": 40,
+    "bytes_excluding_manifest_and_checksum": 642979,
+    "symlinks": false,
+    "binary_or_media_files": false,
+    "raw_runtime_data_files": false
+  },
+  "navigation_revision": {
+    "created_at_utc": "2026-09-07T04:54:20.606371+00:00",
+    "readme_source_basis": "comparison_base_commit",
+    "current_status_target": "PUBLIC_STATUS.md",
+    "base_status_disposition": "Existing public docs/STATUS.md remains unchanged and is historical; current README directs readers to PUBLIC_STATUS.md.",
+    "base_history_scope": "No audit or deletion of already-public historical content is claimed. Later private local commits must not be used as publication ancestry.",
+    "new_capability_rows": [
+      "P01",
+      "P02",
+      "P05",
+      "P08"
+    ],
+    "capability_evidence": "Existing actual phase reports were read locally; no raw report, receipt, host inventory or diagnostic value is copied.",
+    "relative_links_checked_against_public_base_plus_overlay": true,
+    "new_python_source_execution": false,
+    "p08_metrics_review": "Both the existing navigation aggregate and independent joint navigation/reset analysis were read locally: 20 planned, observed, valid and reset-accepted; success 6/20, oracle success 7/20; no unplanned, unscored or excess attempts. Source files remain excluded."
+  },
+  "source_snapshot_note": "Original source_sha256 values identify the files copied at created_at_utc and source_snapshot_commit; later local documentation edits are not implied to match this frozen snapshot. README separately identifies its public-base source. No executed-code identity has been rewritten.",
+  "supporting_documents": []
+}

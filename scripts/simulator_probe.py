@@ -160,6 +160,8 @@ def read_args():
     parser.add_argument("--simulator-port", type=int, default=30000)
     parser.add_argument("--gpu-id", type=int, default=0)
     parser.add_argument("--scene-manager-exclusive", action="store_true", required=True)
+    parser.add_argument("--reset-protocol", choices=("upstream", "paused-final-pose-v1", "paused-final-pose-time-v1"), default="upstream",
+                        help="Explicit reset behavior; all modes verify captured camera pose and paused ground truth")
     parser.add_argument("--probe-config", type=Path, help="JSON array overriding the proposed recorded default probes/tolerances")
     parser.add_argument("--capture-resets", type=int, default=2, help="Proposed capture scope; no action during these resets")
     parser.add_argument("--reset-position-tolerance-m", type=float, default=0.1, help="Proposed reset acceptance tolerance, recorded before measurement")
@@ -197,6 +199,9 @@ def main():
                 "episode_json": str(options.episode_json), "episode_json_sha256": sha(options.episode_json),
                 "dataset_root": str(options.dataset_root), "simulator_port": options.simulator_port,
                 "gpu_id": options.gpu_id, "expected_clock_speed": 10, "model_loaded": False,
+                "reset_protocol": options.reset_protocol, "probe_source_sha256": sha(__file__),
+                "reset_protocol_source_sha256": sha(Path(__file__).with_name("reset_protocol.py")),
+                "reset_acceptance_scope": "Cached state plus actual front-camera rotation/down-camera origin and post-capture paused ground truth; same declared tolerances",
                 "capture_resets": options.capture_resets, "max_wall_seconds": options.max_wall_seconds,
                 "reset_position_tolerance_m": options.reset_position_tolerance_m,
                 "reset_angle_tolerance_rad": options.reset_angle_tolerance_rad,
@@ -233,6 +238,7 @@ def main():
         from src.vlnce_src.env_uav import AirVLNENV
         from airsim_plugin.AirVLNSimulatorClientTool_AeroVLA import AirVLNSimulatorClientTool
         from _vla_lab_runtime import Runtime
+        from reset_protocol import install as install_reset_protocol
         env = AirVLNENV(batch_size=1, dataset_path="./dataset_raw/", save_path=str(results_root), eval_json_path=str(options.episode_json))
         if len(env.data) != 1:
             raise ValueError("Upstream loader did not resolve exactly one trajectory")
@@ -241,6 +247,7 @@ def main():
         runtime.patch(env, "next_minibatch", runtime.episode)
         runtime.patch(env, "makeActions", runtime.action)
         runtime.patch(AirVLNSimulatorClientTool, "run_call", runtime.scene_open)
+        reset_helper = install_reset_protocol(env, runtime, protocol=options.reset_protocol)
         work = probes if options.mode == "controller" else [{"name": f"capture_reset_{i + 1}"} for i in range(options.capture_resets)]
         for probe in work:
             env.index_data = 0
@@ -251,12 +258,14 @@ def main():
                 actual_settings = json.loads((options.upstream / "airsim_plugin/settings" / str(port) / "settings.json").read_text())
                 if actual_settings.get("ClockSpeed") != 10:
                     raise ValueError("Generated ClockSpeed differs from the recorded upstream reference of 10")
+            camera_reset = reset_helper.acceptance(options.reset_position_tolerance_m, options.reset_angle_tolerance_rad)
             runtime.observe(initial)
             result = {"name": probe["name"], "attempt_id": runtime.attempt_id, "initial_state": initial["sensors"]["state"],
                       "initial_imu": initial["sensors"].get("imu"), "observation_shapes_verified": True}
             reset = reset_checks(initial["sensors"]["state"], env.batch[0]["trajectory"][0],
                                  options.reset_position_tolerance_m, options.reset_angle_tolerance_rad)
             result["reset_measurements"] = reset
+            result["camera_reset_measurements"] = camera_reset
             if options.mode == "controller":
                 before = time.monotonic_ns()
                 env.makeActions([probe["action"]])
@@ -269,6 +278,7 @@ def main():
             else:
                 result["checks"] = {"images_and_state_captured": True, "no_initial_endpoint_contact": initial["sensors"]["state"].get("collision", {}).get("has_collided") is False}
             result["checks"].update(reset["checks"])
+            result["checks"].update(camera_reset["checks"])
             result["gate_passed"] = all(result["checks"].values())
             result["status"] = "completed"
             runtime.rec.emit("probe.completed", **result)
@@ -302,7 +312,8 @@ def main():
             except Exception as exc:
                 evidence_checks = {"readable_complete_log": False}
                 cleanup_exceptions.append(f"Evidence validation: {type(exc).__name__}: {exc}")
-        summary = {"schema_version": 1, "mode": options.mode, "status": "completed" if failure is None else "interrupted",
+        summary = {"schema_version": 1, "mode": options.mode, "reset_protocol": options.reset_protocol,
+                   "status": "completed" if failure is None else "interrupted",
                    "model_loaded": False, "results": results, "wall_duration_ns": time.monotonic_ns() - started,
                    "cleanup_succeeded": cleanup_succeeded,
                    "cleanup_exceptions": cleanup_exceptions, "evidence_checks": evidence_checks,
@@ -316,6 +327,8 @@ def main():
                  "", "No VLA model was loaded. These are genuine simulator observations/scripted controller checks.",
                  "Tolerances and scope were recorded in config.resolved.json before measurement.",
                  "The upstream ClockSpeed=10 and controller behavior were retained; timing includes synchronous recording.",
+                 f"Reset protocol: {options.reset_protocol}. The paused-final-pose-v1 option is an explicit reset behavior change.",
+                 "Reset acceptance includes actual captured-camera pose and post-capture paused ground truth, not only cached state.",
                  "Endpoint contact samples do not establish collision-free motion between observations.", ""]
         lines.extend(f"- {result['name']}: gate_passed={result['gate_passed']}; checks={json.dumps(result['checks'])}" for result in results)
         lines.extend(["", "Evidence checks: " + json.dumps(evidence_checks), "Cleanup exceptions: " + json.dumps(cleanup_exceptions)])

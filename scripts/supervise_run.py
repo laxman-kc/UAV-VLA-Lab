@@ -42,6 +42,43 @@ def file_record(path):
     return {"path": str(path), "bytes": path.stat().st_size, "sha256": digest.hexdigest()}
 
 
+def linux_process_identity(pid):
+    """Read a Linux root-process identity without reading its environment.
+
+    Start ticks + boot ID distinguish a reused PID. Re-reading stat bounds the
+    snapshot to one process identity; argv/cwd/exe changes are checked by callers.
+    """
+    if not sys.platform.startswith("linux"):
+        raise RuntimeError("Linux /proc process identity is unavailable on this platform")
+    if type(pid) is not int or pid <= 1:
+        raise ValueError("Process identity requires a PID greater than one")
+    root = Path("/proc") / str(pid)
+
+    def read_stat():
+        raw = (root / "stat").read_text()
+        prefix, separator, remainder = raw.rpartition(") ")
+        if not separator or int(prefix.split("(", 1)[0].strip()) != pid:
+            raise ValueError("Malformed process stat identity")
+        fields = remainder.split()
+        return {"pid": pid, "pgid": int(fields[2]), "session_id": int(fields[3]),
+                "starttime_ticks": int(fields[19]), "state": fields[0]}
+
+    before = read_stat()
+    argv_bytes = (root / "cmdline").read_bytes()
+    argv = [part.decode("utf-8") for part in argv_bytes.rstrip(b"\0").split(b"\0")] if argv_bytes else []
+    uid_line = next(line for line in (root / "status").read_text().splitlines() if line.startswith("Uid:"))
+    identity = {**before, "boot_id": Path("/proc/sys/kernel/random/boot_id").read_text().strip(),
+        "uid": int(uid_line.split()[1]), "argv": argv,
+        "cwd": os.readlink(root / "cwd"), "exe": os.readlink(root / "exe")}
+    after = read_stat()
+    if any(before[key] != after[key] for key in ("pid", "pgid", "session_id", "starttime_ticks")):
+        raise RuntimeError("Process identity changed during its snapshot")
+    if after["state"] in ("Z", "X", "x"):
+        raise RuntimeError("Process is no longer a live signaling target")
+    identity["state"] = after["state"]
+    return identity
+
+
 class Recorder:
     def __init__(self, root):
         self.stream = (root / "events.jsonl").open("x", buffering=1)
@@ -120,7 +157,14 @@ def supervise(options):
                 process = subprocess.Popen(options.command, cwd=options.cwd, stdout=stdout, stderr=stderr,
                                            stdin=subprocess.DEVNULL, start_new_session=True)
                 report.update(process_pid=process.pid, process_group_id=process.pid, status="running")
-                recorder.emit("process.spawned", pid=process.pid, pgid=process.pid, root_process_alive=process.poll() is None)
+                try:
+                    identity, identity_error = linux_process_identity(process.pid), None
+                except Exception as error:
+                    identity, identity_error = None, f"{type(error).__name__}: {error}"
+                report["process_identity_at_spawn"] = identity
+                report["process_identity_error"] = identity_error
+                recorder.emit("process.spawned", pid=process.pid, pgid=process.pid, root_process_alive=process.poll() is None,
+                              process_identity=identity, identity_error=identity_error)
                 ps_process = None
                 try:
                     import psutil

@@ -368,6 +368,12 @@ def execute(command, cwd=None):
     return subprocess.run(command, cwd=cwd, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
 
 
+def static_encoding_command(ffmpeg, fps):
+    return [ffmpeg, "-hide_banner", "-y", "-f", "rawvideo", "-pixel_format", "rgb24", "-video_size", "1280x720",
+            "-framerate", str(fps), "-i", "pipe:0", "-an", "-c:v", "libx264", "-preset", "veryfast",
+            "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-threads", "2", "video/demo.mp4"]
+
+
 def render_video(out, spec, selection, font_file=None):
     out = Path(out)
     ffmpeg, ffprobe = shutil.which("ffmpeg"), shutil.which("ffprobe")
@@ -380,9 +386,7 @@ def render_video(out, spec, selection, font_file=None):
     version = execute([ffmpeg, "-version"])
     (out / "video/encoder-version.txt").write_text(version.stdout + version.stderr, encoding="utf-8")
     (out / "video/slides").mkdir()
-    command = [ffmpeg, "-hide_banner", "-y", "-f", "rawvideo", "-pixel_format", "rgb24", "-video_size", "1280x720",
-               "-framerate", str(selection["fps"]), "-i", "pipe:0", "-an", "-c:v", "libx264", "-preset", "veryfast",
-               "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-threads", "2", "video/demo.mp4"]
+    command = static_encoding_command(ffmpeg, selection["fps"])
     with (out / "video/encode.log").open("wb") as log:
         process = subprocess.Popen(command, cwd=out, stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=log)
         try:
@@ -641,8 +645,17 @@ def validate_review_coverage(review, selection, video_hash):
         if review.get("reviewed_entire_video") is not True:
             raise ReleaseError("Full-video review requires reviewed_entire_video=true")
         return kind
-    if kind != "all_static_segments" or selection["kind"] != "terminal_log":
-        raise ReleaseError("all_static_segments review is restricted to terminal_log videos")
+    if kind != "all_static_segments" or selection["kind"] not in {"terminal_log", "observations"}:
+        raise ReleaseError("all_static_segments requires a supported builder-produced static video")
+    if selection["kind"] == "observations":
+        if (review.get("observation_source_mapping_verified") is not True or review.get("static_holds_only") is not True):
+            raise ReleaseError("Observation static review requires explicit source-mapping and static-holds review")
+        if (selection.get("timeline_domain") != "editorial_display_time" or
+                selection.get("disclosure") not in {DISCLOSURES["observations"],
+                    "Sampled observations; elapsed timing unavailable. Editorial holds, not real-time."} or
+                not selection.get("population_ref") or any(not event.get("slide") or not event.get("slide_sha256")
+                    for event in selection["events"])):
+            raise ReleaseError("Observation static review requires builder slides, population and editorial-hold disclosure")
     if (review.get("reviewed_entire_video") is not False or review.get("reviewed_all_static_segments") is not True or
             review.get("frame_mapping_verified") is not True):
         raise ReleaseError("Static review must declare complete segment/mapping review and reviewed_entire_video=false")
@@ -688,6 +701,65 @@ def validate_static_video(out, review, base):
     return proof
 
 
+def validate_observation_static_origin(out, selection, ffmpeg):
+    """Prove this observation video is the builder's exact repeated PNG slides.
+
+    Re-encode using this tool's fixed command, never a command supplied in data.
+    Exact bytes are required; a different encoder must fail rather than weaken
+    the static-content gate. This does not attest a human visual assessment.
+    """
+    from PIL import Image
+    out = Path(out)
+    validation = read_json(packaged_file(out, "video/validation.json"))
+    command = static_encoding_command(ffmpeg, selection["fps"])
+    recorded = validation.get("commands", [[]])[0]
+    if recorded[1:] != command[1:]:
+        raise ReleaseError("Observation static proof requires this builder's fixed encoding settings")
+    version = execute([ffmpeg, "-version"])
+    version_file = packaged_file(out, "video/encoder-version.txt")
+    if version.returncode or version.stdout + version.stderr != version_file.read_text():
+        raise ReleaseError("Observation static proof requires the recorded FFmpeg version; full-video review remains available")
+    sources = []
+    with tempfile.TemporaryDirectory(prefix="observation-static-proof-") as directory:
+        temporary = Path(directory)
+        (temporary / "video").mkdir()
+        with tempfile.TemporaryFile() as log:
+            process = subprocess.Popen(command, cwd=temporary, stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=log)
+            try:
+                for index, event in enumerate(selection["events"]):
+                    source = packaged_file(out, event["source"])
+                    slide = packaged_file(out, event["slide"])
+                    if (event["slide"] != f"video/slides/{index:04d}.png" or
+                            sha256(slide) != event["slide_sha256"] or sha256(source) != event["source_sha256"]):
+                        raise ReleaseError("Observation source/slide identity disagrees with the builder mapping")
+                    with Image.open(source) as image:
+                        if getattr(image, "n_frames", 1) != 1 or list(image.size) != event.get("source_dimensions"):
+                            raise ReleaseError("Observation source must be the recorded single still image")
+                    with Image.open(slide) as image:
+                        if getattr(image, "n_frames", 1) != 1 or image.size != (1280, 720):
+                            raise ReleaseError("Observation hold needs a single builder-produced 1280x720 slide")
+                        pixels = image.convert("RGB").tobytes()
+                    sources.append({"event_id": event["id"], "source": event["source"], "source_sha256": sha256(source),
+                                    "slide": event["slide"], "slide_sha256": sha256(slide), "frame_count": event["frame_count"]})
+                    for _ in range(event["frame_count"]):
+                        process.stdin.write(pixels)
+                process.stdin.close()
+                returncode = process.wait()
+            except BaseException:
+                process.kill()
+                process.wait()
+                if process.stdin and not process.stdin.closed:
+                    process.stdin.close()
+                raise
+        reconstructed = temporary / "video/demo.mp4"
+        if returncode or sha256(reconstructed) != sha256(packaged_file(out, "video/demo.mp4")):
+            raise ReleaseError("Observation video is not the exact builder-produced static holds; arbitrary dynamic footage requires full-video review")
+        return {"method": "exact_reencode_of_builder_static_slides_v1", "status": "passed",
+                "video_sha256": sha256(reconstructed), "encoder_version_sha256": sha256(version_file),
+                "encode_returncode": returncode, "command": command, "events": sources,
+                "limitation": "Exact static construction and source mapping only; visual review is separately supplied. No continuous playback is attested."}
+
+
 def measure_static_video(out, segments, review_evidence, expected_video_sha256, base):
     """Decode all video frames; bind reviewed references, intervals and timing.
 
@@ -705,8 +777,9 @@ def measure_static_video(out, segments, review_evidence, expected_video_sha256, 
     out = Path(out)
     selection = read_json(packaged_file(out, "video/selection.json"))
     video = packaged_file(out, "video/demo.mp4")
-    if selection["kind"] != "terminal_log" or sha256(video) != expected_video_sha256:
-        raise ReleaseError("Static-content measurement requires the identified terminal-log video")
+    if selection["kind"] not in {"terminal_log", "observations"} or sha256(video) != expected_video_sha256:
+        raise ReleaseError("Static-content measurement requires the identified builder-produced video")
+    observation_origin = validate_observation_static_origin(out, selection, ffmpeg) if selection["kind"] == "observations" else None
     for item in review_evidence:
         if sha256(existing_file(item["path"], base)) != item["sha256"]:
             raise ReleaseError("Inspected review evidence hash mismatch")
@@ -801,6 +874,7 @@ def measure_static_video(out, segments, review_evidence, expected_video_sha256, 
             "video_sha256": sha256(video), "selection_sha256": sha256(out / "video/selection.json"),
             "frames_csv_sha256": sha256(out / "video/frames.csv"), "frame_count": len(frames), "frames_compared": sum(item["frames_compared"] for item in measurements),
             "tolerances": STATIC_FRAME_TOLERANCES, "segments": measurements, "probe_returncode": probe.returncode,
+            "observation_static_origin": observation_origin,
             "decode_returncode": returncode, "decode_log": decode_log, "commands": [probe_command, command],
             "encoded_frame_pts_seconds": [float(item["best_effort_timestamp_time"]) for item in frames],
             "limitations": "Pixel agreement is bounded by the recorded lossy reconstruction tolerances. This programmatic measurement does not itself attest visual review or continuous playback."}
@@ -815,6 +889,20 @@ def verify_static_review(out, review, selection):
             proof.get("decode_returncode") != 0 or proof.get("probe_returncode") != 0 or proof.get("tolerances") != STATIC_FRAME_TOLERANCES or proof.get("failed_frame_checks") or
             proof.get("method") != "every_decoded_rgb_frame_vs_reviewed_segment_reference_v1"):
         raise ReleaseError("Static review coverage is not bound to the complete encoded content and mapping")
+    if selection["kind"] == "observations":
+        origin = proof.get("observation_static_origin") or {}
+        expected_events = [{"event_id": event["id"], "source": event["source"], "source_sha256": event["source_sha256"],
+                            "slide": event["slide"], "slide_sha256": event["slide_sha256"], "frame_count": event["frame_count"]}
+                           for event in selection["events"]]
+        if (origin.get("method") != "exact_reencode_of_builder_static_slides_v1" or origin.get("status") != "passed" or
+                origin.get("video_sha256") != review["video_sha256"] or origin.get("encode_returncode") != 0 or
+                origin.get("encoder_version_sha256") != sha256(packaged_file(out, "video/encoder-version.txt")) or
+                origin.get("events") != expected_events or
+                origin.get("command", [])[1:] != static_encoding_command("ffmpeg", selection["fps"])[1:]):
+            raise ReleaseError("Observation static proof is not bound to every original source, slide and encoded video")
+        for event in selection["events"]:
+            if sha256(packaged_file(out, event["slide"])) != event["slide_sha256"]:
+                raise ReleaseError("Observation static slide hash mismatch")
     pts = proof.get("encoded_frame_pts_seconds", [])
     if len(pts) != selection["frame_count"] or any(not isinstance(value, (int, float)) or not math.isclose(value, index / selection["fps"], abs_tol=1e-6) for index, value in enumerate(pts)):
         raise ReleaseError("Static review does not cover all encoded presentation timestamps")
