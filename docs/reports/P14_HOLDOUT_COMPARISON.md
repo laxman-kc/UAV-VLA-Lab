@@ -50,4 +50,4 @@ Success and OSR follow upstream target-navigation conventions. LAND is not physi
 
 The full cycle therefore reports completed engineering and mixed descriptive navigation results: development SR 6/20 → 7/20; holdout SR 3/10 → 4/10; holdout OSR 6/10 → 5/10. Further training or evaluation would require a separately declared experiment.
 
-[Current cycle status](../../PUBLIC_STATUS.md) · [14-phase completion index](../STATUS.md) · [Holdout preparation](../runbooks/holdout_comparison_preparation.md) · [Paired comparison contract](../runbooks/navigation_comparison.md)
+[Current cycle status](../research/technical-report.md) · [14-phase completion index](../STATUS.md) · [Holdout preparation](../runbooks/holdout_comparison_preparation.md) · [Paired comparison contract](../runbooks/navigation_comparison.md)

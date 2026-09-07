@@ -11,13 +11,13 @@ Use this with [the delivery standard](../DELIVERY_STANDARD.md). A valid artifact
 - An actual inventory JSON, acceptance-check JSON and resolved configuration file. The configuration may be YAML or JSON, which is also valid YAML.
 - Real logs or saved PNG/JPEG camera observations. Review supplied files and command strings for credentials and unrelated private information before packaging. The tool rejects common credential patterns, but does not claim exhaustive secret detection or inspect image contents for secrets.
 
-On the inspected Mac, the bundled runtime has Pillow and the installed FFmpeg has `libx264`:
+Use a Python environment with the reporting dependencies and FFmpeg available:
 
 ```sh
-/Users/laxmankc/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_release.py --spec /absolute/path/release-spec.json --output /absolute/path/new-release-directory --render-video
+python3 scripts/build_release.py --spec /absolute/path/release-spec.json --output /absolute/path/new-release-directory --render-video
 ```
 
-Use the appropriate Python path elsewhere. The ordinary `python3` inspected on this Mac lacks Pillow, but can build reports or verify releases. No automatic installation or driver changes occur.
+This portable example replaces an operator-specific runtime path from the earlier public runbook. It is documentation, not a record of a newly executed command; sealed execution receipts remain unchanged.
 
 ## Input contract
 

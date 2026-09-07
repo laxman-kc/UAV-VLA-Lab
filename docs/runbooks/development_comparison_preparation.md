@@ -2,7 +2,7 @@
 
 `scripts/prepare_development_comparison.py` creates a new P13 metadata bundle only after the actual reviewed-expert P12 run has completed and its final checkpoint has passed reload checks. It reads bounded JSON and declared Python source. It never opens model weights, raw events or images, starts simulation, chooses a checkpoint, or writes evaluation results.
 
-The current cycle uses the **same fixed final P12 candidate regardless of P13 outcome**. P13 may show improvement, no change or regression. Report that result before freezing P14. P14 then tests the unchanged candidate against the released original under a separate holdout plan, with both arms newly executed after that plan freezes. There is no best-of selection, model switch or promise of improvement. This is the fixed-candidate rule recorded in the [current public scope](../../PUBLIC_STATUS.md); the helper also binds it to the actual candidate contract hash in `paired-plan.json` before P13.
+The current cycle uses the **same fixed final P12 candidate regardless of P13 outcome**. P13 may show improvement, no change or regression. Report that result before freezing P14. P14 then tests the unchanged candidate against the released original under a separate holdout plan, with both arms newly executed after that plan freezes. There is no best-of selection, model switch or promise of improvement. This is the fixed-candidate rule recorded in the [current public scope](../research/technical-report.md); the helper also binds it to the actual candidate contract hash in `paired-plan.json` before P13.
 
 ## Inputs and invocation
 

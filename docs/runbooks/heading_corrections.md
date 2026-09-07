@@ -1,6 +1,6 @@
 # Privileged heading-restoration collection — deferred prototype
 
-**Status:** unapproved and unexecuted prototype, not the source of the completed P09/P11 datasets. The current adaptation uses reviewed ordinary source demonstrations; see the [scope decision](../REFERENCE_ALIGNMENT_DECISION.md) and [verified status](../../PUBLIC_STATUS.md). No heading-correction sample or simulator result is claimed.
+**Status:** unapproved and unexecuted prototype, not the source of the completed P09/P11 datasets. The current adaptation uses reviewed ordinary source demonstrations; see the [scope decision](../REFERENCE_ALIGNMENT_DECISION.md) and [verified status](../research/dataset-card.md). No heading-correction sample or simulator result is claimed.
 
 `scripts/collect_heading_corrections.py` implements the separately named `privileged-heading-restoration-v1` teacher. It is a model-free, one-action collection entry point. It does not approve labels, invoke the trainer, change the evaluation runtime, or assert human review. Source inspection and synthetic tests establish an implemented contract; actual simulator evidence must establish which samples satisfy it.
 

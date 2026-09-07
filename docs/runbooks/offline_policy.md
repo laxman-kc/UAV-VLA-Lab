@@ -1,5 +1,8 @@
 # P05: recorded-observation policy probe
 
+Installed package entrypoints and the distinction between native modules and historical compatibility engines are documented in [installed workflows](installed_workflows.md). New GPU hosts follow [fresh-host acceptance](fresh_host.md); the completed-cycle host was retired.
+
+
 `scripts/offline_policy_probe.py` runs the pinned AeroVLA wrapper on three real front/down pairs from the selected demonstration trajectory. It imports no simulator environment or controller. The result is offline inference; it does not demonstrate successful flight or compare predictions to expert action labels.
 
 Prerequisites are the verified AeroVLA checkout, converted raw dataset, the one-episode selection from `prepare_aerovla_episode.py`, and complete local OpenVLA/AeroVLA model snapshots. Use the CUDA environment established on Brev. The wrapper also imports `tkinter` even though its UI code is commented out. Run after model downloads and dataset conversion finish. Do not put observations from development or holdout into this demonstration selection.
@@ -9,11 +12,11 @@ From the lab checkout on Brev, substitute the actual upstream checkout path for 
 ```sh
 python scripts/offline_policy_probe.py \
   --upstream "$AEROVLA_CHECKOUT" \
-  --dataset-root /home/shadeform/vla-data/assets/dataset_raw \
-  --episode-selection /home/shadeform/vla-data/manifests/demo-selection-v1/selection_manifest.json \
-  --base-model /home/shadeform/vla-data/assets/models/openvla-7b \
-  --adapter /home/shadeform/vla-data/assets/models/AerialVLA/aero_vla \
-  --output /home/shadeform/vla-data/runs/p05-offline-demo-v1
+  --dataset-root /actual/persistent/vla-data/assets/dataset_raw \
+  --episode-selection /actual/persistent/vla-data/manifests/demo-selection-v1/selection_manifest.json \
+  --base-model /actual/persistent/vla-data/assets/models/openvla-7b \
+  --adapter /actual/persistent/vla-data/assets/models/AerialVLA/aero_vla \
+  --output /actual/persistent/vla-data/runs/p05-offline-demo-v1
 ```
 
 Every output directory must be new. Add `--validate-only` and choose a different output directory to inspect source/data/target mapping before loading the model. That mode produces `inputs_validated_model_not_run`, and does not pass P05. `--episode-selection` also accepts the generated `episode.json` rows or the locked project split manifest's single `demo` entry.

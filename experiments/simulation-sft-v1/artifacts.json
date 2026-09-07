@@ -1,0 +1,171 @@
+{
+  "schema_version": "uav-vla-lab.study-artifacts.v1",
+  "study_id": "simulation-sft-v1",
+  "availability_record_date": "2026-09-07",
+  "status_scope": "Source artifacts and verified video publication as of the linked receipt; retained raw evidence and checkpoint bytes have separate availability",
+  "included_public_material": [
+    {
+      "kind": "technical_report",
+      "path": "docs/research/technical-report.md",
+      "availability": "included_in_this_source_distribution"
+    },
+    {
+      "kind": "results",
+      "path": "docs/research/results.md",
+      "availability": "included_in_this_source_distribution"
+    },
+    {
+      "kind": "numeric_tables",
+      "path": "experiments/simulation-sft-v1/results/",
+      "availability": "included_in_this_source_distribution"
+    },
+    {
+      "kind": "figures",
+      "path": "docs/assets/figures/simulation-sft-v1/",
+      "formats": [
+        "svg",
+        "png",
+        "pdf"
+      ],
+      "availability": "included_in_this_source_distribution"
+    },
+    {
+      "kind": "model_card",
+      "path": "docs/research/model-card.md",
+      "availability": "included_in_this_source_distribution"
+    },
+    {
+      "kind": "dataset_card",
+      "path": "docs/research/dataset-card.md",
+      "availability": "included_in_this_source_distribution"
+    }
+  ],
+  "published_earlier_media": {
+    "availability": "published",
+    "file_count": 8,
+    "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/tag/simulation-mvp-evidence-v1",
+    "scope": "Earlier diagnostic media, not the seven later videos listed below"
+  },
+  "study_videos": [
+    {
+      "phase": "P08",
+      "filename": "p08-development-baseline.mp4",
+      "sha256": "33c9f0d7a05edba8dc5d53d86ea4d9eea21a36501df2d04479d1b6845e8a2056",
+      "bytes": 1203182,
+      "duration_seconds": 76.0,
+      "availability": "published",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p08-development-baseline.mp4",
+      "media_scope": "Editorial static presentation of recorded evidence; not continuous flight",
+      "publication_receipt": "video-publication-v2.json"
+    },
+    {
+      "phase": "P09",
+      "filename": "p09-reviewed-reference-examples.mp4",
+      "sha256": "91c0abe6c1fcc244081aa1edb414c1ec4c56927b6b82ebed5a7e316b77821c2e",
+      "bytes": 1436529,
+      "duration_seconds": 80.0,
+      "availability": "published",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p09-reviewed-reference-examples.mp4",
+      "media_scope": "Editorial static presentation of recorded evidence; not continuous flight",
+      "publication_receipt": "video-publication-v2.json"
+    },
+    {
+      "phase": "P10",
+      "filename": "p10-reviewed-training-mechanics.mp4",
+      "sha256": "98bff9e8620ced505902ae035929368e3a294f5546d1ccb8b9d5a14ea32fde29",
+      "bytes": 353461,
+      "duration_seconds": 60.0,
+      "availability": "published",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p10-reviewed-training-mechanics.mp4",
+      "media_scope": "Editorial static presentation of recorded evidence; not continuous flight",
+      "publication_receipt": "video-publication-v2.json"
+    },
+    {
+      "phase": "P11",
+      "filename": "p11-reference-dataset-expansion.mp4",
+      "sha256": "52c0cf84b766d7830cd0df81270a6057a0d340a5bd808b4e186225f609f08418",
+      "bytes": 2306815,
+      "duration_seconds": 120.0,
+      "availability": "published",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p11-reference-dataset-expansion.mp4",
+      "media_scope": "Editorial static presentation of recorded evidence; not continuous flight",
+      "publication_receipt": "video-publication-v2.json"
+    },
+    {
+      "phase": "P12",
+      "filename": "p12-fixed-adapter-training.mp4",
+      "sha256": "81288067c999cf809e7f2392db86b9beb24126420bab84a941197549064b6299",
+      "bytes": 399772,
+      "duration_seconds": 67.0,
+      "availability": "published",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p12-fixed-adapter-training.mp4",
+      "media_scope": "Editorial static presentation of recorded evidence; not continuous flight",
+      "publication_receipt": "video-publication-v2.json"
+    },
+    {
+      "phase": "P13",
+      "filename": "p13-development-comparison.mp4",
+      "sha256": "12bf2e755f5af2c36cd96b4a3185c9f0fbf7e72102c584da301493495eedd4a8",
+      "bytes": 947838,
+      "duration_seconds": 94.0,
+      "availability": "published",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p13-development-comparison.mp4",
+      "media_scope": "Editorial static presentation of recorded evidence; not continuous flight",
+      "publication_receipt": "video-publication-v2.json"
+    },
+    {
+      "phase": "P14",
+      "filename": "p14-holdout-comparison.mp4",
+      "sha256": "252db170738ab57a4e657a54263e29fedf6804356edc4c7cbbd4c6ed5e0757b7",
+      "bytes": 765850,
+      "duration_seconds": 74.0,
+      "availability": "published",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p14-holdout-comparison.mp4",
+      "media_scope": "Editorial static presentation of recorded evidence; not continuous flight",
+      "publication_receipt": "video-publication-v2.json"
+    }
+  ],
+  "retained_unpublished": [
+    {
+      "kind": "candidate_adapter_checkpoint",
+      "availability": "retained_private",
+      "public_download_url": null,
+      "identity_reference": "configs/model-identities.json",
+      "reason": "Artifact-specific upstream terms and exact binary publication remain unresolved"
+    },
+    {
+      "kind": "raw_observations_logs_reviews_and_complete_sealed_bundles",
+      "availability": "retained_private",
+      "public_download_url": null,
+      "identity_reference": "source-catalog.json",
+      "scope": "Not copied into this source distribution"
+    }
+  ],
+  "official_inputs": [
+    {
+      "kind": "base_model",
+      "url": "https://huggingface.co/openvla/openvla-7b/tree/47a0ec7fc4ec123775a391911046cf33cf9ed83f"
+    },
+    {
+      "kind": "released_adapter_and_publisher_index",
+      "url": "https://huggingface.co/XuPeng23/AerialVLA/tree/196f2f3253b69df6e90ac10b6ae041c7b3a9569e"
+    },
+    {
+      "kind": "raw_dataset",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV/tree/faa8f2514156455ea7423464cc1295e6f92575cb"
+    },
+    {
+      "kind": "compiled_environments",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV_env/tree/44de5739a95a2f6a88767446421cddada9606642"
+    }
+  ],
+  "rights_scope": "Project-owned code license does not relicense model weights, simulator assets, publisher data or third-party pixels.",
+  "video_publication": {
+    "release_url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/tag/simulation-training-evaluation-v2",
+    "published_at_utc": "2026-09-07T12:26:34Z",
+    "receipt": "video-publication-v2.json",
+    "receipt_sha256": "9762b6c050950931edd4f7b4a275479dc6c03b76a7b788ecea1161725d26dffc",
+    "verified_file_count": 7,
+    "verified_total_bytes": 7413447
+  }
+}

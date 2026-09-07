@@ -1,0 +1,138 @@
+{
+  "schema_version": "uav-vla-lab.research-figures.v1",
+  "validation": {
+    "status": "public_numeric_consistency_passed",
+    "episode_rows": 60,
+    "paired_rows": 30,
+    "training_steps": 25,
+    "training_missions": 25,
+    "total_recorded_actions": 1665,
+    "total_recorded_observations": 1725,
+    "source_receipts": 22,
+    "scope": "Recomputed public tables, membership, counts and identities; private raw causal traces are not replayed"
+  },
+  "renderer": {
+    "file": "tools/render_research_figures.py",
+    "sha256": "db53130398372be30e8507c19c5da85a72ac4465f7fbd375df7334837321479d"
+  },
+  "versions": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.3",
+    "Pillow": "12.3.0"
+  },
+  "inputs": [
+    {
+      "file": "artifacts.json",
+      "bytes": 7332,
+      "sha256": "e8ca333ea8a44926144f75898576b3789886576da328fee785bb3279d4c9351b"
+    },
+    {
+      "file": "configs/model-identities.json",
+      "bytes": 643,
+      "sha256": "ce24a31a85b912fbf5f68a32524b5c7f27b400d212c7805a221191dde3af1100"
+    },
+    {
+      "file": "configs/protocol.json",
+      "bytes": 2150,
+      "sha256": "3fd02fea256ea0ed687d8c9a1d8bcf4affbeb9c9c231bdcd375d59b8eead56f7"
+    },
+    {
+      "file": "configs/training.json",
+      "bytes": 1297,
+      "sha256": "fa8dfbe9338831be72563ed004a7e95211ae4ae24b2eb1d04964064d5cbe19e9"
+    },
+    {
+      "file": "dataset/membership.csv",
+      "bytes": 4532,
+      "sha256": "b4f4ba60f0543891dffe26770c594bb6833dddb24551329ea0cbcd3ddb17708e"
+    },
+    {
+      "file": "results/aggregate.json",
+      "bytes": 2440,
+      "sha256": "95f90e91f2cbcf3b764e4a603b831c13b5f17bdd2131c6d03eb78448d56e3b68"
+    },
+    {
+      "file": "results/episodes.csv",
+      "bytes": 15186,
+      "sha256": "9a7bbc2d68055208f47a340a8c495406670b4c62f2a3d9c554e3a332900a9425"
+    },
+    {
+      "file": "results/paired.csv",
+      "bytes": 3097,
+      "sha256": "817c181a8ec8275a85887ee1501b469ef2743f358d164cef10969decc5ee2e8c"
+    },
+    {
+      "file": "results/timing.json",
+      "bytes": 4474,
+      "sha256": "60dece650e16b5c36ba81c06ec25172e7edc46cc7ce74285c4f6ba8bfb179adb"
+    },
+    {
+      "file": "results/training-steps.csv",
+      "bytes": 3385,
+      "sha256": "39273a05a4ccd57b8d419b031f764320441faa3a5a82aaa68cf3d0ae78f19431"
+    },
+    {
+      "file": "results/training-summary.json",
+      "bytes": 2928,
+      "sha256": "4286cd165f6d738754ca6994476f08b34bdff0bc0201318d45801f85f4f35c97"
+    },
+    {
+      "file": "source-catalog.json",
+      "bytes": 8427,
+      "sha256": "b4088bc29b1278008c9c1cff8b9b0954594429d965098eb9621a26fe961a9283"
+    },
+    {
+      "file": "video-publication-v2.json",
+      "bytes": 2821,
+      "sha256": "9762b6c050950931edd4f7b4a275479dc6c03b76a7b788ecea1161725d26dffc"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "outcome-rates.svg",
+      "sha256": "3db5a49078eadc7221baa0a7752fe53cf36d5d3b8283f1af86fa8b1abef8dc98",
+      "bytes": 18357
+    },
+    {
+      "file": "outcome-rates.png",
+      "sha256": "b0da862be34dded6b7b9a1daea95acae1fa42168dbd4fa12d336f53d5d4c58d1",
+      "bytes": 124014
+    },
+    {
+      "file": "outcome-rates.pdf",
+      "sha256": "2b9ad141b932abe8f110d54e668e628f8c083e10627feabba857ca98cf6aefd2",
+      "bytes": 29819
+    },
+    {
+      "file": "paired-transitions.svg",
+      "sha256": "29eb6cf00eb8cb688c7b3bd77f71856733a90db0edf07600db1c3ea80528b9e3",
+      "bytes": 14891
+    },
+    {
+      "file": "paired-transitions.png",
+      "sha256": "ae0c4bee350ba6152452ee47c691a15f3b7522b469fb62dfd677f927df506596",
+      "bytes": 76102
+    },
+    {
+      "file": "paired-transitions.pdf",
+      "sha256": "92401b36f5f503823a2346c2fadfd8045bcec9610028034146cd061886cad658",
+      "bytes": 24499
+    },
+    {
+      "file": "training-fit.svg",
+      "sha256": "c8a1e96ab6efb3b8dada18022b9041d55ddbc2e9d4e3f58c57d0cc2694400575",
+      "bytes": 24764
+    },
+    {
+      "file": "training-fit.png",
+      "sha256": "67a4324a53a87e14606b8e6086423ce62df4aeafc24a797bc55912783eeda07a",
+      "bytes": 107178
+    },
+    {
+      "file": "training-fit.pdf",
+      "sha256": "2753896c675c5ed022cd45a368bf0648954b0984811587cdccc461b0d0c064e4",
+      "bytes": 29128
+    }
+  ],
+  "scope": "Exact public numeric data, standard plotting; no generated scene images, no error bars or significance claims"
+}

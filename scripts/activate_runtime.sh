@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
-# Source this file on the verified vla01 host before running experiments.
-LAB_DATA_ROOT=/home/shadeform/vla-data
-source "$LAB_DATA_ROOT/venvs/aerovla/bin/activate"
-LAB_SITE_DIR="$LAB_DATA_ROOT/venvs/aerovla/lib/python3.10/site-packages"
-LAB_CUDA_LIB_DIRS="$LAB_SITE_DIR/nvidia/cuda_runtime/lib:$LAB_SITE_DIR/nvidia/cuda_nvrtc/lib:$LAB_SITE_DIR/nvidia/cublas/lib:$LAB_SITE_DIR/nvidia/cusparse/lib"
-export LD_LIBRARY_PATH="$LAB_CUDA_LIB_DIRS${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-export HF_HOME="$LAB_DATA_ROOT/cache/huggingface"
-export HF_HUB_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
-export CUDA_VISIBLE_DEVICES=0
-export PYTHONUNBUFFERED=1
+# Source after installing the package; selects an explicit local environment.
+if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then
+  echo 'Source this file from bash with VLA_DATA_ROOT set.' >&2
+  exit 2
+fi
+VLA_ACTIVATION_SCRIPT="$("${VLA_TOOL_PYTHON:-python3}" -c 'from pathlib import Path; import uav_vla_lab.runtime; print(Path(uav_vla_lab.runtime.__file__).parent / "resources/activate.sh")')" || return 2
+source "$VLA_ACTIVATION_SCRIPT"

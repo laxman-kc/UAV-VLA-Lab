@@ -1,69 +1,37 @@
-# Implemented file structure
+# Repository contents
 
-Updated during execution on 7 September 2026 UTC. Files listed here are implemented entry points; their presence does not imply that every associated phase has passed. Consult [public results and limits](../PUBLIC_STATUS.md) for actual results. The tree distinguishes reusable source from private operational artifacts; listed private configuration files are not part of this public overlay.
+UAV-VLA-Lab is one research project. The code, recorded experiment, report, figures and videos describe the same simulation-SFT study.
 
 ```text
 UAV-VLA-Lab/
-  README.md
-  configs/
-    host.json                            # private operational instance
-    assets/modern_city_map.json           # private operational manifest
-    splits/modern_city_map_v1.json         # private frozen membership
-    experiments/                         # private dated execution plans
-    video/paired-static-rule-v1.json       # supported evidence-video selection rule
-  scripts/
-    host_probe.py, runtime_probe.py        # actual host/runtime evidence
-    bootstrap_brev.sh, activate_runtime.sh
-    download_assets.py, download_models.py
-    prepare_assets.py                     # asset verification and metadata
-    prepare_simulator_bundle.sh
-    prepare_aerovla_episode.py            # strict single-episode selection
-    prepare_evaluation_batch.py           # frozen cohort selection
-    fix_airsim_rpc.py                     # recorded official transport repair
-    patch_aerovla_runtime.py              # guarded reversible upstream patch
-    _aerovla_runtime_hooks.py             # causal observation/policy/action log
-    supervise_run.py                     # bounded owned workload process group
-    run_simulation_session.py             # scene-manager lifecycle and evidence
-    simulator_probe.py                   # real capture/controller acceptance
-    reset_diagnostic.py, reset_protocol.py
-    offline_policy_probe.py
-    interrupt_after_event.py              # verified owned-run interruption
-    summarize_navigation.py              # all-trial accounting and metrics
-    analyze_baseline.py                   # independent reset/outcome audit
-    compare_navigation.py                 # predeclared paired comparison
-    prepare_development_comparison.py      # bind fixed candidate and original reuse
-    prepare_holdout_comparison.py          # freeze two fresh holdout arms
-    prepare_paired_video.py                # declared paired evidence image selection
-    prepare_unstarted_session_amendment.py # pre-navigation receipt-path amendment
-    prepare_amended_paired_video.py        # explicit frozen-rule amendment bridge
-    audit_published_training.py            # read-only published-label audit
-    prepare_published_reference.py         # unchanged historical five-row rule
-    prepare_reference_extension.py         # twenty new training missions
-    audit_reference_alignment.py           # source pose/action projection audit
-    build_reviewed_reference_dataset.py    # package existing qualified reviews
-    train_adapter_mvp.py                  # continuation/save/reload mechanics
-    collect_heading_corrections.py         # deferred unexecuted prototype
-    run_heading_batch.py                  # bounded prototype collection driver
-    build_release.py                     # report, media and integrity bundles
-  tests/                                 # focused contracts and lifecycle tests
+  README.md                         # Research question, main results and links
+  src/uav_vla_lab/                   # Reusable experiment and evidence code
+  scripts/                          # Recorded workflow implementations and helpers
+  tests/                            # Data, execution and evidence contract checks
+  configs/                          # Reusable asset, split and reporting settings
+  experiments/simulation-sft-v1/
+    configs/                        # Executed protocol, training settings, model identities
+    dataset/membership.csv          # 25 training mission/source-row identities
+    results/                        # 60 episodes, 30 pairs, 25 updates and exact totals
+    source-catalog.json             # Hashes of retained source evidence
+    artifacts.json                  # Available artifacts and their actual URLs
+    video-publication-v2.json       # Verified seven-video publication receipt
   docs/
-    SYSTEM_DESIGN.md, IMPLEMENTATION_PLAN.md
-    DELIVERY_STANDARD.md, STATUS.md, FILE_STRUCTURE.md
-    REFERENCE_ALIGNMENT_DECISION.md        # scoped demonstration-SFT decision
-    reports/                             # selected reduced public findings; full private evidence separate
-    runbooks/                            # setup, run, recover and verify
-    templates/                           # common phase/release documents
-  third_party/                           # ignored pinned upstream worktrees
-  data-local/                            # ignored selected copied evidence
-  releases/<phase>/<release-id>/          # ignored finalized report/video bundles
+    research/                       # Technical report, results, model/data cards and videos
+    assets/figures/simulation-sft-v1/ # SVG, PNG and PDF figures with provenance
+    reports/                        # Selected historical evidence summaries
+    runbooks/                       # Detailed method and reproduction procedures
+    history/                        # Earlier evidence and publication context
+  tools/                            # Numeric export, chart, report and video generation
+  pyproject.toml                    # Project metadata and dependencies
+  CITATION.cff                      # Software citation
+  LICENSE, THIRD_PARTY_NOTICES.md   # Project and upstream terms
 ```
 
-On Brev, the separate data root contains `assets/` (archives, models, raw episodes and compiled scenes), `manifests/` (pinned selections and plans), `setup/` (runtime receipts), `venvs/` and `runs/`. A simulation run has separate scene-session evidence and evaluator evidence. The exact directories, source hashes, runtime identity and selection are stored in its configuration and manifest.
+Start with the [technical report](research/technical-report.md), its [downloadable PDF](research/report.pdf), and the [recorded results](research/results.md). The [experiment directory](../experiments/simulation-sft-v1/README.md) contains the numeric data behind the figures. The [video record](research/videos.md) links the published recordings. MP4 recordings are distributed as release assets, with their exact URLs in that record.
 
-Source Git excludes raw datasets, model weights, caches, generated video and full private diagnostic evidence. A release's checksum manifest ties reports and sampled video frames to their original files. Public publication has its own current status; a local finalized bundle is not evidence that an upload occurred.
+`src/uav_vla_lab/` contains the reusable package. Some established workflows remain in `scripts/` and a hash-checked compatibility snapshot inside the package. Generated extractions retain explicit source identities; moving code into a package does not make a historical experiment a new execution.
 
-Comparison entry points: [development preparation](runbooks/development_comparison_preparation.md), [holdout preparation](runbooks/holdout_comparison_preparation.md), [comparison contract](runbooks/navigation_comparison.md), and [paired-video evidence](runbooks/paired_video.md). Presence of a helper is not proof that its experiment completed.
+Full observations, private reviews, model weights and complete sealed evidence bundles are retained separately. The public numeric tables and selected recordings do not provide those complete raw artifacts. Their availability is stated in the [artifact catalog](../experiments/simulation-sft-v1/artifacts.json).
 
-A [no-start operational amendment](runbooks/unstarted_session_amendment.md) preserves the original protocol/editorial freeze and separately records any later candidate-only physical receipt-path redirect. It does not permit a new navigation attempt or change the frozen candidate.
-
-Current completion and evidence: [14-phase completion index](STATUS.md), [reduced P13 comparison](reports/P13_DEVELOPMENT_COMPARISON.md) and [reduced P14 comparison](reports/P14_HOLDOUT_COMPARISON.md).
+Earlier P01–P14 labels identify supporting evidence from this study. They are not separate projects. Archived publication manifests describe their recorded snapshot; see the [history index](history/index.md) before interpreting their hashes or review status as current.

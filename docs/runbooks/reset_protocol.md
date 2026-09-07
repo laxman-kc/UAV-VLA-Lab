@@ -8,7 +8,7 @@ The separate opt-in `paused-final-pose-time-v1` adds exactly one `simContinueFor
 
 This follows a source-level hypothesis: Microsoft's Unreal implementation sets a pending rendered pose, and time-based continuation stops physics before waiting for a render frame. The compiled TravelUAV binary's exact source revision is unknown; only the real camera/ground-truth checks can validate the candidate. [Multirotor rendering implementation](https://github.com/microsoft/AirSim/blob/main/Unreal/Plugins/AirSim/Source/Vehicles/Multirotor/MultirotorPawnSimApi.cpp), [time continuation implementation](https://github.com/microsoft/AirSim/blob/main/Unreal/Plugins/AirSim/Source/SimMode/SimModeWorldBase.cpp).
 
-Actual timed-candidate validation passed two capture resets and all three separate controller probes at unchanged tolerances, including actual camera/vehicle/ground-truth checks and owned-process cleanup. This validates those bounded probes; its policy-loop integration is a separate next check. The original no-continuation candidate remains available with its original protocol name; the description below refers to that variant.
+Actual timed-candidate validation passed two capture resets and all three separate controller probes at unchanged tolerances, including actual camera/vehicle/ground-truth checks and owned-process cleanup. This validates those bounded historical probes. The timed integration was subsequently used in the recorded P08/P13/P14 cycle; a new host still needs its own fresh acceptance. The original no-continuation candidate remains available with its original protocol name; the description below refers to that variant.
 
 `paused-final-pose-v1` is an explicit candidate reset behavior, implemented in
 `scripts/reset_protocol.py` and selected only through the simulator probe's
@@ -106,11 +106,11 @@ queries.
 
 Apply the patcher to a separate checkout at the pinned revision, preserving the
 checkout used for earlier recorded runtimes. To select the timed behavior,
-provide both variables to the exclusively owned simulation session:
+export both variables to the exclusively owned simulation session. Select a new runtime ID and export its actual receipt/event paths as shown in the [fresh-host runbook](fresh_host.md); these are child-process environment values, not unexported shell variables:
 
 ```sh
-VLA_LAB_RESET_PROTOCOL=paused-final-pose-time-v1
-VLA_LAB_RUNTIME_ID=aerovla-rpcfix-msgpack112-paused-final-pose-time-v1
+export VLA_LAB_RESET_PROTOCOL=paused-final-pose-time-v1
+export VLA_LAB_RUNTIME_ID=NEW-rpcfix-msgpack112-paused-final-pose-time-v1
 ```
 
 The runtime ID must explicitly contain the complete reset protocol token; the

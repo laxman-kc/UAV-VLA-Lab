@@ -5,7 +5,7 @@ Use `scripts/supervise_run.py` to give one command a wall-clock limit and preser
 ```sh
 python scripts/supervise_run.py \
   --cwd "$AEROVLA_CHECKOUT" \
-  --output /home/shadeform/vla-data/runs/p06-supervision-attempt-001 \
+  --output /actual/persistent/vla-data/runs/p06-supervision-attempt-001 \
   --timeout-seconds 900 \
   --grace-seconds 15 \
   --poll-gpu \

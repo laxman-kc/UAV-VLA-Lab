@@ -1,5 +1,8 @@
 # Owned simulation sessions
 
+Installed package entrypoints and the distinction between native modules and historical compatibility engines are documented in [installed workflows](installed_workflows.md). New GPU hosts follow [fresh-host acceptance](fresh_host.md); the completed-cycle host was retired.
+
+
 `scripts/run_simulation_session.py` starts one exclusively owned, pinned
 TravelUAV scene manager, waits for its actual localhost listener, runs one command
 through the existing `supervise_run.py` supervisor, and then cleans up its manager

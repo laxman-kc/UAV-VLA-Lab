@@ -102,4 +102,4 @@ image/state export is also outside these counters. A sum of these components
 divided by command elapsed time is an accounting ratio, not total overhead,
 policy slowdown or a causal trajectory comparison. Keep those remaining
 unknowns explicit even when the bounded direct-component measurement gate
-passes. The reduced [verified status](../../PUBLIC_STATUS.md) summarizes the actual P07 supplement. Exact private component measurements and exclusions remain in its retained evidence bundle and are not copied into this public overlay.
+passes. The reduced [verified status](../STATUS.md) summarizes the actual P07 supplement. Exact private component measurements and exclusions remain in its retained evidence bundle and are not copied into this public overlay.

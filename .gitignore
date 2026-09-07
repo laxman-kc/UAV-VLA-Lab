@@ -31,3 +31,12 @@ dist/
 *.z03
 *.z04
 *.tar.gz
+
+# Toolkit development and generated validation artifacts
+.venv/
+*.egg-info/
+build/
+dist/
+site/
+output/
+.mplconfig/

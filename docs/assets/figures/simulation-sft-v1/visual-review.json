@@ -1,0 +1,112 @@
+{
+  "schema_version": "uav-vla-lab.static-figure-review.v1",
+  "reviewer": "Codex agent /root/aerovla_evidence",
+  "human_review": false,
+  "reviewed_at_utc": "2026-09-07T12:04:24.532800+00:00",
+  "status": "passed",
+  "scope": "Actual PNG visual inspection and public-record numeric consistency; no raw-trace replay, video playback, significance assessment or rights clearance",
+  "visually_inspected_pngs": [
+    {
+      "file": "outcome-rates.png",
+      "sha256": "b0da862be34dded6b7b9a1daea95acae1fa42168dbd4fa12d336f53d5d4c58d1",
+      "bytes": 124014
+    },
+    {
+      "file": "paired-transitions.png",
+      "sha256": "ae0c4bee350ba6152452ee47c691a15f3b7522b469fb62dfd677f927df506596",
+      "bytes": 76102
+    },
+    {
+      "file": "training-fit.png",
+      "sha256": "67a4324a53a87e14606b8e6086423ce62df4aeafc24a797bc55912783eeda07a",
+      "bytes": 107178
+    }
+  ],
+  "visual_checks": [
+    "All three final PNG figures opened and visually inspected",
+    "Exact mission counts and training scope agree with the public tables",
+    "Axes, numbers, legends and scope disclosures readable without overlap",
+    "All nine SVG/PNG/PDF output hashes unchanged after validation-only tightening"
+  ],
+  "figure_provenance_sha256": "d4cd59aca957291f5417cb9ef212b635b76d8753d065b2557be0aa1e56f1e3c7",
+  "public_numeric_check": {
+    "status": "public_numeric_consistency_passed",
+    "episode_rows": 60,
+    "paired_rows": 30,
+    "training_steps": 25,
+    "training_missions": 25,
+    "total_recorded_actions": 1665,
+    "total_recorded_observations": 1725,
+    "source_receipts": 22,
+    "scope": "Recomputed public tables, membership, counts and identities; private raw causal traces are not replayed"
+  },
+  "negative_checks": [
+    {
+      "mutation": "trials",
+      "rejected": true,
+      "reason": "Aggregate denominator differs"
+    },
+    {
+      "mutation": "valid_trials",
+      "rejected": true,
+      "reason": "Aggregate denominator differs"
+    },
+    {
+      "mutation": "observed_attempts",
+      "rejected": true,
+      "reason": "Aggregate denominator differs"
+    },
+    {
+      "mutation": "accepted_resets",
+      "rejected": true,
+      "reason": "Aggregate denominator differs"
+    },
+    {
+      "mutation": "string_loss",
+      "rejected": true,
+      "reason": "Invalid loss/reload numeric value"
+    },
+    {
+      "mutation": "boolean_loss",
+      "rejected": true,
+      "reason": "Invalid loss/reload numeric value"
+    },
+    {
+      "mutation": "negative_reload",
+      "rejected": true,
+      "reason": "Invalid loss/reload numeric value"
+    },
+    {
+      "mutation": "false_reload",
+      "rejected": true,
+      "reason": "Historical exact reload differs"
+    },
+    {
+      "mutation": "changed_reload",
+      "rejected": true,
+      "reason": "Historical exact reload differs"
+    }
+  ],
+  "relative_markdown_links_checked": 52,
+  "broken_relative_links": [],
+  "bounded_private_string_scan": {
+    "file_count": 21,
+    "patterns": [
+      "/Users/",
+      "/home/",
+      "GPU-",
+      "ssh ",
+      "ssh@",
+      "192.168."
+    ],
+    "matches": [],
+    "limit": "Bounded string scan, not a comprehensive privacy proof"
+  },
+  "renderer_sha256": "db53130398372be30e8507c19c5da85a72ac4465f7fbd375df7334837321479d",
+  "exporter_sha256": "e65212f82a828a694202ca1cc7139c4d80ce55522f5269b9612b7514fa93eb53",
+  "public_copy_note": "Operator-specific scan terms are omitted from this public receipt. Reviewed figure identities and the stated numeric/visual results are unchanged.",
+  "availability_refresh": {
+    "checked_at_utc": "2026-09-07T12:31:59.454120+00:00",
+    "scope": "Figure provenance refreshed for actual published-video catalog and receipt; all nine figure files are byte-identical to the visually reviewed exports"
+  }
+}

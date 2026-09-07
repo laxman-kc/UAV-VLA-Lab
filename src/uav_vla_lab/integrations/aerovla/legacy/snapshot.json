@@ -1,0 +1,199 @@
+{
+  "schema_version": "uav-vla.legacy-source-snapshot.v1",
+  "created_at_utc": "2026-09-07T11:47:02.357676+00:00",
+  "purpose": "Byte-identical compatibility copies of public historical Python workflows and required metadata. Obsolete host-specific shell copies are excluded; no rewrite of sealed historical provenance.",
+  "files": [
+    {
+      "path": "scripts/_aerovla_runtime_hooks.py",
+      "bytes": 29087,
+      "sha256": "e5a171f120398d17979adca5a9043322f6f767a2ead6381fb146876b36212eef"
+    },
+    {
+      "path": "scripts/analyze_baseline.py",
+      "bytes": 46326,
+      "sha256": "aa963aabe22b4336e6421271cad84425c2b50f29c28bfb3bf81867bbdb8a4b10"
+    },
+    {
+      "path": "scripts/audit_published_training.py",
+      "bytes": 4673,
+      "sha256": "a6e4f0a7824e4cb91265091a843be51c3b6a7c76b9b8b05141018b29f23fd6fe"
+    },
+    {
+      "path": "scripts/audit_reference_alignment.py",
+      "bytes": 22425,
+      "sha256": "2ed8cf1fd8675c788dc8770aecf2106fbdb8d55c817e8d5aa72b588db95da3fa"
+    },
+    {
+      "path": "scripts/build_release.py",
+      "bytes": 70613,
+      "sha256": "3af28d2e958c3c21dc04e25e27df1f664e5ddf7aa31f67decb1c986d004115dd"
+    },
+    {
+      "path": "scripts/build_reviewed_reference_dataset.py",
+      "bytes": 23628,
+      "sha256": "d2039b4000172ec1cc4afdbac21029ab09ed5904b37d6985876e85eec3f0ffc3"
+    },
+    {
+      "path": "scripts/collect_heading_corrections.py",
+      "bytes": 39106,
+      "sha256": "c29b3efef1587d7c7625e50e1888eab53cf37009636809ab63929062c867d488"
+    },
+    {
+      "path": "scripts/compare_navigation.py",
+      "bytes": 31820,
+      "sha256": "918bedb4c5ecc6abc98f70d8fab94c73ce53b57a30545dd07ab31bbcf03e0270"
+    },
+    {
+      "path": "scripts/download_assets.py",
+      "bytes": 2821,
+      "sha256": "2acf6e3a3bcbb878a9c505ec79cb0e077d0c5e0f1496c581d5d869cba73f024e"
+    },
+    {
+      "path": "scripts/download_models.py",
+      "bytes": 2759,
+      "sha256": "c3313952ddbd10c3d73617fb7a7fc05f39847ffb30d8748045a2fd8497c3be77"
+    },
+    {
+      "path": "scripts/fix_airsim_rpc.py",
+      "bytes": 5391,
+      "sha256": "ad61372be258368c39be87e27c6f132a317ec0c2ad58f6d99e5dac0a6a25e71c"
+    },
+    {
+      "path": "scripts/host_probe.py",
+      "bytes": 2586,
+      "sha256": "e3e2edf51cbc85dd9a43f0b8752d0e5edd0f3060f6fe7b9ed026d2c3f97a11be"
+    },
+    {
+      "path": "scripts/interrupt_after_event.py",
+      "bytes": 20684,
+      "sha256": "a5e316fed2e21cfcab75179e974c06a725f9dcb3113744eca2a5ebfd5aa19e5c"
+    },
+    {
+      "path": "scripts/offline_policy_probe.py",
+      "bytes": 23087,
+      "sha256": "ed29ce9e3de8b50c7440ce75ef936e671cc15131dd0b846e902d442569fc1adf"
+    },
+    {
+      "path": "scripts/patch_aerovla_runtime.py",
+      "bytes": 7365,
+      "sha256": "33d46ca1e621a35afcf4d50c91d05006fd1136ec326243313b44f39104dc7910"
+    },
+    {
+      "path": "scripts/prepare_aerovla_episode.py",
+      "bytes": 5110,
+      "sha256": "ac84b9ec9057ef25529e57fbc6341571a88f95df6b0c54b5cab8480b3ab2a456"
+    },
+    {
+      "path": "scripts/prepare_amended_paired_video.py",
+      "bytes": 6470,
+      "sha256": "6fab31f31f52d9db6a6280577cbce7ebdc22026c44284e207ab359dd4e6e4589"
+    },
+    {
+      "path": "scripts/prepare_assets.py",
+      "bytes": 9933,
+      "sha256": "7b2b4a703e657c03b9159bcfc79e84ac94d3f9398934c35be8a4edfdc690c0af"
+    },
+    {
+      "path": "scripts/prepare_development_comparison.py",
+      "bytes": 23423,
+      "sha256": "239d7ef19fcd21d68fae3a57bfb455e5381fa048459ec52287681e18e9d42574"
+    },
+    {
+      "path": "scripts/prepare_evaluation_batch.py",
+      "bytes": 15672,
+      "sha256": "87a6dccad2c1f0cbddbf407ad09f84cb302b0383b5ff7557e9dc8cf9003609ef"
+    },
+    {
+      "path": "scripts/prepare_holdout_comparison.py",
+      "bytes": 27107,
+      "sha256": "537bfe7fd0232be6d9fef95d0ae2c032b2febde930ca78cd6591735f17d23d5f"
+    },
+    {
+      "path": "scripts/prepare_paired_video.py",
+      "bytes": 23508,
+      "sha256": "575dd31708bb1fbb52455808720bf5b4b3f5488151ad8929c2f6b7d55d1f4e03"
+    },
+    {
+      "path": "scripts/prepare_published_reference.py",
+      "bytes": 23168,
+      "sha256": "3019ff8eede0503a482dae7aace60687becc3dfc83f21566fa926c44b23c1add"
+    },
+    {
+      "path": "scripts/prepare_reference_extension.py",
+      "bytes": 23243,
+      "sha256": "2aaa2db846eb0c6db7e884e79d0062d2e73845390250f56ef333610a48f48e95"
+    },
+    {
+      "path": "scripts/prepare_unstarted_session_amendment.py",
+      "bytes": 19050,
+      "sha256": "832cd18c5012edfb8fbfd6e7abfb5b2283be4509fae7efdd5db21ddf6a8a8586"
+    },
+    {
+      "path": "scripts/reset_diagnostic.py",
+      "bytes": 17234,
+      "sha256": "3e41d7cd1cd227c72a77386b89e3dc5fcc512f1d5ea710ede95fc780b1f9b0ed"
+    },
+    {
+      "path": "scripts/reset_protocol.py",
+      "bytes": 15068,
+      "sha256": "68fc45788dbab4da31b65f1ca1fb5b243aa4bef163fd8ac909e89a634e528401"
+    },
+    {
+      "path": "scripts/run_heading_batch.py",
+      "bytes": 6398,
+      "sha256": "4fd1b0acbbd65ffc0d6c4cb8ee9f4a2742559f1ed0617ea2211bfaabfe20afd2"
+    },
+    {
+      "path": "scripts/run_simulation_session.py",
+      "bytes": 25038,
+      "sha256": "4ee4ca1caac33e89420802620ad072ad34ee62908ba5adf415a6951f530f6b84"
+    },
+    {
+      "path": "scripts/runtime_probe.py",
+      "bytes": 1823,
+      "sha256": "ab892b03d982c51fb150ed2b5a1b95ce29719a5fa0d90497f8ec160b0dc4c65c"
+    },
+    {
+      "path": "scripts/simulator_probe.py",
+      "bytes": 22939,
+      "sha256": "817c5d55b1b0824dca79a09999667f0d95208120f37aec4255542d1d6397fa27"
+    },
+    {
+      "path": "scripts/summarize_navigation.py",
+      "bytes": 48051,
+      "sha256": "73e597138e4c442ed8cc93a90730f9a3b16c577c30602a1547665e9a697d1c21"
+    },
+    {
+      "path": "scripts/supervise_run.py",
+      "bytes": 16645,
+      "sha256": "7d1542fa8e7dd6f8ec77c8b8bff14fd7e9572c227056ecae22f60c2837ea0ac2"
+    },
+    {
+      "path": "scripts/train_adapter_mvp.py",
+      "bytes": 40228,
+      "sha256": "24c0ebf8b89f287e14f58f1a4ed43b6e2a22f474dc40cd9b8c7cd907dae9392a"
+    },
+    {
+      "path": "scripts/validate_restart.py",
+      "bytes": 26033,
+      "sha256": "d0fb51f184b2bbe388162d737d44f477ff51fb6d8020de1de38e57cb9c67c251"
+    },
+    {
+      "path": "configs/assets/modern_city_map.json",
+      "bytes": 7451,
+      "sha256": "b3986e333cfa7f28901a3af1142a00975969e6af3e721546b764b7781610623c"
+    },
+    {
+      "path": "configs/splits/modern_city_map_v1.json",
+      "bytes": 57408,
+      "sha256": "ec2842c584ac5563530a1806dd746207bb606b07a5aa3cca9adf0e0236ca8e62"
+    },
+    {
+      "path": "configs/video/paired-static-rule-v1.json",
+      "bytes": 3285,
+      "sha256": "78c6fdaf4eec24f8480eabfd7d43488e3d5ea7cd5a73da9775cbc07d859a524b"
+    }
+  ],
+  "updated_at_utc": "2026-09-07T12:29:56.839458+00:00",
+  "supersedes_manifest_sha256": "1fa7bdfb18e60f1557e6f30e1e1ed2dc2a4e2b212aaa55d032ded5e7b0729eaf"
+}

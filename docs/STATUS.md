@@ -25,4 +25,4 @@ The source labels project body-x/body-z displacement and relative ZYX yaw over f
 
 The final P12 candidate remained fixed through P13 and P14. Development and holdout results are small same-map descriptive comparisons: holdout SR rose by one mission while OSR fell by one. They do not establish broad or causal improvement, unseen-map generalization, learned recovery or physical touchdown. There was no DPO, PX4 integration or physical-UAV experiment.
 
-[Detailed verified status](../PUBLIC_STATUS.md) · [System architecture](SYSTEM_DESIGN.md) · [Actual file structure](FILE_STRUCTURE.md) · [Delivery standard](DELIVERY_STANDARD.md)
+[Detailed verified status](research/technical-report.md) · [System architecture](SYSTEM_DESIGN.md) · [Actual file structure](FILE_STRUCTURE.md) · [Delivery standard](DELIVERY_STANDARD.md)

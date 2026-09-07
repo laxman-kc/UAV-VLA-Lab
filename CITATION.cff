@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this software and the upstream AeroVLA, OpenVLA and TravelUAV work when using UAV-VLA-Lab."
+type: software
+title: "UAV-VLA-Lab: Reproducible UAV Policy Experiments in Simulation"
+authors:
+  - name: "UAV-VLA-Lab contributors"
+version: 0.1.0rc1
+repository-code: "https://github.com/laxman-kc/UAV-VLA-Lab"
+license: Apache-2.0
+abstract: >-
+  A research toolkit connecting AeroVLA policy execution, TravelUAV simulation,
+  reviewed published-demonstration adaptation, paired evaluation, and inspectable
+  experiment evidence. The initial study is a small single-map simulation pilot
+  with mixed outcomes. This citation identifies software, not a peer-reviewed paper.
+keywords:
+  - UAV
+  - vision-language-action
+  - reproducibility
+  - simulation
+  - robot learning

@@ -1,19 +1,51 @@
 # UAV-VLA-Lab
 
-This project implements simulated UAV navigation and adaptation using the released AeroVLA policy and compiled TravelUAV environments. The operator workstation controls a remote model and simulator runtime. Level 1 is excluded.
+**A research project for studying vision-language-action UAV navigation in simulation.**
 
-**Current verified capabilities and limits:** [PUBLIC_STATUS.md](PUBLIC_STATUS.md). It records the completed 14-phase engineering cycle under explicit source-scope amendments, historical reset failures, the separate timed-reset runtime, and both development and holdout comparisons.
+[Results](docs/research/results.md) · [Research report](docs/research/technical-report.md) · [PDF](docs/research/report.pdf) · [Videos](docs/research/videos.md) · [Experiment data](experiments/simulation-sft-v1/) · [File structure](docs/FILE_STRUCTURE.md)
 
-- [Implementation plan: small MVP phases](docs/IMPLEMENTATION_PLAN.md)
-- [System design: architecture, stack, interfaces, source findings](docs/SYSTEM_DESIGN.md)
-- [Implemented file structure](docs/FILE_STRUCTURE.md)
-- [14-phase completion and public evidence index](docs/STATUS.md)
-- [Reduced P13 development report](docs/reports/P13_DEVELOPMENT_COMPARISON.md)
-- [Reduced P14 holdout report](docs/reports/P14_HOLDOUT_COMPARISON.md)
-- [Delivery standard: documentation, reports, video, evidence](docs/DELIVERY_STANDARD.md)
-- [Reusable phase template](docs/templates/PHASE_PLAN.md)
-- [Reusable report template](docs/templates/REPORT.md)
+UAV-VLA-Lab brings the completed AeroVLA/TravelUAV experiments together in one project: demonstration review, policy adaptation, closed-loop evaluation, and the evidence needed to inspect the results.
 
-The released task uses benchmark target-bearing information. Demonstration navigation success does not establish physical touchdown or general navigation reliability. The executed training cycle used 25 unchanged published demonstrations after qualified source/agent review, not newly collected failure corrections. The fixed P12 candidate scored 7/20 versus 6/20 on development, with three gains and two regressions. On ten fresh holdout pairs, SR was 4/10 versus 3/10, while OSR fell to 5/10 from 6/10. This is a mixed small same-map pilot, without evidence of broad or causal improvement.
+## Research question
 
-Source code lives in `scripts/`, declared inputs in `configs/`, and operating instructions in `docs/runbooks/`. Large assets, checkpoints, raw runs and private diagnostic bundles remain outside this source update. The reviewed public overlay and separately screened MP4 hashes are described in [REVIEW.md](REVIEW.md) and [VIDEO_AUDIT.md](VIDEO_AUDIT.md).
+**Does a small amount of adaptation on published demonstrations improve navigation, and where does it regress?**
+
+We trained one fixed candidate with **25 updates over 25 unchanged published demonstrations**, then compared it with the released parent on **20 development missions and 10 holdout missions**. The candidate was fixed before either comparison.
+
+## Results
+
+![Original and adapted navigation results](docs/assets/figures/simulation-sft-v1/outcome-rates.png)
+
+| Evaluation | Original success | Adapted success | Original oracle success | Adapted oracle success |
+|---|---:|---:|---:|---:|
+| Development — 20 pairs | 6/20 | 7/20 | 7/20 | 9/20 |
+| Holdout — 10 pairs | 3/10 | 4/10 | 6/10 | 5/10 |
+
+The adapted policy gained one success in each cohort, while holdout oracle success fell by one. Development contained three gains and two regressions; holdout contained two gains and one regression.
+
+These are **mixed results from a small, single-map study**. They do not establish broad or causal improvement. Development reused the recorded original baseline; both holdout arms ran fresh. The task retains target-bearing assistance and upstream success definitions. [Methods and limitations](docs/research/technical-report.md)
+
+## Why this work matters
+
+Aggregate scores can hide regressions. This project preserves both sides of each comparison and connects the training record to the exact candidate that was evaluated.
+
+Its contribution is an inspectable research workflow and a documented pilot: **60 scored episodes, 30 paired comparisons, 25 training updates, and evidence of both successful and failed behavior**. AeroVLA supplies the policy method and TravelUAV supplies the benchmark assets.
+
+## Explore the work
+
+| Output | What you can inspect |
+|---|---|
+| [Research report](docs/research/technical-report.md) · [Download PDF](docs/research/report.pdf) | Research question, method, results, interpretation, and limitations. |
+| [Charts and result tables](docs/research/results.md) | Outcome rates, paired gains/regressions, and training fit. |
+| [Study videos](docs/research/videos.md) | Recorded observations, demonstration review, training, and paired comparisons. |
+| [Public research data](experiments/simulation-sft-v1/README.md) | Episode rows, paired results, training records, and source identities. |
+| [Model card](docs/research/model-card.md) and [dataset card](docs/research/dataset-card.md) | Candidate lineage, demonstration construction, and known limitations. |
+| [Source code](src/uav_vla_lab/) | Shared simulation, data, training, evaluation, and reporting workflows. |
+
+All parts belong to **one research project**. Earlier phase labels remain only as references to the development history and recorded evidence.
+
+## References and license
+
+The project builds on [AeroVLA](https://github.com/XuPeng23/AeroVLA) and [TravelUAV](https://github.com/prince687028/TravelUAV). See the [report's related work](docs/research/technical-report.md) for the research context.
+
+Project-owned code uses [Apache-2.0](LICENSE). Upstream code, models, and datasets retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md). Use [CITATION.cff](CITATION.cff) to cite this software. This repository is a research artifact, with no claim of peer review or state-of-the-art performance.

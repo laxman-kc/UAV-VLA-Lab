@@ -1,5 +1,8 @@
 # ModernCityMap asset runbook
 
+Installed package entrypoints and the distinction between native modules and historical compatibility engines are documented in [installed workflows](installed_workflows.md). New GPU hosts follow [fresh-host acceptance](fresh_host.md); the completed-cycle host was retired.
+
+
 The selected map is **ModernCityMap**, the smallest complete published raw-map plus environment archive groups among the maps in the released AeroVLA evaluation files and executable mapping. This is a download-size decision, not a claim that its missions are easiest. The exact filenames, immutable URLs, byte sizes and SHA256 values are in [`configs/assets/modern_city_map.json`](../../configs/assets/modern_city_map.json).
 
 ## Verified inventory
@@ -36,10 +39,10 @@ This is a **same-map adaptation holdout**. The released AeroVLA cleaned training
 
 ## Preparation and archive verification
 
-Run these commands from the project checkout in the selected Python environment. The remote data root was selected as `/home/shadeform/vla-data`; the archive staging directory below is a configurable convention, not evidence of completed downloads.
+Run these commands from the project checkout in the selected Python environment. The remote data root was selected as `/actual/persistent/vla-data`; the archive staging directory below is a configurable convention, not evidence of completed downloads.
 
 ```bash
-export VLA_DATA_ROOT=/home/shadeform/vla-data
+export VLA_DATA_ROOT=/actual/persistent/vla-data
 export VLA_ARCHIVE_DIR="$VLA_DATA_ROOT/assets/archives"
 python scripts/prepare_assets.py plan
 ```

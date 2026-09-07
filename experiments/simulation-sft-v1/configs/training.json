@@ -1,0 +1,40 @@
+{
+  "phase": "P12",
+  "supervision_mode": "reviewed-expert",
+  "steps": 25,
+  "learning_rate": 2e-05,
+  "batch_size": 1,
+  "gradient_accumulation": 1,
+  "seed": 100,
+  "weight_decay": 0.03,
+  "max_grad_norm": 1.0,
+  "reload_atol": 1e-05,
+  "reload_rtol": 1e-05,
+  "selection_rule": "fixed_final_step_candidate",
+  "validate_only": false,
+  "algorithm": {
+    "optimizer": "torch.optim.AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "foreach": false,
+    "scheduler": null,
+    "gradient_checkpointing": true,
+    "use_reentrant": false,
+    "frozen_base_dtype": "bfloat16",
+    "trainable_parameter_dtype": "float32",
+    "autocast_dtype": "bfloat16",
+    "max_sequence_length": 2048,
+    "dataloader_workers": 0,
+    "sampling": "Seeded shuffle of all training row indices, repeat at epoch boundary; no dropping or automatic labels",
+    "checkpoint_cadence": "Only final configured optimizer step; intermediate steps remain in the log",
+    "effective_batch_examples": 1
+  },
+  "schema_version": "uav-vla-lab.historical-training-config.v1",
+  "purpose": "Historical effective settings; not a runnable launch plan",
+  "source_id": "training-run",
+  "parent_manifest_source_id": "released-parent-manifest",
+  "dataset_manifest_source_id": "training-dataset-manifest"
+}

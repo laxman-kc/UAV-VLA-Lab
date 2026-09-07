@@ -1,6 +1,8 @@
 # P01 — Brev host readiness
 
-Executed 7 September 2026 UTC on the authorized `vla01` allocation. Engineering gate: **passed with explicit limits**. Navigation and training were not exercised by this phase.
+Executed 7 September 2026 UTC on the recorded experiment allocation. Engineering gate: **passed with explicit limits**. Navigation and training were not exercised by this phase.
+
+This public summary omits the original instance label and filesystem path. The retained execution report and sealed evidence are unchanged.
 
 | Measurement | Observed value |
 |---|---|
@@ -10,7 +12,7 @@ Executed 7 September 2026 UTC on the authorized `vla01` allocation. Engineering 
 | GPU | NVIDIA L40, 46,068 MiB exposed VRAM |
 | NVIDIA driver | 580.126.09 |
 | Initial free storage | 612,665,286,656 bytes |
-| Data root | `/home/shadeform/vla-data` on the observed ext4 root mount |
+| Data root | `<recorded-data-root>` on the observed ext4 root mount; original path omitted from this public summary |
 | Runtime | Python 3.10; PyTorch 2.1.2 with CUDA 11.8 |
 | Import checks | All 15 checked modules passed |
 | CUDA operation | Actual BF16 matrix operation passed |
@@ -23,4 +25,4 @@ The release contains both host snapshots, exact commands, runtime logs, dependen
 
 P01 is a dated snapshot. Later FlashAttention/native CUDA changes and offline model execution are recorded separately in P05, without rewriting the earlier evidence.
 
-Release identifier: `20260907-readiness-v1`. Source implementation: `scripts/host_probe.py`, `scripts/runtime_probe.py`, `scripts/bootstrap_brev.sh`, and `scripts/build_release.py`. Large artifacts are distributed as release attachments rather than source Git files.
+Release identifier: `20260907-readiness-v1`. Source implementation: `scripts/host_probe.py`, `scripts/runtime_probe.py`, `scripts/bootstrap_brev.sh`, and `scripts/build_release.py`. The full bundle is retained outside this source distribution. Published media are listed in the [video record](../research/videos.md).

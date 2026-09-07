@@ -1,0 +1,136 @@
+{
+  "schema_version": "uav-vla-lab.public-report-provenance.v1",
+  "paths_relative_to": "repository_root",
+  "report": {
+    "file": "docs/research/report.pdf",
+    "bytes": 415655,
+    "sha256": "34c02f9e8daa072164c15fe1fbfe6240f280803436f94732acaa99c305a1c06b"
+  },
+  "source_markdown": {
+    "file": "docs/research/technical-report.md",
+    "bytes": 12303,
+    "sha256": "d4ad6a8f045a3b93fe66248001397d8a4595eab4258f675528ce9df556d84519"
+  },
+  "input_figures": [
+    {
+      "file": "docs/assets/figures/simulation-sft-v1/outcome-rates.png",
+      "bytes": 124014,
+      "sha256": "b0da862be34dded6b7b9a1daea95acae1fa42168dbd4fa12d336f53d5d4c58d1"
+    },
+    {
+      "file": "docs/assets/figures/simulation-sft-v1/training-fit.png",
+      "bytes": 107178,
+      "sha256": "67a4324a53a87e14606b8e6086423ce62df4aeafc24a797bc55912783eeda07a"
+    },
+    {
+      "file": "docs/assets/figures/simulation-sft-v1/paired-transitions.png",
+      "bytes": 76102,
+      "sha256": "ae0c4bee350ba6152452ee47c691a15f3b7522b469fb62dfd677f927df506596"
+    }
+  ],
+  "figure_provenance": {
+    "file": "docs/assets/figures/simulation-sft-v1/figure-provenance.json",
+    "bytes": 4293,
+    "sha256": "d4cd59aca957291f5417cb9ef212b635b76d8753d065b2557be0aa1e56f1e3c7"
+  },
+  "tools": [
+    {
+      "file": "tools/render_technical_report.py",
+      "bytes": 7631,
+      "sha256": "3e66c56580c1f3f807fa29038d820ac04ea9eb230e7d64d2c50823669a5a531d"
+    },
+    {
+      "file": "tools/verify_research_figures.py",
+      "bytes": 5256,
+      "sha256": "d67ba194889f4926753cd80eccd7d23e99f87d8b35324cee9554354763bc1b03"
+    },
+    {
+      "file": "tools/render_research_figures.py",
+      "bytes": 15622,
+      "sha256": "db53130398372be30e8507c19c5da85a72ac4465f7fbd375df7334837321479d"
+    }
+  ],
+  "rendering_versions": {
+    "reportlab": "4.5.1",
+    "matplotlib": "3.11.1"
+  },
+  "figure_verification": {
+    "schema_version": "uav-vla-lab.figure-verification.v1",
+    "status": "passed",
+    "figure_provenance_sha256": "d4cd59aca957291f5417cb9ef212b635b76d8753d065b2557be0aa1e56f1e3c7",
+    "figure_renderer_sha256": "db53130398372be30e8507c19c5da85a72ac4465f7fbd375df7334837321479d",
+    "verifier": {
+      "file": "tools/verify_research_figures.py",
+      "sha256": "d67ba194889f4926753cd80eccd7d23e99f87d8b35324cee9554354763bc1b03"
+    },
+    "inputs_verified": 13,
+    "outputs_verified": 9,
+    "numeric_validation": {
+      "status": "public_numeric_consistency_passed",
+      "episode_rows": 60,
+      "paired_rows": 30,
+      "training_steps": 25,
+      "training_missions": 25,
+      "total_recorded_actions": 1665,
+      "total_recorded_observations": 1725,
+      "source_receipts": 22,
+      "scope": "Recomputed public tables, membership, counts and identities; private raw causal traces are not replayed"
+    },
+    "scope": "Current public inputs, recorded renderer identity, figure-file integrity and numeric consistency; not manifest authorship or new visual review."
+  },
+  "video_publication_receipt": {
+    "file": "experiments/simulation-sft-v1/video-publication-v2.json",
+    "bytes": 2821,
+    "sha256": "9762b6c050950931edd4f7b4a275479dc6c03b76a7b788ecea1161725d26dffc"
+  },
+  "review": {
+    "reviewer": "Codex agent /root/aerovla_evidence",
+    "human_review": false,
+    "reviewed_at_utc": "2026-09-07T12:40:53.892702+00:00",
+    "status": "passed",
+    "page_count": 5,
+    "all_pages_visually_inspected": true,
+    "method": "All five pages rendered with Poppler at 120 dpi and individually visually inspected; PDF URLs and current source-file hashes checked",
+    "page_render_sha256": [
+      {
+        "page": 1,
+        "sha256": "1c4d5d860b88493a7b456a58d4bfcb4dffc454716334489f9b21a7c15b1e206e"
+      },
+      {
+        "page": 2,
+        "sha256": "af7898c3993348747b402b8b821745a938ada6f7635ac56ab260d155bc03dad4"
+      },
+      {
+        "page": 3,
+        "sha256": "df34e6f4a02743aee0c49fdef4c80733935a29c2ec8bac9a4abec0badcec371c"
+      },
+      {
+        "page": 4,
+        "sha256": "b11e8b9be24911fb1e65de39022c8574c2e234dfe36782a5bccbfcf5d7d4fb42"
+      },
+      {
+        "page": 5,
+        "sha256": "09909442d7c8d813ebaa0f790c854d54edacd08ea25a45f746b4a1266dde1869"
+      }
+    ],
+    "findings": [
+      "Charts and text readable; result table remains together on page 3",
+      "Numeric results and limitations match the source report and public tables",
+      "Seven study videos are described as published evidence presentations with editorial holds; no continuous-flight or newly executed result claim",
+      "No operator-specific paths or unresolved link placeholders observed"
+    ],
+    "url_targets": {
+      "annotation_count": 20,
+      "repository_targets_checked": 15,
+      "missing_repository_targets": [],
+      "external_urls": [
+        "https://github.com/XuPeng23/AeroVLA",
+        "https://github.com/laxman-kc/UAV-VLA-Lab/releases/tag/simulation-training-evaluation-v2",
+        "https://github.com/openvla/openvla",
+        "https://github.com/prince687028/TravelUAV"
+      ],
+      "scope": "Repository URLs map to existing current source files; external destinations match declared upstream projects and the verified video release. This review does not assert publication of the new source tree."
+    }
+  },
+  "scope": "Exact copy of the visually reviewed technical-report PDF. Source and figure hashes identify this rendition; no new experiment, raw-evidence replay or additional publication is claimed."
+}

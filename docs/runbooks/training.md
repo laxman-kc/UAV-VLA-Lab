@@ -1,8 +1,11 @@
 # Continued AeroVLA adapter training
 
+Installed package entrypoints and the distinction between native modules and historical compatibility engines are documented in [installed workflows](installed_workflows.md). New GPU hosts follow [fresh-host acceptance](fresh_host.md); the completed-cycle host was retired.
+
+
 `scripts/train_adapter_mvp.py` implements P10 training mechanics and a fixed-budget P12 candidate. P10 defaults to one sample, one microbatch and exactly one optimizer update. A changed checkpoint establishes that the training path works; development evaluation must establish whether the candidate is useful.
 
-The runner is implemented and covered by synthetic contract tests. A historical published-reference P10 run and a later separately recorded reviewed-data P10 run each passed one-update/save/unload/reload mechanics checks; their fixed training-sample comparison loss increased. Subsequently, P12 completed one pass over 25 independently reviewed ordinary source demonstrations, saving one fixed final candidate. Its lower fixed training-row loss does not establish navigation improvement. See the [reduced verified status](../../PUBLIC_STATUS.md) for counts, chronology and limits.
+The runner is implemented and covered by synthetic contract tests. A historical published-reference P10 run and a later separately recorded reviewed-data P10 run each passed one-update/save/unload/reload mechanics checks; their fixed training-sample comparison loss increased. Subsequently, P12 completed one pass over 25 independently reviewed ordinary source demonstrations, saving one fixed final candidate. Its lower fixed training-row loss does not establish navigation improvement. See the [reduced verified status](../STATUS.md) for counts, chronology and limits.
 
 The default `--supervision-mode reviewed-expert` requires the approved supervision contract below. The separate `--supervision-mode published-reference-mechanics` permits five strictly validated unchanged publisher examples only for P10's single update, preserving that historical mode's unasserted expert approval and unknown physical horizon. P12 rejects that mode. Later alignment/review records qualify the ordinary-demonstration corpus without rewriting the original mechanics evidence. See the [published reference runbook](published_reference.md). Both modes require recorded parent files; test fixtures are never dataset or model evidence.
 

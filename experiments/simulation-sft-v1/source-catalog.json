@@ -1,0 +1,183 @@
+{
+  "schema_version": "uav-vla-lab.public-source-catalog.v1",
+  "sources": [
+    {
+      "id": "development-sealed-manifest",
+      "sha256": "b096cae3d0a60b33ce710703068bd20b2dccf03a932b9f84de30d75e8b1abfd8",
+      "bytes": 57977,
+      "sealed_release_id": "P13/20260907-paired-development-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "development-comparison",
+      "sha256": "056a946bdeef4d2dc35c024d5f9d5c8f4d496a562a3e6e1ae336004af3a9d46e",
+      "bytes": 702516,
+      "sealed_release_id": "P13/20260907-paired-development-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "development-sealed-spec",
+      "sha256": "07798c58c81ff371fce3d4283a163219edbcc7e0f011d8a17868bd1d7c7fecd0",
+      "bytes": 45282,
+      "sealed_release_id": "P13/20260907-paired-development-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "development-original-analysis",
+      "sha256": "db751d89adb9de1aeb51b031bca611f9e8be1225a5bde0851c58ae25193626c0",
+      "bytes": 2046123,
+      "sealed_release_id": "P13/20260907-paired-development-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "development-candidate-analysis",
+      "sha256": "e8f817eb84a9b1354a3e19fbcf5a7ddf98fd6ab13e5df3c269944d8cfc64cabc",
+      "bytes": 1929513,
+      "sealed_release_id": "P13/20260907-paired-development-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "holdout-sealed-manifest",
+      "sha256": "0439e923f6323719294f4d1851fb8b849dbb28d0dd97ca638565f24583d5fa2d",
+      "bytes": 67987,
+      "sealed_release_id": "P14/20260907-paired-holdout-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "holdout-comparison",
+      "sha256": "0c50f8d3ba8cc36adc98a1d7813827571935eeda18c32de0c93d064f8582494d",
+      "bytes": 339829,
+      "sealed_release_id": "P14/20260907-paired-holdout-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "holdout-sealed-spec",
+      "sha256": "a9cfb9e9b4b78ef7aeb201d33eb8c2f11f0975fc4d1972451c7c461022fbde63",
+      "bytes": 48811,
+      "sealed_release_id": "P14/20260907-paired-holdout-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "holdout-original-analysis",
+      "sha256": "2a2b83a5bc5244d2f73c68a4e438ee0f7244713a7d05bbd154341c772e1cc1c7",
+      "bytes": 953232,
+      "sealed_release_id": "P14/20260907-paired-holdout-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "holdout-candidate-analysis",
+      "sha256": "6554c573c70218376ea4b9363cb3d8943983088723af9b877d67faeaa8053550",
+      "bytes": 878784,
+      "sealed_release_id": "P14/20260907-paired-holdout-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "training-sealed-manifest",
+      "sha256": "3ccf1592bf7bea63449f79a80134529f740a1ac318e5535e5f54b80e4ba915f1",
+      "bytes": 22031,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "training-run",
+      "sha256": "d9f85078870f4ae99a04e79d0ddfc40b533e4b0a78a3505c9acfd1d825f7bbb4",
+      "bytes": 59439,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "candidate-checkpoint-manifest",
+      "sha256": "c8fdf4cc533e7360282f38cf6b5cc8e3937e005606494b4ba71483155c0619be",
+      "bytes": 17198,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "training-dataset-manifest",
+      "sha256": "140681ffe3f883f16d8bda9ec1ea22ec65f535a321bae2139544563d4a130328",
+      "bytes": 77026,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "released-parent-manifest",
+      "sha256": "d2b0c01173ca26e92dbc9944b404b830cfa6932631868913bdcd92e540064210",
+      "bytes": 3826,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "training-launch-plan",
+      "sha256": "ee1b2f0a491157b0bbddab906c2cd646cffa4835cad8cd44284ee568d1ee706f",
+      "bytes": 6436,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "training-sealed-spec",
+      "sha256": "b9c42ae5b10fef2c96c0c379babb2a8f6d986a1812a7564f633f8398d4d77dc4",
+      "bytes": 28041,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "training-step-log",
+      "sha256": "e0d21988e6fd65f4c505b2618fec3d00321dd290d830fd2a4778c9c6be5e540c",
+      "bytes": 19463,
+      "sealed_release_id": "P12/20260907-reference-adaptation-v2",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "evaluation-runtime-receipt",
+      "sha256": "8b233b2ed04bdda5109644990d0fde1b47ef089e93f84071bb2f23270d208934",
+      "bytes": 2365,
+      "sealed_release_id": "P13/20260907-paired-development-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "development-paired-plan",
+      "sha256": "1c4bfed56252d92a83af7611b678d400382146ea060a7d62b7ff58d61302b9d5",
+      "bytes": 5655,
+      "sealed_release_id": "P13/20260907-paired-development-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "holdout-original-frozen-plan",
+      "sha256": "707a69c0557e0f608a9d42cea4093167fbbfa88b226acee2ea6b59f8b561dd1f",
+      "bytes": 5281,
+      "sealed_release_id": "P14/20260907-paired-holdout-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    },
+    {
+      "id": "holdout-effective-path-amended-plan",
+      "sha256": "b67b320ea77f2fe65e84aa0627760fbfe8edb32a89bf897a3a62f54ef3a84f52",
+      "bytes": 5281,
+      "sealed_release_id": "P14/20260907-paired-holdout-v1",
+      "availability": "retained_private_source",
+      "validation": "Bytes match sealed checksum; input also matches manifest when inventoried"
+    }
+  ],
+  "scope": "Identifiers and exact hashes only. Full private sources are not supplied; public rows are selected-field transcriptions, not raw traces.",
+  "exporter_sha256": "e65212f82a828a694202ca1cc7139c4d80ce55522f5269b9612b7514fa93eb53"
+}

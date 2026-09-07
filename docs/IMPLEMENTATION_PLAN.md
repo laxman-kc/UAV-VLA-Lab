@@ -1,6 +1,6 @@
 # AeroVLA implementation plan — short MVP releases
 
-**Approved planning baseline; execution began 7 September 2026 UTC.** Phase scopes below remain the delivery plan. Use [public results and limits](../PUBLIC_STATUS.md) for verified completion and failures; private dated evidence remains separately retained.
+**Approved planning baseline; execution began 7 September 2026 UTC.** Phase scopes below remain the delivery plan. Use [public results and limits](research/technical-report.md) for verified completion and failures; private dated evidence remains separately retained.
 
 The objective is a working simulation-to-training-to-evaluation loop using the released AeroVLA policy and compiled TravelUAV environments. Level 1 is excluded. This document refines the broad stages in [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md) into independently reviewable releases.
 

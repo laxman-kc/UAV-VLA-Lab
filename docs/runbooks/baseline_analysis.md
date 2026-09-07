@@ -1,5 +1,8 @@
 # Development baseline analysis
 
+Installed package entrypoints and the distinction between native modules and historical compatibility engines are documented in [installed workflows](installed_workflows.md). New GPU hosts follow [fresh-host acceptance](fresh_host.md); the completed-cycle host was retired.
+
+
 Run this after the navigation summarizer has finished and the immutable run/session evidence has been copied locally. The tool reads only the plan's declared development evidence. It does not launch a simulator, load a model, inspect holdout pixels, or alter the navigation summary.
 
 ```sh
