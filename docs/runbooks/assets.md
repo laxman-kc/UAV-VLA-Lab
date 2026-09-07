@@ -40,7 +40,7 @@ Run these commands from the project checkout in the selected Python environment.
 
 ```bash
 export VLA_DATA_ROOT=/home/shadeform/vla-data
-export VLA_ARCHIVE_DIR="$VLA_DATA_ROOT/cache/downloads"
+export VLA_ARCHIVE_DIR="$VLA_DATA_ROOT/assets/archives"
 python scripts/prepare_assets.py plan
 ```
 
@@ -49,7 +49,10 @@ Download the manifest's eight assets with the experiment runner's resumable down
 ```bash
 python scripts/prepare_assets.py \
   --report "$VLA_DATA_ROOT/manifests/asset-checks/archives.json" \
-  verify --archive-dir "$VLA_ARCHIVE_DIR"
+  verify --archive-dir "$VLA_ARCHIVE_DIR/dataset_raw" --category dataset_raw
+python scripts/prepare_assets.py \
+  --report "$VLA_DATA_ROOT/manifests/asset-checks/env-archives.json" \
+  verify --archive-dir "$VLA_ARCHIVE_DIR/envs" --category envs
 ```
 
 A missing file, incorrect length or SHA256 mismatch fails the gate. Partial downloads do not count as complete files. Keep failed files for diagnosis; do not overwrite a verified archive with a new unpinned version.
@@ -59,14 +62,14 @@ A missing file, incorrect length or SHA256 mismatch fails the gate. Partial down
 First establish which split-ZIP extractor is installed and supported. With a verified `7z` or `7zz` installation, list/test the archive before extracting. Commands below use `7z` as the verified executable name; substitute `7zz` if that is the installed tool.
 
 ```bash
-7z l "$VLA_ARCHIVE_DIR/ModernCityMap.zip"
-7z l "$VLA_ARCHIVE_DIR/closeloop_envs.zip"
-7z t "$VLA_ARCHIVE_DIR/ModernCityMap.zip"
-7z t "$VLA_ARCHIVE_DIR/closeloop_envs.zip"
+7z l "$VLA_ARCHIVE_DIR/dataset_raw/ModernCityMap.zip"
+7z l "$VLA_ARCHIVE_DIR/envs/closeloop_envs.zip"
+7z t "$VLA_ARCHIVE_DIR/dataset_raw/ModernCityMap.zip"
+7z t "$VLA_ARCHIVE_DIR/envs/closeloop_envs.zip"
 mkdir -p "$VLA_DATA_ROOT/assets/dataset_raw" "$VLA_DATA_ROOT/assets/envs"
-7z x "$VLA_ARCHIVE_DIR/ModernCityMap.zip" \
+7z x "$VLA_ARCHIVE_DIR/dataset_raw/ModernCityMap.zip" \
   "-o$VLA_DATA_ROOT/assets/dataset_raw"
-7z x "$VLA_ARCHIVE_DIR/closeloop_envs.zip" \
+7z x "$VLA_ARCHIVE_DIR/envs/closeloop_envs.zip" \
   "-o$VLA_DATA_ROOT/assets/envs"
 ```
 

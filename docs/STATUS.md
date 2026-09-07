@@ -15,10 +15,13 @@ The user authorized GitHub publication and execution on Brev `vla01` through all
 | Runtime imports | All 15 checked modules passed |
 | GPU operation | BF16 CUDA matrix multiplication passed using PyTorch 2.1.2/cu118 |
 | Dependencies | OpenCV/NumPy conflict resolved; pip check passed; exact environment freeze recorded |
-| Assets | Pinned ModernCityMap and released model downloads in progress |
-| P01 artifacts | Report/video packaging in progress |
-| P02–P14 | Not yet completed |
+| Model assets | Pinned base and adapter downloaded; file hashes recorded |
+| Raw map | All three parts SHA256 verified; archive test and extraction passed; 718 trajectories converted |
+| Environment assets | Shared bundle download remains in progress |
+| P05 offline inference | Three real observation pairs passed strict output parsing; no simulator commands sent |
+| P01 artifacts | Report and 98-second evidence video finalized; all 980 encoded frames technically checked against visually inspected static segments |
+| Other phases | Not yet completed |
 
 The data root is `/home/shadeform/vla-data`. A mounted filesystem was verified; stop/resume persistence was not tested by stopping this active VM. Raw observations, checkpoints and videos stay outside source Git.
 
-The initial task uses the official target-bearing-assisted inputs. The correction-source choice remains pending; it does not block simulator/model integration. No closed-loop success, training improvement, or completed phase video is claimed yet.
+The initial task uses the official target-bearing-assisted inputs. The correction-source choice remains pending; it does not block simulator/model integration. No closed-loop success or training improvement is claimed yet. Both offline inference attempts passed. Matching native CUDA libraries resolved the first run's bitsandbytes loading error; the second run still emitted upstream version/deprecation and CuDNN workaround warnings. These remain in the evidence.

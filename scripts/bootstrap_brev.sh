@@ -28,6 +28,7 @@ pathlib.Path(sys.argv[2]).write_text('\n'.join(x for x in lines if not x.startsw
 PY
 "$LAB_PY" -m pip install -r "$LAB_DATA/setup/requirements-without-flash.txt" numpy==1.26.3 numba==0.60.0 attrs tensorboard sentencepiece huggingface_hub==0.24.7
 "$LAB_PY" -m pip install 'https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.8/flash_attn-2.5.8%2Bcu118torch2.1cxx11abiFALSE-cp310-cp310-linux_x86_64.whl'
+"$LAB_PY" -m pip install nvidia-cuda-runtime-cu11==11.8.89 nvidia-cuda-nvrtc-cu11==11.8.89 nvidia-cublas-cu11==11.11.3.6 nvidia-cusparse-cu11==11.7.5.86
 "$LAB_PY" -m pip check
 "$LAB_PY" -m pip freeze > "$LAB_DATA/setup/runtime.freeze.txt"
 "$LAB_PY" - <<'PY'

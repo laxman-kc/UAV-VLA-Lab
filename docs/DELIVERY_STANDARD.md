@@ -77,7 +77,7 @@ Side-by-side comparisons declare their alignment axis: simulator time, host elap
 
 Before selecting final clips, save a rule in `video/selection.json`. A suitable default is the first valid completed trial and first failure under the recorded trial order, if available; for comparisons, include changed-outcome cases and disclose their selection. An interrupted attempt can be shown as interrupted. Report the full trial population even when the video is short.
 
-Validate the encoded file programmatically and visually. A metadata probe alone is insufficient. Confirm dimensions, duration, decoding, captions, source-frame mapping and consistency with report results. Review at least the beginning, transitions and end, and the full concise final cut.
+Validate the encoded file programmatically and visually. A metadata probe alone is insufficient. Confirm dimensions, duration, decoding, captions, source-frame mapping and consistency with report results. Review the full concise final cut, including its beginning, transitions and end. For a silent video composed entirely of static terminal-log evidence segments, an alternative is to visually inspect a decoded representative of every mapped segment, retain the inspected evidence and its hashes, verify every encoded frame against its reviewed segment reference within fixed recorded reconstruction tolerances, and check all encoded frame timestamps plus complete decoding. Record this as `all_static_segments`, with exact event coverage and the video SHA256; do not claim continuous playback. This alternative does not apply to flight footage or observation videos, whose changing content requires full-video review.
 
 The following are command templates to run from a real release directory once its video exists:
 
