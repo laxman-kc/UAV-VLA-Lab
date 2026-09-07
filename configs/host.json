@@ -1,0 +1,19 @@
+{
+  "instance": "vla01",
+  "source_root": "/home/shadeform/UAV-VLA-Lab",
+  "data_root": "/home/shadeform/vla-data",
+  "python": "/home/shadeform/vla-data/venvs/aerovla/bin/python",
+  "observed_os": "Ubuntu 22.04.5 LTS",
+  "observed_cpus": 14,
+  "observed_ram_kib": 74195796,
+  "observed_gpu": "NVIDIA L40",
+  "observed_gpu_memory_mib": 46068,
+  "user_reported_cpus": 26,
+  "user_reported_ram_gb": 192,
+  "scene_concurrency": 1,
+  "policy_batch_size": 1,
+  "training_and_simulation_concurrent": false,
+  "operational_free_space_reserve_gib": 60,
+  "task_mode": "official_goal_bearing_assisted_reproduction",
+  "mount_lifecycle_tested": false
+}
