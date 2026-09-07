@@ -1,0 +1,85 @@
+{
+  "schema_version": "vla.public-video-payload-list.v1",
+  "prepared_at_utc": "2026-09-07T07:21:17.577194+00:00",
+  "status": "screened_exact_candidates_pending_user_publication_permission",
+  "proposed_release_tag": "simulation-training-evaluation-v2",
+  "release_tag_status": "Execution owner reports tag unused; this review did not create or publish it",
+  "file_count": 7,
+  "total_bytes": 7413447,
+  "total_duration_seconds": 571.0,
+  "static_segments": 115,
+  "files": [
+    {
+      "phase": "P08",
+      "release": "P08/20260907-development-v1",
+      "sha256": "33c9f0d7a05edba8dc5d53d86ea4d9eea21a36501df2d04479d1b6845e8a2056",
+      "bytes": 1203182,
+      "duration_seconds": 76.0,
+      "events": 14,
+      "disclosed_payload": "All 20 development outcomes in derived tables plus six sampled simulator observations in front/down views; model actions, experiment IDs and camera timestamps.",
+      "public_filename": "p08-development-baseline.mp4"
+    },
+    {
+      "phase": "P09",
+      "release": "P09/20260907-reviewed-reference-v3",
+      "sha256": "91c0abe6c1fcc244081aa1edb414c1ec4c56927b6b82ebed5a7e316b77821c2e",
+      "bytes": 1436529,
+      "duration_seconds": 80.0,
+      "events": 20,
+      "disclosed_payload": "All five archived demonstration endpoints in front/down views; source mission prefixes, geometry labels and unknown-time disclosure.",
+      "public_filename": "p09-reviewed-reference-examples.mp4"
+    },
+    {
+      "phase": "P10",
+      "release": "P10/20260907-reviewed-mechanics-v2",
+      "sha256": "98bff9e8620ced505902ae035929368e3a294f5546d1ccb8b9d5a14ea32fde29",
+      "bytes": 353461,
+      "duration_seconds": 60.0,
+      "events": 7,
+      "disclosed_payload": "Exact one-step training log excerpts, GPU-memory free/total/allocated/reserved/peak byte diagnostics, fixed-row losses and logits hashes, reload/cleanup checks and UTC times. No private path/host identifier is visible.",
+      "public_filename": "p10-reviewed-training-mechanics.mp4"
+    },
+    {
+      "phase": "P11",
+      "release": "P11/20260907-reference-extension-v1",
+      "sha256": "52c0cf84b766d7830cd0df81270a6057a0d340a5bd808b4e186225f609f08418",
+      "bytes": 2306815,
+      "duration_seconds": 120.0,
+      "events": 40,
+      "disclosed_payload": "All 20 new archived current front/down pairs and projected labels; unknown-time and large-yaw/controller-difference disclosures.",
+      "public_filename": "p11-reference-dataset-expansion.mp4"
+    },
+    {
+      "phase": "P12",
+      "release": "P12/20260907-reference-adaptation-v2",
+      "sha256": "81288067c999cf809e7f2392db86b9beb24126420bab84a941197549064b6299",
+      "bytes": 399772,
+      "duration_seconds": 67.0,
+      "events": 10,
+      "disclosed_payload": "Recorded completion, all 25 compact step/exposure/loss/gradient/time rows, fixed-training-row before/after/reload values, checkpoint filenames/hashes/bytes and parent release ID.",
+      "public_filename": "p12-fixed-adapter-training.mp4"
+    },
+    {
+      "phase": "P13",
+      "release": "P13/20260907-paired-development-v1",
+      "sha256": "12bf2e755f5af2c36cd96b4a3185c9f0fbf7e72102c584da301493495eedd4a8",
+      "bytes": 947838,
+      "duration_seconds": 94.0,
+      "events": 13,
+      "disclosed_payload": "All20 development outcome rows (SR/OSR/actions/rounded distances); eight original-left/candidate-right genuine front-camera pairs from the first original-only and candidate-only success. Own-arm elapsed host seconds, source mission prefixes, derived decision/terminal indices and editorial-time disclosures. No private host/GPU diagnostics, accounts, paths, addresses or hardware IDs observed.",
+      "public_filename": "p13-development-comparison.mp4"
+    },
+    {
+      "phase": "P14",
+      "release": "P14/20260907-paired-holdout-v1",
+      "sha256": "252db170738ab57a4e657a54263e29fedf6804356edc4c7cbbd4c6ed5e0757b7",
+      "bytes": 765850,
+      "duration_seconds": 74.0,
+      "events": 11,
+      "disclosed_payload": "Complete ten-mission SR/OSR/actions/rounded-distance tables, eight genuine original/candidate front-camera pairs, mission prefixes, own host elapsed times and separate derived/terminal indices. Static timing and non-synchronization are explicit.",
+      "public_filename": "p14-holdout-comparison.mp4"
+    }
+  ],
+  "required_disclosure": "P10 contains exact GPU-memory free/total/allocated/reserved/peak byte diagnostics, in addition to training loss/gradient/exposure/logits/reload/cleanup and UTC/elapsed values.",
+  "scope": "Only these seven exact MP4s. No raw datasets, weights, private reports/configurations, full bundles, CYCLE media or source images as separate assets. No upload performed; prior eight-video permission does not authorize these new files."
+}

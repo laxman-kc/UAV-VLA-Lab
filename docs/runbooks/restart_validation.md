@@ -77,3 +77,29 @@ Local verification:
     python3 -m unittest discover -s tests -p test_restart_validation.py -v
 
 The fixtures are synthetic files; no simulator, signal or GPU job is run by them.
+
+For a recording-cost supplement, keep the original interruption/restart pair
+unchanged and identify the supplemental run's runtime, reset protocol, source
+hashes and frozen plan separately. Do not substitute a different-reset run for
+the restart input merely to add timing fields: the restart validator deliberately
+requires matching configuration between the original pair. Timing assessment is
+an additional read-only analysis, not a feature of validate_restart.py.
+
+Bind every image_write_hash_ns value to its recorded start/end interval, its
+observation event and all ten image hashes. Check that it is nonnegative and no
+larger than that observation's prepare_and_record_ns. Report the batch count,
+sum, mean and empirical quantiles with the interpolation convention stated.
+The batch includes both RGB and depth PNGs; a batch quantile is not a per-image
+quantile. Reconcile run.end's event_count_before_run_end with the actual prior
+event count and its JSON artifact count with the recorded files. Aggregate
+event/JSON counters provide no per-event duration distribution.
+
+Read the exact matching timer implementation before describing its scope.
+The measured image interval covers encoding, writes, readback hashing and loop
+bookkeeping; it excludes directory creation and fsync. The event prefix excludes
+run.end itself, lock wait and final flush/fsync. Separate upstream end-of-episode
+image/state export is also outside these counters. A sum of these components
+divided by command elapsed time is an accounting ratio, not total overhead,
+policy slowdown or a causal trajectory comparison. Keep those remaining
+unknowns explicit even when the bounded direct-component measurement gate
+passes. The reduced [verified status](../../PUBLIC_STATUS.md) summarizes the actual P07 supplement. Exact private component measurements and exclusions remain in its retained evidence bundle and are not copied into this public overlay.

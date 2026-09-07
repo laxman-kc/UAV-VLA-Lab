@@ -1,12 +1,12 @@
 # AeroVLA implementation plan — short MVP releases
 
-**Status: proposed implementation, not executed. Reviewed 6 September 2026.**
+**Approved planning baseline; execution began 7 September 2026 UTC.** Phase scopes below remain the delivery plan. Use [public results and limits](../PUBLIC_STATUS.md) for verified completion and failures; private dated evidence remains separately retained.
 
 The objective is a working simulation-to-training-to-evaluation loop using the released AeroVLA policy and compiled TravelUAV environments. Level 1 is excluded. This document refines the broad stages in [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md) into independently reviewable releases.
 
 ## 1. Planning boundaries
 
-The local machine was inspected: MacBook Pro, Apple M4, 16 GB. The Brev allocation is user-reported: L40 with 48 GB VRAM, 192 GB system RAM, 26 CPUs, x86_64, 625 GB storage. Remote operating system, driver, graphics support, free disk space, persistence and workload capacity remain unverified. Brev access follows plan review.
+The Mac is the operator workstation and the remote L40 host owns simulator, policy and training execution. Runtime admission used measured capacity, not the advertised allocation. Detailed host inventory and private operating paths are retained outside this reduced public copy. Stop/resume storage persistence remains unverified.
 
 All phase sizes below are **proposed work limits**, not claims of statistical adequacy, known data availability, or completion-time estimates. Each release adds one capability and reuses prior capabilities. If a dependency fails, retain the evidence and split out the compatibility fix; do not expand a phase into a general simulator rewrite.
 
@@ -14,14 +14,14 @@ All phase sizes below are **proposed work limits**, not claims of statistical ad
 |---|---|---|
 | Remote platform, persistent mount, available space | P01 | Inspect the actual host; record evidence |
 | Initial map and required asset subset | P02 | Match executable, episode metadata and all referenced files; check capacity |
-| Known-target-bearing reproduction or unknown-target navigation | Before P05 | Explicit task choice; unresolved today. The latter changes inputs/protocol and may need additional implementation |
+| Known-target-bearing reproduction or unknown-target navigation | Before P05 | Initial implementation uses the original released target-bearing-assisted task. Unknown-target navigation is a separate changed protocol |
 | Clocks, stopping, parsing and controller behavior | Before P06; freeze before P08 | Record upstream behavior and any deliberate changes as named protocol versions |
 | Train/dev/holdout membership | Before P08 evaluation | Exclude earlier demo material from holdout; hash the split manifest |
 | Correction source and action-label horizon | Before P09 | Define the expert, coordinate frame, temporal meaning, validation and stop labels |
 | Training budget, expanded dataset size and checkpoint selection | Before P12 | Use measured capacity and a written experiment configuration |
 | Held-out scope and statistical claim | Before final test | Define supported claim and sample size; the small P14 pilot does not establish broad improvement |
 
-These are decision gates, not repeated installation-permission requests. No remote operation is being performed as part of this planning deliverable.
+These are decision gates, not repeated installation-permission requests. The user authorized remote implementation through these phases; the current execution status is recorded separately from the plan.
 
 ## 2. Architecture and implementation choices
 
@@ -35,12 +35,14 @@ flowchart LR
     C --> S
     R --> E[Events, images, manifests]
     E --> V[Offline replay and reports]
-    E --> D[Reviewed expert corrections]
+    A[Published train trajectories and unchanged labels] --> D[Audited, agent-reviewed demonstrations]
     D --> T[Offline supervised adapter training]
     T --> Q[Frozen checkpoint comparison]
     Q --> V
     V --> M
 ```
+
+The diagram reflects the explicit P09/P11 execution amendment below: this cycle uses ordinary published demonstrations, with evaluation evidence kept separate from training membership. Original phase proposals and their exact scope amendments remain visible.
 
 Simulation and policy inference share the Brev host. Begin with one scene and one policy. Training uses the same GPU in a separate job after simulator processes are stopped. The Mac reviews selected artifacts and does not sit in the per-action network path.
 
@@ -56,11 +58,11 @@ Simulation and policy inference share the Brev host. Begin with one scene and on
 | Reporting | Small Python analysis tools, Markdown plus browsable HTML, measured plots | Every phase, expanded P08/P13 |
 | Video | Actual evidence capture, offline FFmpeg encoding, ffprobe inspection, captions | Every phase |
 
-The author repository documents the reference installation and compiled-environment route. It is the baseline to test, not proof of compatibility with the user's uninspected VM. [AeroVLA repository](https://github.com/XuPeng23/AeroVLA).
+The author repository documents the reference installation and compiled-environment route. It was the reference baseline; compatibility and named changes required their own measured gates. [AeroVLA repository](https://github.com/XuPeng23/AeroVLA).
 
 ## 3. Fourteen small releases
 
-**Every phase delivers the common release bundle in section 4.** The report/video entries below specify the evidence unique to that phase. All statuses are currently planned. A valid negative research result can satisfy an engineering gate; an infrastructure crash does not count as a completed navigation trial.
+**Every phase delivers the common release bundle in section 4.** The report/video entries below specify the evidence unique to that phase; they are acceptance criteria rather than completion claims. A valid negative research result can satisfy an engineering gate; an infrastructure crash does not count as a completed navigation trial.
 
 ### P01 — Host readiness MVP
 
@@ -134,7 +136,9 @@ The author repository documents the reference installation and compiled-environm
 - **Video:** summary plus clips chosen under a declared rule, including a failure if one occurred.
 - **Main additions:** `analysis.py`, `splits.py`, split/protocol manifests, baseline runbook.
 
-### P09 — Expert correction MVP
+### P09 — Reviewed supervision MVP
+
+**Execution amendment, 7 September 2026:** the initial correction proposal below is implemented in this cycle as ordinary published demonstration SFT. The [alignment decision](REFERENCE_ALIGNMENT_DECISION.md) records why the heading-correction prototype was deferred and how exact source motion, instructions and images are independently reviewed. Five unchanged published rows passed that qualified review. This cycle does not deliver newly collected model-failure corrections or a learned-recovery claim. The original proposal remains visible in the scope below so the difference is explicit.
 
 - **Working result:** export a small, auditable set of supervised corrections compatible with the training reader.
 - **Scope:** proposed five approved observation/action samples from separate training missions. Define expert source, action horizon, units, stop semantics and approval process before collection. Reject unsupported labels.
@@ -154,6 +158,8 @@ The author repository documents the reference installation and compiled-environm
 
 ### P11 — Versioned training dataset MVP
 
+For this execution, the increment is twenty unchanged published examples from twenty additional official training missions, selected under `aerovla-reference-extension-twenty-v1` before alignment review. The original five are preserved. Labels are neither corrected nor replaced to force acceptance; every selected row must pass the same qualified review before the 25-example union can be packaged. This is the reference-SFT scope recorded at P09.
+
 - **Working result:** grow the reviewed correction corpus through repeatable, independently validated increments.
 - **Scope:** proposed cap of 20 newly approved samples per release; repeat with a new release ID as needed. Choose total size and coverage after baseline review; this cap is not a claim that 20 samples are sufficient.
 - **Acceptance:** all new labels pass P09 semantics; no split leakage or accidental duplicates; dataset revision is immutable; coverage and expert effort are reported. Sampling rules use training data and permitted development findings.
@@ -162,6 +168,8 @@ The author repository documents the reference installation and compiled-environm
 - **Main additions:** incremental dataset manifests, coverage analysis and dataset release runbook.
 
 ### P12 — Bounded adaptation MVP
+
+The current cycle uses one fixed final-step candidate, starting from the released parent. Its training configuration will be frozen after the actual P11 dataset is approved. P13 reports that candidate regardless of whether it improves. P14 will keep the same checkpoint under a separately frozen holdout plan; no best-of checkpoint choice or tuning based on holdout is permitted. This replaces the optional development-based checkpoint selection in the original scope below with an explicit fixed-candidate rule.
 
 - **Working result:** train one candidate adapter using the validated corpus and a predeclared budget.
 - **Scope:** one configuration and one seed per release. Use P10 measurements to set batch/accumulation, step limit, checkpoint cadence and stop conditions. Write the development-based selection rule before training; record parent and full configuration.
@@ -219,7 +227,7 @@ The release video is intended to be concise, approximately one to three minutes 
 
 ## 5. Planned source file structure
 
-Only `README.md`, the three main design/delivery documents, and the templates below exist today. The rest of this tree specifies where implementation will go.
+The tree below is the original package-layout proposal. Execution currently uses independently runnable Python scripts, preserving the pinned upstream integration. The actual source layout and implemented entry points are listed in [FILE_STRUCTURE.md](FILE_STRUCTURE.md); proposed `src/vla_lab` modules below must not be read as existing files.
 
 ```text
 VLA/
@@ -278,7 +286,7 @@ VLA/
   patches/                           # reproducible upstream changes
 ```
 
-Large data is held under **`VLA_DATA_ROOT`**, whose absolute Brev path will be selected in P01. This refines the conceptual storage root in the system design; it does not presume a particular VM username or mount.
+Large data is held under **`VLA_DATA_ROOT`**, resolved during P01 and recorded in the host configuration and private evidence. The tree below is a logical layout; actual runtime directories are recorded by each run's resolved configuration.
 
 ```text
 VLA_DATA_ROOT/
@@ -309,3 +317,5 @@ A claim that recovery-focused supervision is better than ordinary additional SFT
 Calendar and cost estimates follow measurements: asset download/extraction, scene startup, episode durations, recording bytes, training throughput and actual billing rate. No time, FPS, VRAM partition, success-rate gain or price is assumed.
 
 This reporting approach is informed by requirements to expose experimental configuration, resources, uncertainty and reproducibility steps. [NeurIPS paper checklist](https://neurips.cc/public/guides/PaperChecklist). The exact phase sizes, file layout and release bundle are project design choices.
+
+Current completion and evidence: [14-phase completion index](STATUS.md), [reduced P13 comparison](reports/P13_DEVELOPMENT_COMPARISON.md) and [reduced P14 comparison](reports/P14_HOLDOUT_COMPARISON.md).

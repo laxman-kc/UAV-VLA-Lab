@@ -1,6 +1,8 @@
 # AeroVLA on Mac + NVIDIA Brev L40: system design and execution plan
 
-Status: design only. Remote deployment has not started. The user will provide Brev access after reviewing this plan. Level 1 is excluded.
+Status: approved historical design baseline. Execution began 7 September 2026 UTC. Level 1 remains excluded. The planning-stage inventory and proposed stages below are retained as history; they are not current host readiness or unfinished-work assertions. See [public results and limits](../PUBLIC_STATUS.md) for verified completion and [the implementation plan](IMPLEMENTATION_PLAN.md) for the explicit execution amendments.
+
+**Execution clarification, 7 September 2026:** the working system keeps simulation and policy execution on the remote GPU host and uses the Mac for supervision and evidence review. P09/P11 package 25 unchanged published training examples after source-motion alignment and named agent review; no new failure-correction collection was executed. P12 continued the released adapter/projector for one fixed 25-update pass. P13 reports that fixed candidate, and P14 retains it regardless of the development result. The original recovery-collection flow, unknown-label statements, pending-access statements and later research stages below describe the initial proposal; the [dated alignment decision](REFERENCE_ALIGNMENT_DECISION.md) and [current file structure](FILE_STRUCTURE.md) identify what was actually implemented. No new host inventory or private execution receipt is reproduced here.
 
 The broad execution stages below are now refined into short releases in [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Use its P01–P14 phase IDs for delivery, with documentation, reports and actual video evidence governed by [DELIVERY_STANDARD.md](DELIVERY_STANDARD.md).
 
@@ -216,7 +218,7 @@ sequenceDiagram
     R->>S: Release owned scene when finished
 ```
 
-The diagram is the proposed instrumented design. Preserve an identifiable original-protocol run before changing parsing, stopping, clocks, cameras, or execution. Log instrumentation overhead because added work can affect an unpaused simulation. A paused-at-inference mode or clock-speed-one mode is a separate experimental configuration, not a silent fix.
+The diagram is the original proposed instrumented design; actual recorded semantics and qualifications are described in the current runbooks and public status. Preserve an identifiable original-protocol run before changing parsing, stopping, clocks, cameras, or execution. Log instrumentation overhead because added work can affect an unpaused simulation. A paused-at-inference mode or clock-speed-one mode is a separate experimental configuration, not a silent fix.
 
 ## 8. Assets and storage on the 625 GB allocation
 
@@ -411,3 +413,5 @@ No rate, total cost, training duration, real-time guarantee, or expected success
 When access is supplied, start at Stage 0. Before model execution, resolve the goal-information choice. Before correction collection, resolve the expert source and label-generation method. Before interpreting deployment readiness, define the required timing and physical landing criteria.
 
 This design used AI-assisted primary-source and source-code review plus a read-only local hardware query. It has not been executed on the Brev host. The plan's remote readiness gates, measured quantities, and open decisions are deliberately left explicit.
+
+Current completion and evidence: [14-phase completion index](STATUS.md), [reduced P13 comparison](reports/P13_DEVELOPMENT_COMPARISON.md) and [reduced P14 comparison](reports/P14_HOLDOUT_COMPARISON.md).
