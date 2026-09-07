@@ -1,0 +1,47 @@
+{
+  "schema_version": "proposed-1",
+  "is_template": true,
+  "phase_id": null,
+  "release_id": null,
+  "created_at_utc": null,
+  "engineering_status": "planned",
+  "research_status": "not_established",
+  "artifact_status": "incomplete",
+  "source": {
+    "project_commit": null,
+    "upstream_commit": null,
+    "patches_sha256": null
+  },
+  "host_inventory_ref": null,
+  "environment_lock_sha256": null,
+  "resolved_config_sha256": null,
+  "protocol_manifest_sha256": null,
+  "split_manifest_sha256": null,
+  "model_manifest_ref": null,
+  "dataset_manifest_ref": null,
+  "checkpoint_manifest_ref": null,
+  "workload": {
+    "planned_unique_missions": null,
+    "planned_policy_mission_trials": null,
+    "actual_attempts": null,
+    "valid_trial_outcomes": null,
+    "infrastructure_failures": null
+  },
+  "acceptance_checks_ref": null,
+  "artifacts": [],
+  "video": {
+    "file": null,
+    "evidence_type": null,
+    "selection_manifest_ref": null,
+    "frame_or_clip_mapping_ref": null,
+    "timeline_domain": null,
+    "encoder_version": null,
+    "validation_ref": null
+  },
+  "unknowns": [],
+  "limitations": [],
+  "notes": [
+    "Template only. Null values are unknown, not zero.",
+    "Applicable provenance and artifact checks must be populated before release verification."
+  ]
+}
