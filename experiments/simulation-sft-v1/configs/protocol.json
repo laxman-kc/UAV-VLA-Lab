@@ -1,0 +1,66 @@
+{
+  "schema_version": "uav-vla-lab.study-protocol.v1",
+  "study_id": "simulation-sft-v1",
+  "map": "ModernCityMap",
+  "task": "Official target-bearing-assisted navigation",
+  "upstream_revision": "e37685afb8953d1f5a09155d7255960cee1bfd9d",
+  "runtime_id": "aerovla-rpcfix-msgpack112-paused-final-pose-time-v1",
+  "reset_protocol": "paused-final-pose-time-v1",
+  "runtime_code": {
+    "_aerovla_runtime_hooks.py": {
+      "sha256": "e5a171f120398d17979adca5a9043322f6f767a2ead6381fb146876b36212eef",
+      "bytes": 29087
+    },
+    "patch_aerovla_runtime.py": {
+      "sha256": "33d46ca1e621a35afcf4d50c91d05006fd1136ec326243313b44f39104dc7910",
+      "bytes": 7365
+    },
+    "reset_protocol.py": {
+      "sha256": "68fc45788dbab4da31b65f1ca1fb5b243aa4bef163fd8ac909e89a634e528401",
+      "bytes": 15068
+    },
+    "run_simulation_session.py": {
+      "sha256": "4ee4ca1caac33e89420802620ad072ad34ee62908ba5adf415a6951f530f6b84",
+      "bytes": 25038
+    },
+    "supervise_run.py": {
+      "sha256": "7d1542fa8e7dd6f8ec77c8b8bff14fd7e9572c227056ecae22f60c2837ea0ac2",
+      "bytes": 16645
+    }
+  },
+  "clock_speed": 10,
+  "max_actions": 200,
+  "position_acceptance_tolerance_m": 0.1,
+  "angle_acceptance_tolerance_rad": 0.05,
+  "requested_reset_continuation_seconds": 0.001,
+  "maximum_observed_attempts_per_mission_per_arm": 1,
+  "development_original_reused": true,
+  "holdout_both_arms_fresh": true,
+  "development_plan_frozen_at_utc": "2026-09-07T05:58:32.274194+00:00",
+  "holdout_plan_frozen_at_utc": "2026-09-07T06:21:24.010066+00:00",
+  "holdout_candidate_infrastructure_launches": 2,
+  "failed_launch_navigation_attempts": 0,
+  "candidate_rule": "Same fixed final P12 checkpoint before development and regardless of development outcomes",
+  "generation": {
+    "forward_m": [
+      0,
+      5
+    ],
+    "down_m": [
+      -5,
+      5
+    ],
+    "yaw_rad": [
+      -1.1,
+      1.1
+    ]
+  },
+  "physical_touchdown_measured": false,
+  "physical_label_horizon_seconds": null,
+  "source_ids": [
+    "evaluation-runtime-receipt",
+    "development-paired-plan",
+    "holdout-original-frozen-plan",
+    "holdout-effective-path-amended-plan"
+  ]
+}

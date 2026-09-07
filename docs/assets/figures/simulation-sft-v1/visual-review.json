@@ -1,0 +1,51 @@
+{
+  "schema_version": "uav-vla-lab.static-figure-review.v1",
+  "reviewer": "Codex agent /root/traveluav_feasibility",
+  "human_review": false,
+  "reviewed_at_utc": "2026-09-07T12:54:23.089563+00:00",
+  "status": "passed",
+  "scope": "Actual visual inspection of the three regenerated PNG figures and public-record numeric consistency. SVG/PDF files are byte-verified against the renderer manifest, not separately visually inspected. No new simulator, model or raw-trace execution.",
+  "supersedes_review_sha256": "585de833d3eab0ff64337d0ed54199c2d3ff222705a39a5ca886dff187e62527",
+  "visually_inspected_pngs": [
+    {
+      "file": "outcome-rates.png",
+      "bytes": 114653,
+      "sha256": "fc1b7093ce750f16212c0303e0e7c29f7f3afc6096ca9e24cbc6416168e6cc92"
+    },
+    {
+      "file": "paired-transitions.png",
+      "bytes": 106979,
+      "sha256": "532d332fdab23d8d5567eeaaff3995298edb990f6c1e0e737237b99b9f0255d0"
+    },
+    {
+      "file": "training-fit.png",
+      "bytes": 86466,
+      "sha256": "de4d518bcb92eacce21118f41d291a88a8c2f2e96146dad7feab6668e71d82eb"
+    }
+  ],
+  "visual_checks": [
+    "All three regenerated PNGs opened and inspected after the simplified labels and larger text were rendered.",
+    "Counts, percentages, four paired outcome rows and all 25 training-step values agree with the unchanged validated public data.",
+    "Before training and After training use the same blue/orange colors in the navigation and fixed-example loss figures.",
+    "Full plain metric labels Successful stop and Reached target area replace SR/OSR abbreviations; precise definitions and study limitations remain in the Markdown report.",
+    "Final test is the existing holdout cohort; no mission membership, protocol or model identity changes.",
+    "Labels, count annotations and legends are readable with no observed clipping or overlap.",
+    "The final paired chart was inspected again after replacing Both missed with Neither succeeded; the other two inspected PNGs remain byte-identical."
+  ],
+  "figure_provenance_sha256": "71a2b3e0953dba5fc8f8be612c6956dc03948f8c2b999f16d214912c35285c13",
+  "public_numeric_check": {
+    "status": "public_numeric_consistency_passed",
+    "episode_rows": 60,
+    "paired_rows": 30,
+    "training_steps": 25,
+    "training_missions": 25,
+    "total_recorded_actions": 1665,
+    "total_recorded_observations": 1725,
+    "source_receipts": 22,
+    "scope": "Recomputed public tables, membership, counts and identities; private raw causal traces are not replayed"
+  },
+  "numeric_validator_sha256": "9c858c90ae282ca6bc0a2641632549d026490d342ffa3fcf9bf438fb252dc561",
+  "numeric_validator_unchanged": true,
+  "renderer_sha256": "16beb74a0eefbd40c5723071f65836d394c1c180e2d4e11393a4196e89f7c8d4",
+  "outputs_verified": 9
+}

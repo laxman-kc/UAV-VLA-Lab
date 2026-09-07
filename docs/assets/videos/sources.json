@@ -1,0 +1,259 @@
+{
+  "schema_version": "uav-vla-lab.short-video-sources.v1",
+  "scope": "Selected recorded final images and reported whole-mission outcomes; one improvement and one regression per video. Separate runs, views and times; not synchronized or continuous flight.",
+  "layout": "Four cards: title, selected improvement, selected regression, aggregate result. Approximately 2, 7, 7 and 4 seconds; total 20 seconds.",
+  "image_edit": "Camera-panel crops from the previously published paired source figures; 320-pixel squares enlarged to 448 pixels with Pillow bicubic resizing.",
+  "source_results": "experiments/simulation-sft-v1/results/paired.csv",
+  "videos": [
+    {
+      "filename": "development-20s.mp4",
+      "url": "https://github.com/user-attachments/assets/f95f5cc2-7a31-4e4b-84c8-57827091a7d0",
+      "sha256": "1a7622a8076ed0dc709a5a79ac483ac668df3561ff065c5b8e5c5a5e40a3916c",
+      "bytes": 614795,
+      "duration_seconds": 20,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "frame_count": 600,
+      "frames_per_second": 30,
+      "audio_streams": 0,
+      "original_public_video": {
+        "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p13-development-comparison.mp4",
+        "sha256": "12bf2e755f5af2c36cd96b4a3185c9f0fbf7e72102c584da301493495eedd4a8",
+        "frames_per_second": 10
+      },
+      "selected_images": [
+        {
+          "source_event": "mission-06-08",
+          "mission_id": "343f9571-0628-45c1-87dd-23c71aea1ce8",
+          "outcome": {
+            "before_training_successful_stop": false,
+            "after_training_successful_stop": true
+          },
+          "source_figure_sha256": "915e905b8fdef626ad4169816afa512a24e05b60c7135ed9f908cb8b6e89c5d9",
+          "source_figure_dimensions": [
+            770,
+            440
+          ],
+          "original_video_frame_range": [
+            880,
+            940
+          ],
+          "original_video_time_range_seconds": [
+            88.0,
+            94.0
+          ],
+          "frame_range_convention": "start inclusive, end exclusive",
+          "camera_crops_in_source_figure": [
+            {
+              "role": "before_training",
+              "xywh": [
+                27,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            },
+            {
+              "role": "after_training",
+              "xywh": [
+                417,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            }
+          ]
+        },
+        {
+          "source_event": "mission-02-04",
+          "mission_id": "196334ed-54be-40f2-864a-3eb94b59b4cc",
+          "outcome": {
+            "before_training_successful_stop": true,
+            "after_training_successful_stop": false
+          },
+          "source_figure_sha256": "b759f550a758d508ebfb067caa5c290c0b3cc5d1c6fe1bcdd5d5e9f0d96b003f",
+          "source_figure_dimensions": [
+            770,
+            440
+          ],
+          "original_video_frame_range": [
+            640,
+            700
+          ],
+          "original_video_time_range_seconds": [
+            64.0,
+            70.0
+          ],
+          "frame_range_convention": "start inclusive, end exclusive",
+          "camera_crops_in_source_figure": [
+            {
+              "role": "before_training",
+              "xywh": [
+                27,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            },
+            {
+              "role": "after_training",
+              "xywh": [
+                417,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            }
+          ]
+        }
+      ],
+      "checks": {
+        "full_decode": "passed",
+        "visual_review": "All four encoded card midpoints and all transition boundary samples inspected; no continuous playback attestation"
+      }
+    },
+    {
+      "filename": "final-test-20s.mp4",
+      "url": "https://github.com/user-attachments/assets/0d76712b-0403-4ffc-bc35-808975b1e683",
+      "sha256": "40a91d9e7395dce5d3e9b49609491c0feec12fa8d458e5cf9ca60b9074dff9c7",
+      "bytes": 494360,
+      "duration_seconds": 20,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "frame_count": 600,
+      "frames_per_second": 30,
+      "audio_streams": 0,
+      "original_public_video": {
+        "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p14-holdout-comparison.mp4",
+        "sha256": "252db170738ab57a4e657a54263e29fedf6804356edc4c7cbbd4c6ed5e0757b7",
+        "frames_per_second": 10
+      },
+      "selected_images": [
+        {
+          "source_event": "mission-02-08",
+          "mission_id": "44f9a56c-df6f-4c24-88cf-cd6d65118733",
+          "outcome": {
+            "before_training_successful_stop": false,
+            "after_training_successful_stop": true
+          },
+          "source_figure_sha256": "75e614e2e1eff5b15ff8cd886a96c5a54a530e0e00cb2ce84fccbcb67869ad1a",
+          "source_figure_dimensions": [
+            770,
+            440
+          ],
+          "original_video_frame_range": [
+            680,
+            740
+          ],
+          "original_video_time_range_seconds": [
+            68.0,
+            74.0
+          ],
+          "frame_range_convention": "start inclusive, end exclusive",
+          "camera_crops_in_source_figure": [
+            {
+              "role": "before_training",
+              "xywh": [
+                27,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            },
+            {
+              "role": "after_training",
+              "xywh": [
+                417,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            }
+          ]
+        },
+        {
+          "source_event": "mission-09-04",
+          "mission_id": "8285681c-d33a-4b60-8ebf-3ac47b465658",
+          "outcome": {
+            "before_training_successful_stop": true,
+            "after_training_successful_stop": false
+          },
+          "source_figure_sha256": "af9444eae3daae8a21afb2aab868096d0cfeded312c911cfa34eed3aad1ca988",
+          "source_figure_dimensions": [
+            770,
+            440
+          ],
+          "original_video_frame_range": [
+            440,
+            500
+          ],
+          "original_video_time_range_seconds": [
+            44.0,
+            50.0
+          ],
+          "frame_range_convention": "start inclusive, end exclusive",
+          "camera_crops_in_source_figure": [
+            {
+              "role": "before_training",
+              "xywh": [
+                27,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            },
+            {
+              "role": "after_training",
+              "xywh": [
+                417,
+                60,
+                320,
+                320
+              ],
+              "output_size": [
+                448,
+                448
+              ]
+            }
+          ]
+        }
+      ],
+      "checks": {
+        "full_decode": "passed",
+        "visual_review": "All four encoded card midpoints and all transition boundary samples inspected; no continuous playback attestation"
+      }
+    }
+  ]
+}

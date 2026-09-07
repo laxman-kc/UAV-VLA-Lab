@@ -1,0 +1,16 @@
+{
+  "schema_version": "uav-vla-lab.study-model-identities.v1",
+  "base": {
+    "repository": "openvla/openvla-7b",
+    "revision": "47a0ec7fc4ec123775a391911046cf33cf9ed83f"
+  },
+  "released_adapter": {
+    "repository": "XuPeng23/AerialVLA",
+    "revision": "196f2f3253b69df6e90ac10b6ae041c7b3a9569e",
+    "subfolder": "aero_vla"
+  },
+  "candidate_manifest_sha256": "c8fdf4cc533e7360282f38cf6b5cc8e3937e005606494b4ba71483155c0619be",
+  "candidate_checkpoint_contract_sha256": "515668dbff9098dda16cf1fb6b696619c27c02470822018df88f3aa8ecbbb919",
+  "candidate_weights_publicly_available": false,
+  "source_id": "candidate-checkpoint-manifest"
+}

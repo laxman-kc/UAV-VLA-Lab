@@ -1,0 +1,59 @@
+{
+  "schema": "uav-vla.public-video-publication.v1",
+  "release_url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/tag/simulation-training-evaluation-v2",
+  "release_tag": "simulation-training-evaluation-v2",
+  "target_commit": "8607c7b0d8d1de7160560f3ce0aa3e4b19dc23c0",
+  "published_at_utc": "2026-09-07T12:26:34Z",
+  "verification": "GitHub API asset names, sizes and server SHA256 digests matched the approved seven-file manifest.",
+  "assets": [
+    {
+      "name": "p08-development-baseline.mp4",
+      "bytes": 1203182,
+      "sha256": "33c9f0d7a05edba8dc5d53d86ea4d9eea21a36501df2d04479d1b6845e8a2056",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p08-development-baseline.mp4",
+      "state": "uploaded"
+    },
+    {
+      "name": "p09-reviewed-reference-examples.mp4",
+      "bytes": 1436529,
+      "sha256": "91c0abe6c1fcc244081aa1edb414c1ec4c56927b6b82ebed5a7e316b77821c2e",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p09-reviewed-reference-examples.mp4",
+      "state": "uploaded"
+    },
+    {
+      "name": "p10-reviewed-training-mechanics.mp4",
+      "bytes": 353461,
+      "sha256": "98bff9e8620ced505902ae035929368e3a294f5546d1ccb8b9d5a14ea32fde29",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p10-reviewed-training-mechanics.mp4",
+      "state": "uploaded"
+    },
+    {
+      "name": "p11-reference-dataset-expansion.mp4",
+      "bytes": 2306815,
+      "sha256": "52c0cf84b766d7830cd0df81270a6057a0d340a5bd808b4e186225f609f08418",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p11-reference-dataset-expansion.mp4",
+      "state": "uploaded"
+    },
+    {
+      "name": "p12-fixed-adapter-training.mp4",
+      "bytes": 399772,
+      "sha256": "81288067c999cf809e7f2392db86b9beb24126420bab84a941197549064b6299",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p12-fixed-adapter-training.mp4",
+      "state": "uploaded"
+    },
+    {
+      "name": "p13-development-comparison.mp4",
+      "bytes": 947838,
+      "sha256": "12bf2e755f5af2c36cd96b4a3185c9f0fbf7e72102c584da301493495eedd4a8",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p13-development-comparison.mp4",
+      "state": "uploaded"
+    },
+    {
+      "name": "p14-holdout-comparison.mp4",
+      "bytes": 765850,
+      "sha256": "252db170738ab57a4e657a54263e29fedf6804356edc4c7cbbd4c6ed5e0757b7",
+      "url": "https://github.com/laxman-kc/UAV-VLA-Lab/releases/download/simulation-training-evaluation-v2/p14-holdout-comparison.mp4",
+      "state": "uploaded"
+    }
+  ]
+}

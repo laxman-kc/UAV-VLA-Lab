@@ -1,0 +1,182 @@
+{
+  "schema_version": "vla.assets.v1",
+  "map_id": "ModernCityMap",
+  "upstream_code_revision": "e37685afb8953d1f5a09155d7255960cee1bfd9d",
+  "verified_at_utc": "2026-09-07T02:25:07.846127+00:00",
+  "selection_basis": "Smallest complete published raw-map plus environment archive groups among maps in released AeroVLA evaluation splits and launcher mapping; excludes model weights and extracted/temp storage.",
+  "total_archive_bytes": 28492759660,
+  "assets": [
+    {
+      "category": "dataset_raw",
+      "filename": "ModernCityMap.z01",
+      "size_bytes": 4037017600,
+      "sha256": "0fe135b061079a7e01e8125e08c93fcffbdff25a991d7d7bd0ffc80d78612e2c",
+      "repository": "wangxiangyu0814/TravelUAV",
+      "revision": "faa8f2514156455ea7423464cc1295e6f92575cb",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV/resolve/faa8f2514156455ea7423464cc1295e6f92575cb/ModernCityMap.z01"
+    },
+    {
+      "category": "dataset_raw",
+      "filename": "ModernCityMap.z02",
+      "size_bytes": 4037017600,
+      "sha256": "6ce7d801d196cb679d415ac92ae45c2e2de64372e4ddb14717ff1d713710cd33",
+      "repository": "wangxiangyu0814/TravelUAV",
+      "revision": "faa8f2514156455ea7423464cc1295e6f92575cb",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV/resolve/faa8f2514156455ea7423464cc1295e6f92575cb/ModernCityMap.z02"
+    },
+    {
+      "category": "dataset_raw",
+      "filename": "ModernCityMap.zip",
+      "size_bytes": 1773021965,
+      "sha256": "4ce2e547449f60c681541afba3087e8ea859bd44c4b443a8e971fa5b705473f7",
+      "repository": "wangxiangyu0814/TravelUAV",
+      "revision": "faa8f2514156455ea7423464cc1295e6f92575cb",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV/resolve/faa8f2514156455ea7423464cc1295e6f92575cb/ModernCityMap.zip"
+    },
+    {
+      "category": "envs",
+      "filename": "closeloop_envs.z01",
+      "size_bytes": 4026531840,
+      "sha256": "acc4e6e2f68d2c2606084cb068f7879670b1e2c6c2900a0b621fbdb4020054c2",
+      "repository": "wangxiangyu0814/TravelUAV_env",
+      "revision": "44de5739a95a2f6a88767446421cddada9606642",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV_env/resolve/44de5739a95a2f6a88767446421cddada9606642/closeloop_envs.z01"
+    },
+    {
+      "category": "envs",
+      "filename": "closeloop_envs.z02",
+      "size_bytes": 4026531840,
+      "sha256": "ba5fc7c11996aa7932070b7b0e3c19d331c99d9757534a6d1b41f446b2ca762c",
+      "repository": "wangxiangyu0814/TravelUAV_env",
+      "revision": "44de5739a95a2f6a88767446421cddada9606642",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV_env/resolve/44de5739a95a2f6a88767446421cddada9606642/closeloop_envs.z02"
+    },
+    {
+      "category": "envs",
+      "filename": "closeloop_envs.z03",
+      "size_bytes": 4026531840,
+      "sha256": "1825f0a3124d80130de1bd3cd8761abea2ab28c48e497e8f1ad098a745feebea",
+      "repository": "wangxiangyu0814/TravelUAV_env",
+      "revision": "44de5739a95a2f6a88767446421cddada9606642",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV_env/resolve/44de5739a95a2f6a88767446421cddada9606642/closeloop_envs.z03"
+    },
+    {
+      "category": "envs",
+      "filename": "closeloop_envs.z04",
+      "size_bytes": 4026531840,
+      "sha256": "abb292ae7b9f614244216bb37ecc44c2be6b24055acae6829a9a3092da8a8b6d",
+      "repository": "wangxiangyu0814/TravelUAV_env",
+      "revision": "44de5739a95a2f6a88767446421cddada9606642",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV_env/resolve/44de5739a95a2f6a88767446421cddada9606642/closeloop_envs.z04"
+    },
+    {
+      "category": "envs",
+      "filename": "closeloop_envs.zip",
+      "size_bytes": 2539575135,
+      "sha256": "9c8d745acbcc3519146f8c15d52980a77d6c9c2f6bc2d8a04073c801cfca0827",
+      "repository": "wangxiangyu0814/TravelUAV_env",
+      "revision": "44de5739a95a2f6a88767446421cddada9606642",
+      "url": "https://huggingface.co/datasets/wangxiangyu0814/TravelUAV_env/resolve/44de5739a95a2f6a88767446421cddada9606642/closeloop_envs.zip"
+    }
+  ],
+  "layout": {
+    "environment_launcher": "envs/closeloop_envs/ModernCityMap.sh",
+    "environment_binary": "envs/closeloop_envs/ModernCityDowntown/Binaries/Linux/ModernCityDowntown",
+    "raw_map_root": "dataset_raw/ModernCityMap"
+  },
+  "required_episode_files": [
+    "mark.json",
+    "object_description.json",
+    "log/*.json",
+    "frontcamera/*.png",
+    "downcamera/*.png"
+  ],
+  "generated_episode_files": [
+    "merged_data.json"
+  ],
+  "conversion": {
+    "repository": "prince687028/TravelUAV",
+    "script": "Model/LLaMA-UAV/tools/generate_merged_json.py",
+    "arguments": [
+      "--root_dir",
+      "<VLA_DATA_ROOT>/assets/dataset_raw",
+      "--map_list",
+      "ModernCityMap"
+    ],
+    "revision": "5cc26e9a4a55b9c788e918f7c3bb2dc5076a85e6",
+    "url": "https://raw.githubusercontent.com/prince687028/TravelUAV/5cc26e9a4a55b9c788e918f7c3bb2dc5076a85e6/Model/LLaMA-UAV/tools/generate_merged_json.py",
+    "sha256": "8bbd7ff607bdc7eb7ea43c712a04a948a26d8dd0de73ec7d60ced15e6853fdbe",
+    "wrapper_behavior": "Seed the Python PRNG before running unchanged upstream source, which otherwise assigns random.seed = 1. Pin and hash generated outputs; upstream traversal and skip-existing behavior remain unchanged."
+  },
+  "unverified": [
+    "Downloaded archive integrity until local SHA256 verification",
+    "Actual extraction and runtime compatibility",
+    "Free-space persistence across VM lifecycle",
+    "Official AeroVLA cleaned training JSON labels/temporal horizon not inspected",
+    "Raw file payload contents and decoding until archive extraction/validation"
+  ],
+  "archive_index_evidence": {
+    "method": "Bounded HTTP Range reads of ZIP central directories; no simulator executable or raw image payload downloaded by asset audit.",
+    "raw_entries": 258241,
+    "raw_trajectory_count": 718,
+    "raw_declared_uncompressed_bytes": 10159691009,
+    "env_entries": 473,
+    "env_declared_uncompressed_bytes": 19576208267,
+    "demo_required_metadata_paths_verified": true,
+    "archive_plus_full_extraction_declared_bytes": 58228658936,
+    "limitations": [
+      "Declared byte sums exclude filesystem metadata, allocation rounding, joined-archive temporary copies, model files, caches and outputs.",
+      "Archive contents and runtime behavior are not validated by central-directory inspection alone."
+    ]
+  },
+  "download_size_comparison": [
+    {
+      "map_id": "ModernCityMap",
+      "archive_bytes": 28492759660
+    },
+    {
+      "map_id": "ModularPark",
+      "archive_bytes": 47579204823
+    },
+    {
+      "map_id": "Carla_Town06",
+      "archive_bytes": 54794536528
+    },
+    {
+      "map_id": "Carla_Town07",
+      "archive_bytes": 54817725434
+    },
+    {
+      "map_id": "Carla_Town05",
+      "archive_bytes": 58061819586
+    },
+    {
+      "map_id": "Carla_Town04",
+      "archive_bytes": 62380656739
+    },
+    {
+      "map_id": "Carla_Town01",
+      "archive_bytes": 66060528637
+    },
+    {
+      "map_id": "Carla_Town15",
+      "archive_bytes": 72592537016
+    },
+    {
+      "map_id": "Carla_Town10HD",
+      "archive_bytes": 74156318632
+    },
+    {
+      "map_id": "TropicalIsland",
+      "archive_bytes": 74953895055
+    },
+    {
+      "map_id": "NewYorkCity",
+      "archive_bytes": 76486219903
+    },
+    {
+      "map_id": "NYCEnvironmentMegapa",
+      "archive_bytes": 109317720492
+    }
+  ]
+}

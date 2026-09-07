@@ -1,0 +1,14 @@
+{
+  "schema_version": "vla.synthetic-replay.v1",
+  "source_kind": "synthetic",
+  "example_id": "square-corner",
+  "description": "A hand-authored point moves around a corner and rises 0.25 metres. This exercises the CPU evidence workflow; it is not UAV flight data.",
+  "coordinate_frame": "local_ned_metres_yaw_radians",
+  "initial_state": {"x": 0, "y": 0, "z": 0, "yaw": 0},
+  "actions": [
+    {"forward": 1, "down": 0, "yaw_delta": 0},
+    {"forward": 1, "down": 0, "yaw_delta": 1.5707963267948966},
+    {"forward": 0.5, "down": -0.25, "yaw_delta": 0},
+    {"forward": 0, "down": 0, "yaw_delta": -1.5707963267948966}
+  ]
+}

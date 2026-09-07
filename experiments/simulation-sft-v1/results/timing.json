@@ -1,0 +1,149 @@
+{
+  "arms": [
+    {
+      "cohort": "development",
+      "arm": "original",
+      "command_elapsed_seconds": 846.9296460760006,
+      "generate_host_call_return_seconds": {
+        "recorded_count": 577,
+        "valid_count": 577,
+        "missing_or_invalid_count": 0,
+        "min": 0.408432,
+        "max": 0.802941068,
+        "mean": 0.4443221919462738,
+        "median": 0.439276177,
+        "sum": 256.373904753
+      },
+      "action_execution_host_seconds": {
+        "recorded_count": 577,
+        "valid_count": 577,
+        "missing_or_invalid_count": 0,
+        "min": 0.052885442,
+        "max": 0.716614853,
+        "mean": 0.4644377809410745,
+        "median": 0.531458066,
+        "sum": 267.980599603
+      },
+      "image_write_hash_host_seconds": {
+        "recorded_count": 597,
+        "valid_count": 597,
+        "missing_or_invalid_count": 0,
+        "min": 0.016777057,
+        "max": 0.032827438,
+        "mean": 0.022530692775544387,
+        "median": 0.022124314,
+        "sum": 13.450823587
+      },
+      "source_id": "development-original-analysis"
+    },
+    {
+      "cohort": "development",
+      "arm": "candidate",
+      "command_elapsed_seconds": 820.3838510290007,
+      "generate_host_call_return_seconds": {
+        "recorded_count": 557,
+        "valid_count": 557,
+        "missing_or_invalid_count": 0,
+        "min": 0.080979485,
+        "max": 0.740856946,
+        "mean": 0.4477792247917415,
+        "median": 0.444339515,
+        "sum": 249.41302820900003
+      },
+      "action_execution_host_seconds": {
+        "recorded_count": 557,
+        "valid_count": 557,
+        "missing_or_invalid_count": 0,
+        "min": 0.052831042,
+        "max": 0.846485819,
+        "mean": 0.475345095010772,
+        "median": 0.536832469,
+        "sum": 264.7672179210001
+      },
+      "image_write_hash_host_seconds": {
+        "recorded_count": 577,
+        "valid_count": 577,
+        "missing_or_invalid_count": 0,
+        "min": 0.016461128,
+        "max": 0.034808726,
+        "mean": 0.022812956270363952,
+        "median": 0.022383302,
+        "sum": 13.163075767999997
+      },
+      "source_id": "development-candidate-analysis"
+    },
+    {
+      "cohort": "holdout",
+      "arm": "original",
+      "command_elapsed_seconds": 449.2357434860005,
+      "generate_host_call_return_seconds": {
+        "recorded_count": 278,
+        "valid_count": 278,
+        "missing_or_invalid_count": 0,
+        "min": 0.415177134,
+        "max": 0.870691319,
+        "mean": 0.45458424721223023,
+        "median": 0.44807092000000004,
+        "sum": 126.37442072500005
+      },
+      "action_execution_host_seconds": {
+        "recorded_count": 278,
+        "valid_count": 278,
+        "missing_or_invalid_count": 0,
+        "min": 0.053173311,
+        "max": 0.710364688,
+        "mean": 0.46826622479496405,
+        "median": 0.5351477365,
+        "sum": 130.17801049300004
+      },
+      "image_write_hash_host_seconds": {
+        "recorded_count": 288,
+        "valid_count": 288,
+        "missing_or_invalid_count": 0,
+        "min": 0.017289132,
+        "max": 0.037331333,
+        "mean": 0.022918132652777777,
+        "median": 0.022592548,
+        "sum": 6.600422203999999
+      },
+      "source_id": "holdout-original-analysis"
+    },
+    {
+      "cohort": "holdout",
+      "arm": "candidate",
+      "command_elapsed_seconds": 410.4177442330001,
+      "generate_host_call_return_seconds": {
+        "recorded_count": 253,
+        "valid_count": 253,
+        "missing_or_invalid_count": 0,
+        "min": 0.414871033,
+        "max": 0.719888112,
+        "mean": 0.45080555160474306,
+        "median": 0.44270951,
+        "sum": 114.05380455600006
+      },
+      "action_execution_host_seconds": {
+        "recorded_count": 253,
+        "valid_count": 253,
+        "missing_or_invalid_count": 0,
+        "min": 0.154328005,
+        "max": 0.722227673,
+        "mean": 0.45693232388537547,
+        "median": 0.535077444,
+        "sum": 115.60387794300006
+      },
+      "image_write_hash_host_seconds": {
+        "recorded_count": 263,
+        "valid_count": 263,
+        "missing_or_invalid_count": 0,
+        "min": 0.017049577,
+        "max": 0.034620471,
+        "mean": 0.02262826391254753,
+        "median": 0.02230814,
+        "sum": 5.951233409000003
+      },
+      "source_id": "holdout-candidate-analysis"
+    }
+  ],
+  "scope": "Nested recorded host intervals; different trajectories/lengths, not a policy speed comparison"
+}

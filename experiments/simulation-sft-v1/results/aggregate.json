@@ -1,0 +1,86 @@
+{
+  "study_id": "simulation-sft-v1",
+  "cohorts": {
+    "development": {
+      "original": {
+        "trials": 20,
+        "valid_trials": 20,
+        "observed_attempts": 20,
+        "successes": 6,
+        "oracle_successes": 7,
+        "actions_completed": 577,
+        "observations_recorded": 597,
+        "policy_outputs_recorded": 577,
+        "accepted_resets": 20,
+        "any_sampled_endpoint_contact": 9,
+        "upstream_collision_flag": 13
+      },
+      "candidate": {
+        "trials": 20,
+        "valid_trials": 20,
+        "observed_attempts": 20,
+        "successes": 7,
+        "oracle_successes": 9,
+        "actions_completed": 557,
+        "observations_recorded": 577,
+        "policy_outputs_recorded": 557,
+        "accepted_resets": 20,
+        "any_sampled_endpoint_contact": 6,
+        "upstream_collision_flag": 13
+      },
+      "paired_sr_transitions": {
+        "both_failure": 11,
+        "original_only_success": 2,
+        "candidate_only_success": 3,
+        "both_success": 4
+      },
+      "paired_osr_transitions": {
+        "both_failure": 9,
+        "original_only_success": 2,
+        "candidate_only_success": 4,
+        "both_success": 5
+      }
+    },
+    "holdout": {
+      "original": {
+        "trials": 10,
+        "valid_trials": 10,
+        "observed_attempts": 10,
+        "successes": 3,
+        "oracle_successes": 6,
+        "actions_completed": 278,
+        "observations_recorded": 288,
+        "policy_outputs_recorded": 278,
+        "accepted_resets": 10,
+        "any_sampled_endpoint_contact": 5,
+        "upstream_collision_flag": 7
+      },
+      "candidate": {
+        "trials": 10,
+        "valid_trials": 10,
+        "observed_attempts": 10,
+        "successes": 4,
+        "oracle_successes": 5,
+        "actions_completed": 253,
+        "observations_recorded": 263,
+        "policy_outputs_recorded": 253,
+        "accepted_resets": 10,
+        "any_sampled_endpoint_contact": 2,
+        "upstream_collision_flag": 5
+      },
+      "paired_sr_transitions": {
+        "both_failure": 5,
+        "original_only_success": 1,
+        "candidate_only_success": 2,
+        "both_success": 2
+      },
+      "paired_osr_transitions": {
+        "both_failure": 2,
+        "original_only_success": 3,
+        "candidate_only_success": 2,
+        "both_success": 3
+      }
+    }
+  },
+  "scope": "Descriptive paired counts; no significance test or pooled cross-cohort estimate"
+}

@@ -1,0 +1,34 @@
+{
+  "table": {
+    "all_planned_missions": true,
+    "declared_order": true,
+    "rows_per_slide": 5,
+    "display_seconds_per_slide": 10,
+    "unscored_outcomes": "explicit unavailable, never coerced to failure",
+    "kind": "derived comparison table, never camera observation"
+  },
+  "clip_selection": {
+    "eligible": "Matched valid pairs in the accepted comparison only. An invalid or missing arm excludes imagery from outcome-based category selection and remains visible in the all-mission table.",
+    "categories": [
+      "first original-only SR success in declared mission order",
+      "first candidate-only SR success in declared mission order"
+    ],
+    "absent_category": "Show an explicit absent-category statement; do not substitute a more favorable mission.",
+    "fallback": "Only if both discordant SR categories are absent: first matched valid same-SR-outcome pair in declared mission order. If none exists, show no paired imagery and state why.",
+    "sr_definition": "Recorded upstream navigation success, not OSR and not physical touchdown.",
+    "camera": "FrontCamera scene RGB only, original left and candidate right.",
+    "index_selection": "For each selected accepted attempt, order observation.prepared by event_id. Assign zero-based decision index equal to the number of its action.completed records before that observation; require unique contiguous indices and the validated observation/action causal order, beginning at zero. These are derived decision indices, not a literal loop_index event field. Form their sorted intersection across arms. Select positions 0, floor((N-1)/2), N-1, preserving order and deduplicating repeated indices. Require exactly one observation per selected decision index and arm.",
+    "no_common_indices": "State unavailable; do not align by nearest time or infer a missing image.",
+    "terminal_views": "If either arm final recorded observation index differs from the final common index, append one separate side-by-side pair of each arm actual final recorded observation. State both indices and whether each corresponds to its terminal outcome; do not infer capture after termination.",
+    "display_seconds_per_pair": 6,
+    "introduction_seconds": 6,
+    "absent_category_statement_seconds": 4
+  },
+  "mapping": {
+    "alignment": "Decision-index alignment only; paths, poses, host times and physical progress need not match.",
+    "time": "Show each arm own elapsed host_monotonic_ns since its actual episode.start when both fields exist; otherwise unavailable. Do not substitute camera time with host or simulator time. Preserve all original time fields in mapping.",
+    "pixels": "Use genuine copied PNG bytes with independent source receipts. A deterministic technical two-panel composition may resize each image with preserved aspect ratio but must not retouch scene content. Store both original hashes, each panel rectangle, caption and composed-image hash.",
+    "provenance": "Retain full comparator output, both input analyses, selected attempt event chains, source hashes and every selected image mapping. Never invent unavailable actions, timing or candidate results.",
+    "presentation": "Static editorial holds; not synchronized flight, continuous playback, original camera rate or policy rate."
+  }
+}

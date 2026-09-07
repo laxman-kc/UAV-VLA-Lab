@@ -1,0 +1,711 @@
+{
+  "schema_version": "vla.public-overlay-review.v1",
+  "prepared_at_utc": "2026-09-07T06:09:26.198587+00:00",
+  "status": "source_content_review_complete_new_video_permission_pending",
+  "public_base": "e8364051216783775aced21948d9280879d05b36",
+  "files": [
+    {
+      "path": "scripts/analyze_baseline.py",
+      "source_sha256": "aa963aabe22b4336e6421271cad84425c2b50f29c28bfb3bf81867bbdb8a4b10",
+      "sha256": "aa963aabe22b4336e6421271cad84425c2b50f29c28bfb3bf81867bbdb8a4b10",
+      "bytes": 46326,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "aa963aabe22b4336e6421271cad84425c2b50f29c28bfb3bf81867bbdb8a4b10",
+      "source_bytes": 46326
+    },
+    {
+      "path": "scripts/audit_reference_alignment.py",
+      "source_sha256": "2ed8cf1fd8675c788dc8770aecf2106fbdb8d55c817e8d5aa72b588db95da3fa",
+      "sha256": "2ed8cf1fd8675c788dc8770aecf2106fbdb8d55c817e8d5aa72b588db95da3fa",
+      "bytes": 22425,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "2ed8cf1fd8675c788dc8770aecf2106fbdb8d55c817e8d5aa72b588db95da3fa",
+      "source_bytes": 22425
+    },
+    {
+      "path": "scripts/build_reviewed_reference_dataset.py",
+      "source_sha256": "d2039b4000172ec1cc4afdbac21029ab09ed5904b37d6985876e85eec3f0ffc3",
+      "sha256": "d2039b4000172ec1cc4afdbac21029ab09ed5904b37d6985876e85eec3f0ffc3",
+      "bytes": 23628,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "d2039b4000172ec1cc4afdbac21029ab09ed5904b37d6985876e85eec3f0ffc3",
+      "source_bytes": 23628
+    },
+    {
+      "path": "scripts/collect_heading_corrections.py",
+      "source_sha256": "c29b3efef1587d7c7625e50e1888eab53cf37009636809ab63929062c867d488",
+      "sha256": "c29b3efef1587d7c7625e50e1888eab53cf37009636809ab63929062c867d488",
+      "bytes": 39106,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "c29b3efef1587d7c7625e50e1888eab53cf37009636809ab63929062c867d488",
+      "source_bytes": 39106
+    },
+    {
+      "path": "scripts/compare_navigation.py",
+      "source_sha256": "918bedb4c5ecc6abc98f70d8fab94c73ce53b57a30545dd07ab31bbcf03e0270",
+      "sha256": "918bedb4c5ecc6abc98f70d8fab94c73ce53b57a30545dd07ab31bbcf03e0270",
+      "bytes": 31820,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "918bedb4c5ecc6abc98f70d8fab94c73ce53b57a30545dd07ab31bbcf03e0270",
+      "source_bytes": 31820
+    },
+    {
+      "path": "scripts/prepare_development_comparison.py",
+      "source_sha256": "239d7ef19fcd21d68fae3a57bfb455e5381fa048459ec52287681e18e9d42574",
+      "sha256": "239d7ef19fcd21d68fae3a57bfb455e5381fa048459ec52287681e18e9d42574",
+      "bytes": 23423,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "239d7ef19fcd21d68fae3a57bfb455e5381fa048459ec52287681e18e9d42574",
+      "source_bytes": 23423
+    },
+    {
+      "path": "scripts/prepare_reference_extension.py",
+      "source_sha256": "2aaa2db846eb0c6db7e884e79d0062d2e73845390250f56ef333610a48f48e95",
+      "sha256": "2aaa2db846eb0c6db7e884e79d0062d2e73845390250f56ef333610a48f48e95",
+      "bytes": 23243,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "2aaa2db846eb0c6db7e884e79d0062d2e73845390250f56ef333610a48f48e95",
+      "source_bytes": 23243
+    },
+    {
+      "path": "scripts/run_heading_batch.py",
+      "source_sha256": "4fd1b0acbbd65ffc0d6c4cb8ee9f4a2742559f1ed0617ea2211bfaabfe20afd2",
+      "sha256": "4fd1b0acbbd65ffc0d6c4cb8ee9f4a2742559f1ed0617ea2211bfaabfe20afd2",
+      "bytes": 6398,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "4fd1b0acbbd65ffc0d6c4cb8ee9f4a2742559f1ed0617ea2211bfaabfe20afd2",
+      "source_bytes": 6398
+    },
+    {
+      "path": "tests/test_baseline_analysis.py",
+      "source_sha256": "7f90584c2a83812915957855e69a25977633c35e7e73537cf9a18bc3b02a9417",
+      "sha256": "7f90584c2a83812915957855e69a25977633c35e7e73537cf9a18bc3b02a9417",
+      "bytes": 19560,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "7f90584c2a83812915957855e69a25977633c35e7e73537cf9a18bc3b02a9417",
+      "source_bytes": 19560
+    },
+    {
+      "path": "tests/test_development_comparison_preparation.py",
+      "source_sha256": "d5c88b53d42e5fa579ca1df3b521f80865e49e7d1fdf5ddf2b2877b06e76bd99",
+      "sha256": "d5c88b53d42e5fa579ca1df3b521f80865e49e7d1fdf5ddf2b2877b06e76bd99",
+      "bytes": 12433,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "d5c88b53d42e5fa579ca1df3b521f80865e49e7d1fdf5ddf2b2877b06e76bd99",
+      "source_bytes": 12433
+    },
+    {
+      "path": "tests/test_heading_batch.py",
+      "source_sha256": "f765f08e9097002e71983abe85ddf9bc88785f3f3f878dc812155ad2371d2e66",
+      "sha256": "f765f08e9097002e71983abe85ddf9bc88785f3f3f878dc812155ad2371d2e66",
+      "bytes": 3434,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "f765f08e9097002e71983abe85ddf9bc88785f3f3f878dc812155ad2371d2e66",
+      "source_bytes": 3434
+    },
+    {
+      "path": "tests/test_heading_corrections.py",
+      "source_sha256": "d7abb4ffc1c44ecdbe6435ffb4f3b2d42032ecf82ad4818eb9eb8d569b105a89",
+      "sha256": "d7abb4ffc1c44ecdbe6435ffb4f3b2d42032ecf82ad4818eb9eb8d569b105a89",
+      "bytes": 9484,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "d7abb4ffc1c44ecdbe6435ffb4f3b2d42032ecf82ad4818eb9eb8d569b105a89",
+      "source_bytes": 9484
+    },
+    {
+      "path": "tests/test_navigation_comparison.py",
+      "source_sha256": "5b764ed76161c0417b8106b482e76fc21a0612654d3b46e5cb554a0bd73c922c",
+      "sha256": "5b764ed76161c0417b8106b482e76fc21a0612654d3b46e5cb554a0bd73c922c",
+      "bytes": 19406,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "5b764ed76161c0417b8106b482e76fc21a0612654d3b46e5cb554a0bd73c922c",
+      "source_bytes": 19406
+    },
+    {
+      "path": "tests/test_reference_alignment.py",
+      "source_sha256": "64a6a31f10932161d7bfb513363f89db5aa0f85bf7656c561b53929a8d9bf5d2",
+      "sha256": "64a6a31f10932161d7bfb513363f89db5aa0f85bf7656c561b53929a8d9bf5d2",
+      "bytes": 4934,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "64a6a31f10932161d7bfb513363f89db5aa0f85bf7656c561b53929a8d9bf5d2",
+      "source_bytes": 4934
+    },
+    {
+      "path": "tests/test_reference_extension.py",
+      "source_sha256": "78f8883e88e9b5c669b5836b5fca4b228dfbae971063aca7769a4cf353692059",
+      "sha256": "78f8883e88e9b5c669b5836b5fca4b228dfbae971063aca7769a4cf353692059",
+      "bytes": 12627,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "78f8883e88e9b5c669b5836b5fca4b228dfbae971063aca7769a4cf353692059",
+      "source_bytes": 12627
+    },
+    {
+      "path": "tests/test_reviewed_reference_dataset.py",
+      "source_sha256": "a6593a17bec1c63f1d5a6a42d7a1fb4126bba399ccb4bddab1542ae169997a6e",
+      "sha256": "a6593a17bec1c63f1d5a6a42d7a1fb4126bba399ccb4bddab1542ae169997a6e",
+      "bytes": 12417,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "a6593a17bec1c63f1d5a6a42d7a1fb4126bba399ccb4bddab1542ae169997a6e",
+      "source_bytes": 12417
+    },
+    {
+      "path": "docs/runbooks/baseline_analysis.md",
+      "source_sha256": "1bca1203ecf28a0ff79d8d320b9c2890ed12be9af8426de98916294c4b6fb3fe",
+      "sha256": "ffe3259c6c1458948ec119504b36b37456a480cfde5298137c2679c0a72ae136",
+      "bytes": 7441,
+      "relationship": "documentation derivative: replace operator-specific path-map example with placeholders",
+      "initial_overlay_sha256": "ffe3259c6c1458948ec119504b36b37456a480cfde5298137c2679c0a72ae136",
+      "source_bytes": 7476
+    },
+    {
+      "path": "docs/runbooks/development_comparison_preparation.md",
+      "source_sha256": "ebf64ddcc189c8ada7d8011281ae6dd1b7ebe1a49866d17955ce0b016cb9176b",
+      "sha256": "e9357104dab01f38c463100cbb73e1c8e2d3b8e7e1237ddf32a315d35196b803",
+      "bytes": 9389,
+      "relationship": "documentation derivative",
+      "initial_overlay_sha256": "ebf64ddcc189c8ada7d8011281ae6dd1b7ebe1a49866d17955ce0b016cb9176b",
+      "source_bytes": 9391,
+      "derivation": "Point fixed-candidate rule to current reduced public scope rather than unchanged older public implementation plan."
+    },
+    {
+      "path": "docs/runbooks/heading_corrections.md",
+      "source_sha256": "a9cf31b50aa97a9d74970ca1dcfd24e12a7062e8ce24ec63304e060366a3db21",
+      "sha256": "822476d2175b1fac639747eabc8b6b1ce9a6ed130bf1c3c75e2bc71dfd15efa6",
+      "bytes": 10690,
+      "relationship": "documentation derivative",
+      "initial_overlay_sha256": "a9cf31b50aa97a9d74970ca1dcfd24e12a7062e8ce24ec63304e060366a3db21",
+      "source_bytes": 10238,
+      "derivation": "Remove private configuration link; mark deferred/unapproved/unexecuted prototype and conditional sample claims; point to current ordinary-SFT scope."
+    },
+    {
+      "path": "docs/runbooks/navigation_comparison.md",
+      "source_sha256": "14dbb7e5b60b170a3ea8b1ffaf7685a4741f23a2fc31d29c693b783da5ba8ae9",
+      "sha256": "14dbb7e5b60b170a3ea8b1ffaf7685a4741f23a2fc31d29c693b783da5ba8ae9",
+      "bytes": 10535,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "14dbb7e5b60b170a3ea8b1ffaf7685a4741f23a2fc31d29c693b783da5ba8ae9",
+      "source_bytes": 10535
+    },
+    {
+      "path": "docs/runbooks/reference_alignment.md",
+      "source_sha256": "be64fc6c54a226a70388651d75d8a68b664200209fb66621667cb430d7ec2a36",
+      "sha256": "be64fc6c54a226a70388651d75d8a68b664200209fb66621667cb430d7ec2a36",
+      "bytes": 6460,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "be64fc6c54a226a70388651d75d8a68b664200209fb66621667cb430d7ec2a36",
+      "source_bytes": 6460
+    },
+    {
+      "path": "docs/runbooks/reference_extension.md",
+      "source_sha256": "e702542b59ed738e3ef863e3a4e54bc5f4a76a7a06e76442f5d25a3c5a274fc8",
+      "sha256": "e702542b59ed738e3ef863e3a4e54bc5f4a76a7a06e76442f5d25a3c5a274fc8",
+      "bytes": 7784,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "e702542b59ed738e3ef863e3a4e54bc5f4a76a7a06e76442f5d25a3c5a274fc8",
+      "source_bytes": 7784
+    },
+    {
+      "path": "docs/runbooks/restart_validation.md",
+      "source_sha256": "99627a9ad5ae56996b4992a45f791252497e8bc7011fa1c26b8793bdb31e0807",
+      "sha256": "62725a5cf2a1ae25624f5098b9c85d3c8c8a710d659696399b8dd9398bbf0b35",
+      "bytes": 6595,
+      "relationship": "documentation derivative",
+      "initial_overlay_sha256": "99627a9ad5ae56996b4992a45f791252497e8bc7011fa1c26b8793bdb31e0807",
+      "source_bytes": 6494,
+      "derivation": "Replace unavailable private P07 report link with reduced public status; retain precise component timing limits.",
+      "public_base_file_sha256": "a16c82fb74561d5420f08a26758361c15688817747b2ec822430fbac7caf1472"
+    },
+    {
+      "path": "docs/runbooks/reviewed_reference_dataset.md",
+      "source_sha256": "a51afd602ab9f47e8ce37da790a8c880835a0264305dc49dc50b53671cc84946",
+      "sha256": "a51afd602ab9f47e8ce37da790a8c880835a0264305dc49dc50b53671cc84946",
+      "bytes": 6074,
+      "relationship": "verbatim source",
+      "initial_overlay_sha256": "a51afd602ab9f47e8ce37da790a8c880835a0264305dc49dc50b53671cc84946",
+      "source_bytes": 6074
+    },
+    {
+      "path": "docs/runbooks/training.md",
+      "source_sha256": "1d755768777c4be85d9cd6edd263488976bc3b4508e79f88c9aa0a39bedf9676",
+      "sha256": "d9d53661aea83458014c4c39dd1e032766e507dd7ef7d1c545a2253368442f49",
+      "bytes": 15072,
+      "relationship": "documentation derivative",
+      "initial_overlay_sha256": "1d755768777c4be85d9cd6edd263488976bc3b4508e79f88c9aa0a39bedf9676",
+      "source_bytes": 14791,
+      "derivation": "Replace broken private report link and dated mechanics-only status with reduced public chronology; retain historical mechanics mode and reviewed-source distinction.",
+      "public_base_file_sha256": "0a2014fb22cf94b2f825d0549cefdbb795f52f7784ce0c95135a6debab514cc9"
+    },
+    {
+      "path": "docs/REFERENCE_ALIGNMENT_DECISION.md",
+      "source_sha256": "4b2b59de25d0146092051301f67492dc1ccd3329155f569bfa2bfde8d3c369da",
+      "sha256": "4b2b59de25d0146092051301f67492dc1ccd3329155f569bfa2bfde8d3c369da",
+      "bytes": 4159,
+      "relationship": "verbatim dated scope decision",
+      "initial_overlay_sha256": "4b2b59de25d0146092051301f67492dc1ccd3329155f569bfa2bfde8d3c369da",
+      "source_bytes": 4159
+    },
+    {
+      "path": "PUBLIC_STATUS.md",
+      "source_sha256": "fbbd85603ea3bd2c64844eb03cfd765e058ef49642f72c58f233957a36e31085",
+      "source_bytes": 4758,
+      "source_scope": "Existing clean public-base summary plus selected verified phase facts; no raw evidence copied",
+      "relationship": "documentation derivative",
+      "derivation": "Extend the existing public summary with actual completed P14 denominators/transitions, preserved no-start chronology, explicit mixed result, and safe 14-phase index; retain original ordinary-SFT and fixed-candidate limits.",
+      "sha256": "cf9a139ed7783f32fd7b6c14503b7da16581acc55fe9418ae3c0d0c44dd436e2",
+      "bytes": 9555
+    },
+    {
+      "path": "scripts/prepare_holdout_comparison.py",
+      "source_sha256": "537bfe7fd0232be6d9fef95d0ae2c032b2febde930ca78cd6591735f17d23d5f",
+      "sha256": "537bfe7fd0232be6d9fef95d0ae2c032b2febde930ca78cd6591735f17d23d5f",
+      "bytes": 27107,
+      "source_bytes": 27107,
+      "initial_overlay_sha256": "537bfe7fd0232be6d9fef95d0ae2c032b2febde930ca78cd6591735f17d23d5f",
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "tests/test_holdout_comparison_preparation.py",
+      "source_sha256": "9106df4f51aff8a0045d6c8b302afcd05084a3fbb1d0176c027f27f4288b85a3",
+      "sha256": "9106df4f51aff8a0045d6c8b302afcd05084a3fbb1d0176c027f27f4288b85a3",
+      "bytes": 17550,
+      "source_bytes": 17550,
+      "initial_overlay_sha256": "9106df4f51aff8a0045d6c8b302afcd05084a3fbb1d0176c027f27f4288b85a3",
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "docs/runbooks/holdout_comparison_preparation.md",
+      "source_sha256": "e7dfb73751be61cc6b1e424fd09e98695fcd6e1bbf5f54b4845452a339fd6a6b",
+      "sha256": "e7dfb73751be61cc6b1e424fd09e98695fcd6e1bbf5f54b4845452a339fd6a6b",
+      "bytes": 7422,
+      "source_bytes": 7422,
+      "initial_overlay_sha256": "e7dfb73751be61cc6b1e424fd09e98695fcd6e1bbf5f54b4845452a339fd6a6b",
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "scripts/prepare_paired_video.py",
+      "source_sha256": "575dd31708bb1fbb52455808720bf5b4b3f5488151ad8929c2f6b7d55d1f4e03",
+      "sha256": "575dd31708bb1fbb52455808720bf5b4b3f5488151ad8929c2f6b7d55d1f4e03",
+      "bytes": 23508,
+      "source_bytes": 23508,
+      "initial_overlay_sha256": "575dd31708bb1fbb52455808720bf5b4b3f5488151ad8929c2f6b7d55d1f4e03",
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "tests/test_paired_video.py",
+      "source_sha256": "1abcebbf4478799fdebee57d3822471ff7d78eb2c91923d7e39213b15f3bb07c",
+      "sha256": "1abcebbf4478799fdebee57d3822471ff7d78eb2c91923d7e39213b15f3bb07c",
+      "bytes": 10681,
+      "source_bytes": 10681,
+      "initial_overlay_sha256": "1abcebbf4478799fdebee57d3822471ff7d78eb2c91923d7e39213b15f3bb07c",
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "docs/runbooks/paired_video.md",
+      "source_sha256": "48e9cd31a8da2e8a1cbad18261c7a4454ff5e1f6af26fdae8336a5db9a97edea",
+      "sha256": "c698166cd80b4c97bb41c7ebfc320c308c8538793f21624d8b2c2fa2a0e171f3",
+      "bytes": 6159,
+      "source_bytes": 5935,
+      "initial_overlay_sha256": "48e9cd31a8da2e8a1cbad18261c7a4454ff5e1f6af26fdae8336a5db9a97edea",
+      "relationship": "documentation derivative",
+      "derivation": "Keep actual P13 editorial chronology as text-only metadata and the canonical rule link; clarify the implemented P14 mode reads supplied completed evidence and does not itself execute policies."
+    },
+    {
+      "path": "configs/video/paired-static-rule-v1.json",
+      "source_sha256": "78c6fdaf4eec24f8480eabfd7d43488e3d5ea7cd5a73da9775cbc07d859a524b",
+      "sha256": "78c6fdaf4eec24f8480eabfd7d43488e3d5ea7cd5a73da9775cbc07d859a524b",
+      "bytes": 3285,
+      "source_bytes": 3285,
+      "initial_overlay_sha256": "78c6fdaf4eec24f8480eabfd7d43488e3d5ea7cd5a73da9775cbc07d859a524b",
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "docs/SYSTEM_DESIGN.md",
+      "source_sha256": "26b117edac87fac7d5100194a7a3a93fbd2c3613338973ab9f7d9b34cf519422",
+      "sha256": "f0792c007ee2f2deff578be24eb8ad41df0ac57a72eab6d40d21b32c952ffef6",
+      "bytes": 36958,
+      "source_bytes": 35636,
+      "initial_overlay_sha256": "26b117edac87fac7d5100194a7a3a93fbd2c3613338973ab9f7d9b34cf519422",
+      "relationship": "documentation derivative",
+      "public_base_file_sha256": "f636744fc7875803a557f5643b676dba65a20074a7d659c26e698e74078b1992",
+      "derivation": "Preserve the historical full architecture/design body and already-public planning inventory; add current-status links and explicit ordinary-demonstration/fixed-candidate execution clarification. Do not transplant new private host diagnostics. Add final safe phase index and completed comparison links."
+    },
+    {
+      "path": "docs/IMPLEMENTATION_PLAN.md",
+      "source_sha256": "a5801c4b19341ddb885af03db5422554aefa7715c60e9976eb184bae3dbd6f0b",
+      "sha256": "c60f1e978f174f8362d3731596f9f341999ae1aebe6fa0cdfa85cbe9a67ecc00",
+      "bytes": 26465,
+      "source_bytes": 25952,
+      "initial_overlay_sha256": "a5801c4b19341ddb885af03db5422554aefa7715c60e9976eb184bae3dbd6f0b",
+      "relationship": "documentation derivative",
+      "public_base_file_sha256": "65bf03b50eb878c902c32c52a8e55e8bf5ba0088d6afea15908a52a5f11d9792",
+      "derivation": "Preserve the complete 14-phase plan and exact P09/P11/P12 scope-amendment text. Replace new private hardware diagnostics with the operating boundary, direct current status to the public derivative, and align the overview diagram with the audited ordinary-demonstration source. Add final safe phase index and completed comparison links."
+    },
+    {
+      "path": "docs/FILE_STRUCTURE.md",
+      "source_sha256": "6e95ee92ff4f1efe7062167e30827fbda81fe77146de518aea8941aed48171cd",
+      "sha256": "42848b0c28168a8ae1c89af1aab1a5302ce5d81f619b19e964ca07fff43f4f09",
+      "bytes": 5537,
+      "source_bytes": 4380,
+      "initial_overlay_sha256": "05324915dc55cf7e5194cfafb863901970a24644dc63b2dbfb0f3e29b44866a2",
+      "relationship": "documentation derivative",
+      "derivation": "Add actual comparison entry points/canonical video-rule file, distinguish private operational files from the public source tree, and link current public status/runbooks. Add final safe phase index and completed comparison links.",
+      "prior_source_sha256": "62937d259962553353f1977cec7ff287775d5962771234a784fa846e2e57978a",
+      "source_revision_history": [
+        {
+          "source_sha256": "05324915dc55cf7e5194cfafb863901970a24644dc63b2dbfb0f3e29b44866a2",
+          "note": "Prior file-structure snapshot before root added the two operational amendment helpers."
+        }
+      ]
+    },
+    {
+      "path": "docs/reports/P13_DEVELOPMENT_COMPARISON.md",
+      "source_sha256": "0267d7e75c8ba33fc96376d30b6989caa16b66e49789bb620d143763c304e4b9",
+      "source_bytes": 9293,
+      "initial_overlay_sha256": "497e391059d0f9244ad92134714b8e7a513b003feb374c38e0070365c4cd97de",
+      "sha256": "1fa22e586f2415ecfac27d617dd00e3e4cde826793cc3a777e5124e288655a6b",
+      "bytes": 5434,
+      "relationship": "documentation derivative",
+      "derivation": "Reduce the actual P13 report to verified scientific counts, complete 20-row SR/action table, exact checkpoint inventory identity, protocol and limitations; remove raw/private bundle links, all host-resource diagnostics and private archive inventories.",
+      "source_revision_history": [
+        {
+          "source_sha256": "497e391059d0f9244ad92134714b8e7a513b003feb374c38e0070365c4cd97de",
+          "note": "Prior actual report before media seal; reduced scientific summary verified against unchanged comparison.json."
+        }
+      ]
+    },
+    {
+      "path": "README.md",
+      "source_origin": "approved public base",
+      "source_sha256": "f8368df822fbfeae41fd1ee9e3337feae8f769a22bb332c25a64ea2051856c1c",
+      "source_bytes": 1526,
+      "initial_overlay_sha256": "f8368df822fbfeae41fd1ee9e3337feae8f769a22bb332c25a64ea2051856c1c",
+      "public_base_file_sha256": "f8368df822fbfeae41fd1ee9e3337feae8f769a22bb332c25a64ea2051856c1c",
+      "relationship": "documentation derivative",
+      "derivation": "Update the recorded public-base README with the completed amended cycle, safe 14-phase index, reduced P13/P14 links and mixed results; exclude host diagnostics.",
+      "sha256": "aee661594ef53731cd0f6083602fe9f0a2ff85e7f634150e284b8df9b6d391f9",
+      "bytes": 2113
+    },
+    {
+      "path": "scripts/prepare_unstarted_session_amendment.py",
+      "source_sha256": "832cd18c5012edfb8fbfd6e7abfb5b2283be4509fae7efdd5db21ddf6a8a8586",
+      "source_bytes": 19050,
+      "initial_overlay_sha256": "832cd18c5012edfb8fbfd6e7abfb5b2283be4509fae7efdd5db21ddf6a8a8586",
+      "sha256": "832cd18c5012edfb8fbfd6e7abfb5b2283be4509fae7efdd5db21ddf6a8a8586",
+      "bytes": 19050,
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "scripts/prepare_amended_paired_video.py",
+      "source_sha256": "6fab31f31f52d9db6a6280577cbce7ebdc22026c44284e207ab359dd4e6e4589",
+      "source_bytes": 6470,
+      "initial_overlay_sha256": "6fab31f31f52d9db6a6280577cbce7ebdc22026c44284e207ab359dd4e6e4589",
+      "sha256": "6fab31f31f52d9db6a6280577cbce7ebdc22026c44284e207ab359dd4e6e4589",
+      "bytes": 6470,
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "tests/test_unstarted_session_amendment.py",
+      "source_sha256": "995aafc588a3b78f42d39ba09b288e610918814fa344caa760d6f4c7369d3924",
+      "source_bytes": 6651,
+      "initial_overlay_sha256": "995aafc588a3b78f42d39ba09b288e610918814fa344caa760d6f4c7369d3924",
+      "sha256": "995aafc588a3b78f42d39ba09b288e610918814fa344caa760d6f4c7369d3924",
+      "bytes": 6651,
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "tests/test_amended_paired_video.py",
+      "source_sha256": "de5141b64d0fdf78376f0616ca2926cde8c8592d978dce563e00d70f6c4b88cc",
+      "source_bytes": 3171,
+      "initial_overlay_sha256": "de5141b64d0fdf78376f0616ca2926cde8c8592d978dce563e00d70f6c4b88cc",
+      "sha256": "de5141b64d0fdf78376f0616ca2926cde8c8592d978dce563e00d70f6c4b88cc",
+      "bytes": 3171,
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "docs/runbooks/unstarted_session_amendment.md",
+      "source_sha256": "76fad95a23686f3513ecd11953629e41c55b5212f8342c96c326fc5f6a9db105",
+      "source_bytes": 3371,
+      "initial_overlay_sha256": "76fad95a23686f3513ecd11953629e41c55b5212f8342c96c326fc5f6a9db105",
+      "sha256": "76fad95a23686f3513ecd11953629e41c55b5212f8342c96c326fc5f6a9db105",
+      "bytes": 3371,
+      "relationship": "verbatim source"
+    },
+    {
+      "path": "docs/reports/P14_HOLDOUT_COMPARISON.md",
+      "source_sha256": "b92cc0f816d8905c82b1d7499db090c84e4e64a3576d19a74f779f36bf22356b",
+      "source_bytes": 29993,
+      "relationship": "documentation derivative",
+      "source_origin": "private P14 full report (source retained, not copied)",
+      "derivation": "Reduce the actual P14 report and all-ten CSV rows to exact counts, checkpoint identity, preserved infrastructure/amendment chronology and scientific limits. Exclude full raw evidence, host metrics and private links. Media seal remains a separate check.",
+      "sha256": "180e7ae389ffe77e81a562cde55d2a65bdc0f36584d7ee93121ee5b144611c90",
+      "bytes": 6682,
+      "source_copy_method": "Derived directly from retained source; original full source was not copied into overlay."
+    },
+    {
+      "path": "docs/STATUS.md",
+      "source_sha256": "d646cafc7154e15eb3c9e43af3d7890c423a53dd81320d4f9af19a8a8b663cba",
+      "source_bytes": 7386,
+      "relationship": "documentation derivative",
+      "source_origin": "private current implementation status (source retained, reduced)",
+      "derivation": "Create a reduced 14-phase completion/evidence index from actual source status and verified published-video receipt. Remove all private host/account/path/resource details; distinguish amended ordinary-SFT deliverables and pending media approval.",
+      "sha256": "ecd8e597835dddb43a1adf9f31fc1af9b7eb0cb54e6ad48101b814cbb51403bc",
+      "bytes": 6944,
+      "source_revision_history": [
+        {
+          "source_sha256": "8c17bc5bc58a58f38c9954c7675ea6fa9996429f17b3aabc688bf4eaa6ff4f1a",
+          "note": "Status before final P14 artifact seal; numerical facts unchanged."
+        }
+      ],
+      "source_copy_method": "Derived directly from retained source; original full source was not copied into overlay."
+    }
+  ],
+  "excluded": [
+    "private Git history",
+    "raw diagnostics and event logs",
+    "host identifiers and actual experiment path configurations",
+    "datasets/checkpoints",
+    "video payloads"
+  ],
+  "note": "Only text source, tests and operating docs. Final status/report derivatives and any later helper require final review before publication.",
+  "no_publication_performed": true,
+  "reviewer": "Codex subagent /root/traveluav_feasibility",
+  "pending": [
+    "Explicit user publication permission for these seven exact MP4s",
+    "Execution owner publication and live-link update only after permitted upload"
+  ],
+  "reviewed_at_utc": "2026-09-07T07:21:17.577194+00:00",
+  "checks": {
+    "allowlisted_files": 46,
+    "python_files_parsed": 24,
+    "targeted_private_identifier_hits": [],
+    "allowed_pattern_matches": [
+      "127.0.0.1 is the generic upstream loopback default in retained historical system design",
+      "4.10.0.84 is the public OpenCV package version, not a host address"
+    ],
+    "broken_local_markdown_links": [],
+    "tests_executed_by_this_review": false,
+    "all_p13_rows_retained": 20,
+    "all_p14_rows_retained": 10,
+    "phase_index_entries": 14,
+    "derived_source_never_copied_for_new_private_reports": true
+  },
+  "review_documents": [
+    "REVIEW.md",
+    "VIDEO_AUDIT.md",
+    "PAYLOAD_LIST.md",
+    "VIDEO_PAYLOAD_MANIFEST.json"
+  ],
+  "video_payloads": [
+    {
+      "phase": "P08",
+      "release": "P08/20260907-development-v1",
+      "sha256": "33c9f0d7a05edba8dc5d53d86ea4d9eea21a36501df2d04479d1b6845e8a2056",
+      "bytes": 1203182,
+      "duration_seconds": 76.0,
+      "events": 14,
+      "disclosed_payload": "All 20 development outcomes in derived tables plus six sampled simulator observations in front/down views; model actions, experiment IDs and camera timestamps.",
+      "public_filename": "p08-development-baseline.mp4"
+    },
+    {
+      "phase": "P09",
+      "release": "P09/20260907-reviewed-reference-v3",
+      "sha256": "91c0abe6c1fcc244081aa1edb414c1ec4c56927b6b82ebed5a7e316b77821c2e",
+      "bytes": 1436529,
+      "duration_seconds": 80.0,
+      "events": 20,
+      "disclosed_payload": "All five archived demonstration endpoints in front/down views; source mission prefixes, geometry labels and unknown-time disclosure.",
+      "public_filename": "p09-reviewed-reference-examples.mp4"
+    },
+    {
+      "phase": "P10",
+      "release": "P10/20260907-reviewed-mechanics-v2",
+      "sha256": "98bff9e8620ced505902ae035929368e3a294f5546d1ccb8b9d5a14ea32fde29",
+      "bytes": 353461,
+      "duration_seconds": 60.0,
+      "events": 7,
+      "disclosed_payload": "Exact one-step training log excerpts, GPU-memory free/total/allocated/reserved/peak byte diagnostics, fixed-row losses and logits hashes, reload/cleanup checks and UTC times. No private path/host identifier is visible.",
+      "public_filename": "p10-reviewed-training-mechanics.mp4"
+    },
+    {
+      "phase": "P11",
+      "release": "P11/20260907-reference-extension-v1",
+      "sha256": "52c0cf84b766d7830cd0df81270a6057a0d340a5bd808b4e186225f609f08418",
+      "bytes": 2306815,
+      "duration_seconds": 120.0,
+      "events": 40,
+      "disclosed_payload": "All 20 new archived current front/down pairs and projected labels; unknown-time and large-yaw/controller-difference disclosures.",
+      "public_filename": "p11-reference-dataset-expansion.mp4"
+    },
+    {
+      "phase": "P12",
+      "release": "P12/20260907-reference-adaptation-v2",
+      "sha256": "81288067c999cf809e7f2392db86b9beb24126420bab84a941197549064b6299",
+      "bytes": 399772,
+      "duration_seconds": 67.0,
+      "events": 10,
+      "disclosed_payload": "Recorded completion, all 25 compact step/exposure/loss/gradient/time rows, fixed-training-row before/after/reload values, checkpoint filenames/hashes/bytes and parent release ID.",
+      "public_filename": "p12-fixed-adapter-training.mp4"
+    },
+    {
+      "phase": "P13",
+      "release": "P13/20260907-paired-development-v1",
+      "sha256": "12bf2e755f5af2c36cd96b4a3185c9f0fbf7e72102c584da301493495eedd4a8",
+      "bytes": 947838,
+      "duration_seconds": 94.0,
+      "events": 13,
+      "disclosed_payload": "All20 development outcome rows (SR/OSR/actions/rounded distances); eight original-left/candidate-right genuine front-camera pairs from the first original-only and candidate-only success. Own-arm elapsed host seconds, source mission prefixes, derived decision/terminal indices and editorial-time disclosures. No private host/GPU diagnostics, accounts, paths, addresses or hardware IDs observed.",
+      "public_filename": "p13-development-comparison.mp4"
+    },
+    {
+      "phase": "P14",
+      "release": "P14/20260907-paired-holdout-v1",
+      "sha256": "252db170738ab57a4e657a54263e29fedf6804356edc4c7cbbd4c6ed5e0757b7",
+      "bytes": 765850,
+      "duration_seconds": 74.0,
+      "events": 11,
+      "disclosed_payload": "Complete ten-mission SR/OSR/actions/rounded-distance tables, eight genuine original/candidate front-camera pairs, mission prefixes, own host elapsed times and separate derived/terminal indices. Static timing and non-synchronization are explicit.",
+      "public_filename": "p14-holdout-comparison.mp4"
+    }
+  ],
+  "video_screen_receipt": {
+    "filename": "final-video-screen.json",
+    "sha256": "6b715d33761e495c945305eafd50af61a9ff56c2649e2cdb6215012f873df881",
+    "status": "screened_candidates_not_upload_authorized",
+    "copied_into_overlay": false
+  },
+  "summary_fact_sources_not_copied": [
+    {
+      "filename": "P08_DEVELOPMENT_BASELINE.md",
+      "sha256": "76424e52dd0e5fa41e9c775837d6cb3ba9319a04f35ff3a8a5c9dd7df988369d",
+      "bytes": 11589
+    },
+    {
+      "filename": "P09_REVIEWED_REFERENCE_EXAMPLES.md",
+      "sha256": "c9250b375a9f9023037c8812a27b1ff1ad775ccbe6a9a1af5347ff19cdda5b46",
+      "bytes": 7563
+    },
+    {
+      "filename": "P10_PUBLISHED_REFERENCE_MECHANICS.md",
+      "sha256": "515f8f1ca52d5e98f9009c1c6c944e9cb643ca7f5446af5fb33b1cbb87e4aac3",
+      "bytes": 5250
+    },
+    {
+      "filename": "P10_REVIEWED_TRAINING_MECHANICS.md",
+      "sha256": "b64a336223a7cf27ef61d85199c7983fc9eaa85f5eb760e8ddeeb2b1fb8a5b35",
+      "bytes": 8250
+    },
+    {
+      "filename": "P12_REFERENCE_ADAPTATION.md",
+      "sha256": "014174cecc03a77b64bd9f78238c39497e541702f49b74bb9471c324f12ba6b9",
+      "bytes": 7303
+    },
+    {
+      "filename": "P12_CHECKPOINT_CARD.md",
+      "sha256": "c20fbd0aa4997f815fea87181786e300cb34f99dd509b384d34ac52d16f1f577",
+      "bytes": 2786
+    },
+    {
+      "filename": "P11 sealed report.html",
+      "sha256": "2528dfc200abf20db3d4d9f4674aafe831d5d5d1235dad80d08f5f2935a50b83",
+      "bytes": 45178
+    },
+    {
+      "filename": "P13_DEVELOPMENT_COMPARISON.md",
+      "sha256": "497e391059d0f9244ad92134714b8e7a513b003feb374c38e0070365c4cd97de",
+      "bytes": 8304
+    },
+    {
+      "filename": "comparison.json",
+      "sha256": "056a946bdeef4d2dc35c024d5f9d5c8f4d496a562a3e6e1ae336004af3a9d46e",
+      "bytes": 702516
+    },
+    {
+      "filename": "comparison.json",
+      "sha256": "0c50f8d3ba8cc36adc98a1d7813827571935eeda18c32de0c93d064f8582494d",
+      "bytes": 339829
+    },
+    {
+      "filename": "trials.csv",
+      "sha256": "e3d2cc90f66bd03419a714633dca11329d5e3245313cdc93931f38a0b429e778",
+      "bytes": 5266
+    },
+    {
+      "filename": "p14-candidate-amendment-completion-v1.json",
+      "sha256": "bd44f0d7766a448978917e3d675025cd39a2a56ddaeb2fa9a7d151d0c3e87f52",
+      "bytes": 956
+    },
+    {
+      "filename": "public-video-release-validation-v1.json",
+      "sha256": "2ae972096ba2b02e798d7fc3d1a65b9b108acd58447f84fd8038616b642d7b9d",
+      "bytes": 3047
+    }
+  ],
+  "refreshes": [
+    {
+      "prior_snapshot": "wave2-through-p12-snapshot",
+      "purpose": "Preserve the completed through-P12 text/video screen while refreshing comparison source and public P13 status."
+    },
+    {
+      "prior_snapshot": "wave2-through-p13-snapshot",
+      "purpose": "Preserve the through-P13 text/media review while adding completed P14 and safe 14-phase index."
+    }
+  ],
+  "source_review_note": "Current main-source hashes and approved public-base derivatives are checked separately; operator concurrent updates are retained as prior_source_sha256 where applicable. No private workspace edits by this review.",
+  "test_receipt_not_copied": {
+    "filename": "verification-final-tests-v1.json",
+    "sha256": "d325f6b7be54f94dc4d0bbbd6f218012a37d2dca71e29fbd2cacb2cf4f1a62ca",
+    "bytes": 304,
+    "log_sha256": "ce3e4d42396d4935415f93b4956dd2a405c1e35482d061a94f06f388b17bbf8e",
+    "observed_result": "267 tests in9.609s; OK,1 platform skip",
+    "test_execution_by_this_review": false
+  },
+  "p13_video_screen_receipt": {
+    "filename": "P13-screen.json",
+    "sha256": "bdb21c8ad67c2ffb85843c5aa965980735f44384978217f4ff1ab648df176706",
+    "status": "screened_candidate_not_upload_authorized",
+    "copied_into_overlay": false
+  },
+  "additional_read_only_reviews": {
+    "P14_helper": "No material actual P13-schema mismatch found; no holdout outcomes/images opened.",
+    "operational_amendment_bridge": "Exact reconstructed allowed receipt-path diff, original freeze retained, separately dated amendment, complete no-start proof plus separate absence receipt, replacement start after amendment, unchanged config/source, unchanged paired selector and canonical rule. No code edits or GPU actions by reviewer.",
+    "P14_completed_result": "All ten valid fresh pairs, actual mixed SR/OSR counts and no-start/amendment/completion chronology inspected after authorized execution; supersedes earlier pre-result review scope."
+  },
+  "p14_video_screen_receipt": {
+    "filename": "P14-screen.json",
+    "sha256": "0e9321fb3d0fbe5f04ffb0ed059ef4cb838b660f3092c76c21ffdf7e516ee130",
+    "status": "screened_candidate_not_upload_authorized",
+    "copied_into_overlay": false
+  },
+  "video_payload_manifest": {
+    "filename": "VIDEO_PAYLOAD_MANIFEST.json",
+    "sha256": "ce38cc5374f264ffaf2a120eff2ed613ca7cd803c0c56b80c3c0aae3d7349245",
+    "bytes": 4760,
+    "files": 7,
+    "total_bytes": 7413447
+  },
+  "final_evidence_receipts_not_copied": [
+    {
+      "filename": "public-final-tests-v1.json",
+      "sha256": "93975f2555a6f6ec22d76a1cdd62b3c65b9f156bc573d53136f819b74886b69c",
+      "bytes": 428
+    },
+    {
+      "filename": "public-release-wave2-notes.md",
+      "sha256": "596a0de48ced1837e1e09a7334bccc151c2d365945956e784dd0c3be2b4ecc36",
+      "bytes": 1994
+    }
+  ],
+  "public_checkout_test_receipt": {
+    "filename": "public-final-tests-v1.json",
+    "sha256": "93975f2555a6f6ec22d76a1cdd62b3c65b9f156bc573d53136f819b74886b69c",
+    "observed_result": "267 tests in 9.250s; OK, 1 platform skip",
+    "execution_by_this_review": false,
+    "scope": "Execution-owner run on exact public source/test snapshot; final changes are documentation/review metadata only."
+  },
+  "release_body_review": {
+    "filename": "public-release-wave2-notes.md",
+    "sha256": "596a0de48ced1837e1e09a7334bccc151c2d365945956e784dd0c3be2b4ecc36",
+    "status": "Content inspected; no private paths/identifiers or scientific scope mismatch found. Future-tense draft becomes release description only after permission/publication.",
+    "copied_into_overlay": false
+  }
+}

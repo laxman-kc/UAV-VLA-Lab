@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uav-vla-lab"
+version = "0.1.0rc1"
+description = "Reproducible UAV vision-language-action research workflows and evidence"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = []
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "setuptools>=77", "wheel>=0.43"]
+test = ["Pillow>=10,<13", "build>=1.2", "setuptools>=77", "wheel>=0.43"]
+research = ["matplotlib>=3.8,<3.12", "Pillow>=10,<13"]
+reporting = ["Pillow>=10,<13"]
+
+[project.urls]
+Repository = "https://github.com/laxman-kc/UAV-VLA-Lab"
+Issues = "https://github.com/laxman-kc/UAV-VLA-Lab/issues"
+
+[project.scripts]
+uav-vla = "uav_vla_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+uav_vla_lab = ["data/*.json", "**/*.json", "**/*.sh", "**/*.txt", "integrations/aerovla/legacy/**/*.py"]

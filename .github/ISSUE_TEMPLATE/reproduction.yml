@@ -1,0 +1,24 @@
+name: Reproduction problem
+description: Report an experiment or result-reproduction issue.
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Project version and context
+      description: Identify the experiment or code version and any relevant context. Exclude private details and credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and configuration
+      description: Exact command and a small public-safe configuration.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected and observed result
+      description: Include the first failure and distinguish a data-reanalysis issue from a new experiment.
+    validations:
+      required: true

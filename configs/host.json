@@ -1,0 +1,19 @@
+{
+  "schema_version": "uav-vla.host-selection.v1",
+  "status": "no_active_gpu_host",
+  "instance": null,
+  "source_root": null,
+  "data_root": null,
+  "python": null,
+  "note": "The completed-cycle GPU host was backed up and deleted on 7 September 2026. Select and inventory a new host explicitly; no executable remote defaults are supplied.",
+  "requested_runtime_family": {
+    "os": "Ubuntu 22.04 x86_64",
+    "python": "3.10",
+    "torch": "2.1.2+cu118",
+    "scene_concurrency": 1,
+    "policy_batch_size": 1,
+    "training_and_simulation_concurrent": false
+  },
+  "operational_free_space_reserve_gib": 60,
+  "mount_lifecycle_tested": false
+}

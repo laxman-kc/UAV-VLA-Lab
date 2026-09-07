@@ -1,0 +1,91 @@
+{
+  "schema_version": "uav-vla-lab.study-training-summary.v1",
+  "optimizer_steps": 25,
+  "training_rows": 25,
+  "sample_exposures": 25,
+  "complete_passes": 1,
+  "changed_tensors": 454,
+  "trainable_tensors": 454,
+  "trainable_parameters": 231293440,
+  "fixed_training_row_index": 0,
+  "fixed_row_exposed_at_step": 11,
+  "fixed_row_loss": {
+    "before": 0.48068147897720337,
+    "after": 0.04631422460079193,
+    "reloaded": 0.04631422460079193
+  },
+  "reload_validation": {
+    "exact_adapter_and_projector_hashes_match": true,
+    "last_token_logits_allclose": true,
+    "loss_isclose": true,
+    "last_token_logits_max_absolute_error": 0.0,
+    "atol": 1e-05,
+    "rtol": 1e-05,
+    "scope": "Fixed first training sample, teacher-forced loss and final-position full-vocabulary logits; no navigation evaluation"
+  },
+  "training_elapsed_seconds": 13.894800124999165,
+  "supervised_command_elapsed_seconds": 51.88820297100028,
+  "candidate_files": [
+    {
+      "filename": "README.md",
+      "bytes": 5123,
+      "sha256": "b0864d26c21041a4789b29cca80732686a38da3e1ff4f92815a64a7d2899fe5c"
+    },
+    {
+      "filename": "adapter_config.json",
+      "bytes": 733,
+      "sha256": "f4d46d32e68b0b5a505eda6d4b5f64c47b547cb19f718578b7fafff7d8a80659"
+    },
+    {
+      "filename": "adapter_model.safetensors",
+      "bytes": 925241648,
+      "sha256": "cce1d20f9c7e5791ec1815a19cd39a4ff7170e31903fa10a415e13221ba3db85"
+    },
+    {
+      "filename": "added_tokens.json",
+      "bytes": 21,
+      "sha256": "ab43123267b190cb7990bc9f2ae4ad32dcb7ed029fb0fccb1b4e062c6f54a2a1"
+    },
+    {
+      "filename": "preprocessor_config.json",
+      "bytes": 1650,
+      "sha256": "bd024783fb785cbdfe35b710b621c5e8678d4c157a9ba625675e67d40d1757da"
+    },
+    {
+      "filename": "processing_prismatic.py",
+      "bytes": 12718,
+      "sha256": "06563586bbc73d36501a14a231a3174904ede830d33174d0c625ece8e931ef1e"
+    },
+    {
+      "filename": "processor_config.json",
+      "bytes": 130,
+      "sha256": "167e026d8121f6cb0bf5c18310b97ba8139152f970822bb3824213bd37dc7a76"
+    },
+    {
+      "filename": "special_tokens_map.json",
+      "bytes": 552,
+      "sha256": "cb90ee5cf5793aa444039af9795b00db59d3fef8942e7eca9cf1990bab370d61"
+    },
+    {
+      "filename": "tokenizer.json",
+      "bytes": 1842976,
+      "sha256": "8f5e2869e1807b8bb3c7717a294539c37e9de5d728ad60e31ef57e83cc5ea527"
+    },
+    {
+      "filename": "tokenizer.model",
+      "bytes": 499723,
+      "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+    },
+    {
+      "filename": "tokenizer_config.json",
+      "bytes": 1220,
+      "sha256": "f8c037ebe383b03f4f729b4c81fc920c6acc87a044194930ce88ad0034bbb8a5"
+    }
+  ],
+  "source_ids": [
+    "training-run",
+    "candidate-checkpoint-manifest",
+    "training-sealed-spec"
+  ],
+  "scope": "Teacher-forced training-sample fit and checkpoint mechanics; no held-out loss or navigation conclusion"
+}
